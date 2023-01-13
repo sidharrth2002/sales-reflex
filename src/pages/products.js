@@ -12,8 +12,8 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
+import { FaPlus, FaTrash } from "react-icons/fa";
 
-import { FaPlus } from "react-icons/fa";
 import Head from "next/head";
 import { Inter } from "@next/font/google";
 import { useState } from "react";
@@ -28,7 +28,7 @@ export default function Register() {
       description:
         "Sambal is a spicy condiment made from a paste of ground chilies, shallots, garlic, and other seasonings. It is a staple condiment in Indonesian, Malaysian, Singaporean, and Bruneian cuisine.",
       image:
-        "https://www.thespruceeats.com/thmb/bMRK43OmjlFaL5jRQKaiCxSkWyU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/malaysian-sambal-sauce-3030364-hero-02-abcaaf29182f43ac9938cdcb39272c82.jpg",
+        "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/e8547f4b-df54-4d29-a432-629ce45f8aaa/Derivates/312a8b0d-199e-4b0c-b4cf-8ce9509ea6b0.jpg",
     },
     {
       name: "Kuey Teow",
@@ -51,12 +51,16 @@ export default function Register() {
       <Flex
         justifyContent={"center"}
         alignItems={"center"}
-        width={"100%"}
+        width={800}
+        maxWidth={"70%"}
+        margin={"auto"}
         padding={12}
         flexDirection={"column"}
+        boxShadow={"2xl"}
+        mt={20}
       >
         <Heading className={inter.className} mb={7}>
-          Products
+          Manage your products
         </Heading>
         <SimpleGrid
           spacing={4}
@@ -72,73 +76,54 @@ export default function Register() {
                 mb={-4}
               >
                 <Heading size="md">{product.name}</Heading>
-                <Text>RM {product.price}</Text>
+                <Text color={"blue.600"}>RM {product.price}</Text>
               </CardHeader>
               <CardBody>
                 <Text mb={8}>
                   {product.description.substring(0, 100) + "..."}
                 </Text>
-                <Image
-                  borderRadius={10}
-                  src={product.image}
-                  width={300}
-                  maxWidth={"90%"}
-                  alt="product"
-                  textAlign={"center"}
-                />
+                <Flex
+                  alignItems={"center"}
+                  width={"100%"}
+                  justifyContent={"center"}
+                >
+                  <Image
+                    borderRadius={10}
+                    src={product.image}
+                    width={250}
+                    maxWidth={"90%"}
+                    alt="product"
+                    textAlign={"center"}
+                  />
+                </Flex>
               </CardBody>
               <CardFooter>
-                <Button>View here</Button>
+                <Button textAlign={"center"}>
+                  <Icon as={FaTrash} />
+                </Button>
               </CardFooter>
             </Card>
           ))}
-        </SimpleGrid>
-        <Flex
-          flexWrap={"wrap"}
-          justifyContent={"center"}
-          alignItems={"flex-start"}
-        >
-          {products.map((product) => (
-            <Box
-              key={product.name}
-              //   boxShadow={"2xl"}
-              padding={6}
-              margin={4}
-              borderRadius={12}
-              width={350}
-              shadow="md"
+          <Card width={"100%"}>
+            <CardHeader
               display={"flex"}
-              flexDirection={"column"}
-              alignItems={"center"}
-              boxShadow={"0 0 6px rgba(0, 0, 0, 0.15)"}
-            >
-              <Flex justifyContent={"space-between"} width={"100%"}>
-                <Text fontSize={"1.5rem"} mb={4}>
-                  {product.name}
-                </Text>
-                <Text fontSize={"1.2rem"} mb={4} ml={4}>
-                  RM {product.price}
-                </Text>
+              justifyContent={"space-between"}
+              flexDirection={"row"}
+              mb={-4}
+            ></CardHeader>
+            <CardBody>
+              <Flex
+                alignItems={"center"}
+                width={"100%"}
+                justifyContent={"center"}
+              >
+                <Box backgroundColor={"gray.100"} borderRadius={10} p={8}>
+                  <Icon color={"#0f0f0f"} as={FaPlus} fontSize={"5xl"} />
+                </Box>
               </Flex>
-              <Text mb={5}>{product.description}</Text>
-              <Image borderRadius={10} src={product.image} alt="product" />
-            </Box>
-          ))}
-          <Box
-            //   boxShadow={"2xl"}
-            padding={6}
-            margin={4}
-            borderRadius={12}
-            width={350}
-            shadow="md"
-            display={"flex"}
-            flexDirection={"column"}
-            alignItems={"center"}
-            boxShadow={"0 0 6px rgba(0, 0, 0, 0.15)"}
-          >
-            <Icon as={FaPlus} fontSize={"2rem"} mb={4} />
-          </Box>
-        </Flex>
+            </CardBody>
+          </Card>
+        </SimpleGrid>
       </Flex>
     </>
   );
