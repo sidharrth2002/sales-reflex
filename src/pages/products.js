@@ -12,24 +12,21 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
-import { FaPlus, FaTrash } from "react-icons/fa";
-
+import {Inter} from "@next/font/google";
+import {useSupabaseClient} from "@supabase/auth-helpers-react";
 import Head from "next/head";
-import { Inter } from "@next/font/google";
-import { useState, useEffect } from "react";
+import {useEffect, useState} from "react";
+import {FaPlus, FaTrash} from "react-icons/fa";
 
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
-
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({subsets : [ "latin" ]});
 
 export default function Register() {
   const supabase = useSupabaseClient();
 
   useEffect(() => {
-
-    const getProducts = async () => {
-      const {data, error} = await supabase.from("product")
-        .select("*")
+    const getProducts =
+        async () => {
+      const {data, error} = await supabase.from("product").select("*")
       console.log("supaProducts", data);
     }
 
@@ -38,20 +35,20 @@ export default function Register() {
 
   const [products, setProducts] = useState([
     {
-      name: "Sambal",
-      price: 10,
-      description:
-        "Sambal is a spicy condiment made from a paste of ground chilies, shallots, garlic, and other seasonings. It is a staple condiment in Indonesian, Malaysian, Singaporean, and Bruneian cuisine.",
-      image:
-        "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/e8547f4b-df54-4d29-a432-629ce45f8aaa/Derivates/312a8b0d-199e-4b0c-b4cf-8ce9509ea6b0.jpg",
+      name : "Sambal",
+      price : 10,
+      description :
+          "Sambal is a spicy condiment made from a paste of ground chilies, shallots, garlic, and other seasonings. It is a staple condiment in Indonesian, Malaysian, Singaporean, and Bruneian cuisine.",
+      image :
+          "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/e8547f4b-df54-4d29-a432-629ce45f8aaa/Derivates/312a8b0d-199e-4b0c-b4cf-8ce9509ea6b0.jpg",
     },
     {
-      name: "Kuey Teow",
-      price: 10,
-      description:
-        "Kuey teow is a flat rice noodle dish that is popular in Southeast Asia. It is a staple food in Malaysia, Singapore, Indonesia, Brunei, and southern Thailand. It is also popular in the southern Chinese provinces of Guangdong, Fujian, and Hainan.",
-      image:
-        "https://rasamalaysia.com/wp-content/uploads/2009/11/char-koay-teow-thumb.jpg",
+      name : "Kuey Teow",
+      price : 10,
+      description :
+          "Kuey teow is a flat rice noodle dish that is popular in Southeast Asia. It is a staple food in Malaysia, Singapore, Indonesia, Brunei, and southern Thailand. It is also popular in the southern Chinese provinces of Guangdong, Fujian, and Hainan.",
+      image :
+          "https://rasamalaysia.com/wp-content/uploads/2009/11/char-koay-teow-thumb.jpg",
     },
   ]);
 
@@ -78,46 +75,35 @@ export default function Register() {
           Manage your products
         </Heading>
         <SimpleGrid
-          spacing={4}
-          templateColumns="repeat(auto-fill, minmax(250px, 1fr))"
-          justifyItems={"center"}
-        >
-          {products.map((product) => (
+  spacing = {4} templateColumns = "repeat(auto-fill, minmax(250px, 1fr))"
+  justifyItems = {"center"} > {products.map((product) => (
             <Card key={product.name} width={"100%"}>
               <CardHeader
-                display={"flex"}
-                justifyContent={"space-between"}
-                flexDirection={"row"}
-                mb={-4}
-              >
-                <Heading size="md">{product.name}</Heading>
+    display = {"flex"} justifyContent = {"space-between"} flexDirection = {"row"} mb =
+        {-4} >
+        <Heading size = "md">{product.name}<
+            /Heading>
                 <Text color={"blue.600"}>RM {product.price}</Text>
-              </CardHeader>
+        </CardHeader>
               <CardBody>
                 <Text mb={8}>
                   {product.description.substring(0, 100) + "..."}
-                </Text>
-                <Flex
-                  alignItems={"center"}
-                  width={"100%"}
-                  justifyContent={"center"}
-                >
-                  <Image
-                    borderRadius={10}
-                    src={product.image}
-                    width={250}
-                    maxWidth={"90%"}
-                    alt="product"
-                    textAlign={"center"}
-                  />
-                </Flex>
-              </CardBody>
+                </Text><
+        Flex
+    alignItems = {"center"} width = {"100%"} justifyContent = {"center"} > <
+                                                              Image
+    borderRadius = {10} src = {product.image} width = {250} maxWidth = {
+        "90%"} alt = "product"
+    textAlign =
+    { "center" } />
+                </Flex >
+        </CardBody>
               <CardFooter>
                 <Button textAlign={"center"}>
                   <Icon as={FaTrash} />
-                </Button>
+        </Button>
               </CardFooter>
-            </Card>
+        </Card>
           ))}
           <Card width={"100%"}>
             <CardHeader
@@ -126,14 +112,14 @@ export default function Register() {
               flexDirection={"row"}
               mb={-4}
             ></CardHeader>
-            <CardBody>
-              <Flex
+        <CardBody>< Flex
                 alignItems={"center"}
                 width={"100%"}
                 justifyContent={"center"}
               >
                 <Box backgroundColor={"gray.100"} borderRadius={10} p={8}>
-                  <Icon color={"#0f0f0f"} as={FaPlus} fontSize={"5xl"} />
+                  <Icon color={"#0f0f0f"} as={FaPlus} fontSize={
+      "5xl"} />
                 </Box>
               </Flex>
             </CardBody>
@@ -142,4 +128,4 @@ export default function Register() {
       </Flex>
     </>
   );
-}
+  }
