@@ -331,7 +331,9 @@ export default function Register() {
               <FormControl>
                 <FormLabel>Your Name</FormLabel>
                 <Input type="name" onChange={(e) => setName(e.target.value)} />
-                <FormHelperText>We'll never share your name.</FormHelperText>
+                <FormHelperText>
+                  We&sbquo;ll never share your name.
+                </FormHelperText>
               </FormControl>{" "}
               <FormControl>
                 <FormLabel>Rating</FormLabel>
