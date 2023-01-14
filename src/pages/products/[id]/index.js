@@ -1,3 +1,4 @@
+import {loadModel, nasi_lemak, predict} from "@/lib/food-classifier";
 import {
   Box,
   Button,
@@ -8,8 +9,8 @@ import {
   Flex,
   FormControl,
   FormLabel,
-  HStack,
   Heading,
+  HStack,
   Icon,
   Image,
   Input,
@@ -24,10 +25,17 @@ import {
   Skeleton,
   Text,
   Textarea,
-  VStack,
   useDisclosure,
   useToast,
+  VStack,
 } from "@chakra-ui/react";
+import {Inter} from "@next/font/google";
+import {useSupabaseClient} from "@supabase/auth-helpers-react";
+import Layout from "components/Layout";
+import Head from "next/head";
+import {useRouter} from "next/router";
+import {useEffect, useRef, useState} from "react";
+import {FileUploader} from "react-drag-drop-files";
 import {
   FaArrowRight,
   FaPencilAlt,
@@ -35,24 +43,15 @@ import {
   FaSearch,
   FaTrash,
 } from "react-icons/fa";
-import { useEffect, useRef, useState } from "react";
 
-import { FileUploader } from "react-drag-drop-files";
-import Head from "next/head";
-import { Inter } from "@next/font/google";
-import Layout from "components/Layout";
-import { useRouter } from "next/router";
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
-import { loadModel, predict, nasi_lemak } from "@/lib/food-classifier";
-
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({subsets : [ "latin" ]});
 
 export default function Register() {
   const [hardCode, setHardCode] = useState(true);
   const imgRef = useRef(null);
   const router = useRouter();
   const [products, setProducts] = useState([]);
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const {isOpen, onOpen, onClose} = useDisclosure();
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState(0);
   const [productDescription, setProductDescription] = useState("");
@@ -65,23 +64,19 @@ export default function Register() {
   const supabase = useSupabaseClient();
 
   useEffect(() => {
-    (async () => {
-      await loadModel("/models/food/model.json");
-    })();
+    (async () => { await loadModel("/models/food/model.json"); })();
   }, []);
 
   useEffect(() => {
     if (router.isReady) {
       const getProducts = async () => {
-        const { id } = router.query;
+        const {id} = router.query;
 
         setLoading(true);
         // const { data, error } = await supabase.from("product").select("*");
         // select from supabase where store = brian
-        const { data, error } = await supabase
-          .from("product")
-          .select("*")
-          .match({ store: id });
+        const {data, error} =
+            await supabase.from("product").select("*").match({store : id});
 
         if (error) {
         } else {
@@ -92,43 +87,35 @@ export default function Register() {
 
       getProducts();
     }
-  }, [router.isReady]);
+  }, [ router.isReady ]);
 
   const createProduct = async () => {
     const newProduct = {
-      name: productName,
-      price: productPrice,
-      description: productDescription,
-      image_path: productImage,
-      store: router.query.id,
+      name : productName,
+      price : productPrice,
+      description : productDescription,
+      image_path : productImage,
+      store : router.query.id,
     };
     // add to supabase
-    supabase
-      .from("product")
-      .insert(newProduct)
-      .then((response) => {});
+    supabase.from("product").insert(newProduct).then((response) => {});
 
-    setProducts([...products, newProduct]);
+    setProducts([...products, newProduct ]);
   };
 
   const deleteProduct = (name) => {
     // delete from supabase
-    supabase
-      .from("product")
-      .delete()
-      .match({ name })
-      .then((response) => {
-        const newProducts = products.filter((product) => product.name !== name);
-        setProducts(newProducts);
-      });
+    supabase.from("product").delete().match({name}).then((response) => {
+      const newProducts = products.filter((product) => product.name !== name);
+      setProducts(newProducts);
+    });
   };
 
   const uploadImage = async (file) => {
     // upload image to supabase
     setUploaded(false);
-    const { data, error } = await supabase.storage
-      .from("product-images")
-      .upload(file.name, file);
+    const {data, error} =
+        await supabase.storage.from("product-images").upload(file.name, file);
     if (error) {
       setUploaded(true);
       return setProductImage("");
@@ -136,8 +123,8 @@ export default function Register() {
       setUploaded(true);
       console.log(data.path);
       setProductImage(
-        `https://malkpiqslwdctbpgjzzw.supabase.co/storage/v1/object/public/product-images/${data.path}`
-      );
+          `https://malkpiqslwdctbpgjzzw.supabase.co/storage/v1/object/public/product-images/${
+              data.path}`);
       setInference(true);
     }
   };
@@ -165,29 +152,18 @@ export default function Register() {
       <Layout>
         <Skeleton isLoaded={!loading}>
           <Flex
-            justifyContent={"center"}
-            alignItems={"center"}
-            width={1000}
-            maxWidth={"80%"}
-            margin={"auto"}
-            padding={12}
-            flexDirection={"column"}
-            boxShadow={"2xl"}
-            mt={20}
-          >
-            <HStack
-              width={"100%"}
-              justifyContent={"space-between"}
-              alignItems={"center"}
-              px={20}
-            >
-              <Heading className={inter.className} mb={7}>
-                Manage your products
-              </Heading>
+  justifyContent = {"center"} alignItems = {"center"} width = {1000} maxWidth =
+      {"80%"} margin = {"auto"} padding = {12} flexDirection = {
+          "column"} boxShadow = {"2xl"} mt = {20} > < HStack
+  width = {"100%"} justifyContent = {"space-between"} alignItems = {"center"} px =
+      {20} >
+      <Heading className = {inter.className} mb = {7}>Manage your products <
+      /Heading>
 
               <Button
                 onClick={() => {
-                  router.push(`/store/${router.query.id}`);
+                  router.push(`/store /
+          $ { router.query.id } `);
                 }}
                 colorScheme="blue"
               >
@@ -205,7 +181,7 @@ export default function Register() {
               <FormControl id="search" mb={5} position="relative">
                 <Input
                   type="text"
-                  placeholder={`Search`}
+                  placeholder={` Search`}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
                 <Icon as={FaSearch} position="absolute" top={3} right={3} />
@@ -371,7 +347,7 @@ export default function Register() {
                     // width={300}
                     // height={300}
                     className="w-full object-contain"
-                    alt={`upload`}
+                    alt={` upload`}
                     ref={imgRef}
                   />
                 )}
