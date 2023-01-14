@@ -19,6 +19,7 @@
     "@supabase/auth-helpers-nextjs": "^0.5.2",
     "@supabase/auth-helpers-react": "^0.3.1",
     "@supabase/supabase-js": "^2.4.0",
+    "@tailwindcss/line-clamp": "^0.4.2",
     "axios": "^1.2.2",
     "classnames": "^2.3.2",
     "eslint": "8.31.0",

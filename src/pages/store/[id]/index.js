@@ -23,7 +23,16 @@ import { useCart } from "@/context/cart";
 import { useRouter } from "next/router";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
-export default function Store() {
+export async function getServerSideProps({ params }) {
+  const { id } = params;
+  return {
+    props: {
+      id,
+    },
+  };
+}
+
+export default function Store({ id }) {
   const router = useRouter();
   const supabase = useSupabaseClient();
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -65,14 +74,19 @@ export default function Store() {
       >
         <ModalOverlay />
         <ModalContent>
+          <Image
+            src={current?.image_path}
+            alt={current?.name}
+            width="0"
+            height="0"
+            sizes="100vw"
+            className="object-cover w-full transition-all h-[200px]"
+          />
           <ModalHeader>{current?.name}</ModalHeader>
-          <ModalCloseButton />
+          <ModalCloseButton color={"white"} />
           <ModalBody className="text-justify">{current?.description}</ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="blackAlpha" mr={5} onClick={onClose}>
-              Close
-            </Button>
             <NumberInput
               value={number}
               onChange={(v) => setNumber(Number(v))}
@@ -88,13 +102,54 @@ export default function Store() {
               </NumberInputStepper>
             </NumberInput>
             <Button
+              mr={3}
               colorScheme="linkedin"
               onClick={() => {
-                setCart([...cart, { ...current, number }]);
+                const idx = cart?.findIndex((c) => c?.id === current?.id);
+                if (idx >= 0) {
+                  const newCart = cart?.map((c) => {
+                    if (c?.id === current?.id) {
+                      return {
+                        ...c,
+                        number: c?.number + 1,
+                      };
+                    } else {
+                      return c;
+                    }
+                  });
+                  setCart(newCart);
+                } else {
+                  setCart([...cart, { ...current, number }]);
+                }
                 onClose();
               }}
             >
               Add to Cart
+            </Button>
+            <Button
+              colorScheme="facebook"
+              onClick={() => {
+                const idx = cart?.findIndex((c) => c?.id === current?.id);
+                if (idx >= 0) {
+                  const newCart = cart?.map((c) => {
+                    if (c?.id === current?.id) {
+                      return {
+                        ...c,
+                        number: c?.number + 1,
+                      };
+                    } else {
+                      return c;
+                    }
+                  });
+                  setCart(newCart);
+                } else {
+                  setCart([...cart, { ...current, number }]);
+                }
+                router.push(`/store/${id}/checkout`);
+                onClose();
+              }}
+            >
+              Buy Now
             </Button>
             {/* <Button colorScheme="facebook">Buy Now</Button> */}
           </ModalFooter>

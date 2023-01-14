@@ -3,8 +3,16 @@ import { useCart } from "@/context/cart";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { BiCart, BiSearchAlt, BiTrash } from "react-icons/bi";
-import { BsWhatsapp } from "react-icons/bs";
+import {
+  BiCart,
+  BiCopyAlt,
+  BiNotepad,
+  BiSearchAlt,
+  BiTrash,
+} from "react-icons/bi";
+import { BsBank2, BsWhatsapp } from "react-icons/bs";
+import { useRouter } from "next/router";
+import Link from "next/link";
 import {
   Modal,
   ModalOverlay,
@@ -15,27 +23,94 @@ import {
   ModalCloseButton,
   useDisclosure,
   Button,
-  NumberInput,
-  NumberInputField,
-  NumberInputStepper,
-  NumberIncrementStepper,
-  NumberDecrementStepper,
 } from "@chakra-ui/react";
-import { useRouter } from "next/router";
 
-export default function Store() {
+export async function getServerSideProps({ params }) {
+  const { id } = params;
+  return {
+    props: {
+      id,
+    },
+  };
+}
+
+export default function Store({ id }) {
   const router = useRouter();
+  const [copy, setCopy] = useState("");
   const { cart, setCart } = useCart();
-  console.log(cart);
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <div className="bg-gradient-to-r min-h-[100vh] from-rose-100 to-teal-100">
+      <Modal
+        isOpen={isOpen}
+        onClose={() => {
+          onClose();
+        }}
+        isCentered
+      >
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Checkout</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody className="w-full flex items-center flex-col gap-5">
+            <div className="w-full text-sm">
+              Total: RM{" "}
+              <span className="text-xl font-bold">
+                {cart?.reduce((p, c) => p + c?.number * c?.price, 0).toFixed(2)}
+              </span>
+            </div>
+            <div className="font-bold w-full mt-4">
+              <div>Payment Methods</div>
+              <div className="text-sm flex items-center font-normal text-gray-500 text-justify">
+                This vendor personally allow only RHB and Manual Transfer.
+              </div>
+            </div>
+            <button className="px-4 flex items-center gap-5 hover:bg-blue-50 transition-all hover:text-primary-4-light justify-center py-3 border-2 text-sm rounded-md shadow border-primary-4-light w-full">
+              <Image src={`/rhb.png`} width={50} height={50} alt="rhb" />
+              PayDirect powered by RHB Bank
+            </button>
+            <div className="font-bold text-sm">or</div>
+            <div className="w-full relative">
+              <div className="grid grid-cols-7 w-full bg-gray-100 border p-2 rounded-t-md text-xs gap-4">
+                <div className="col-span-2">Account Details</div>
+                <div className="col-span-2">Name</div>
+                <div className="col-span-2">Bank</div>
+              </div>
+              <div className="grid grid-cols-7 w-full border-x border-b p-2 rounded-b-md text-xs gap-4">
+                <div className="col-span-2">8921 0230 1310 2122</div>
+                <div className="col-span-2">Sidharth</div>
+                <div className="col-span-2">RHB Bank</div>
+                <BiCopyAlt
+                  onClick={() => {
+                    navigator.clipboard.writeText(8921023013102122);
+                    setCopy("8921 0230 1310 2122");
+                  }}
+                  className="w-4 h-4 cursor-pointer right-2 bottom-10"
+                />
+              </div>
+              {copy.length > 0 && (
+                <div className="text-xs mt-2 text-green-400">{`Copied Successfully! ${copy}`}</div>
+              )}
+              <Link
+                href={`https://api.whatsapp.com/send?phone=60163132154`}
+                target={"_blank"}
+                className="mt-8 w-full mb-3 rounded-md text-sm px-5 py-2 flex items-center justify-center bg-blue-500 font-medium text-white shadow"
+              >
+                {"Send Proof of Payment".toUpperCase()}
+              </Link>
+            </div>
+          </ModalBody>
+
+          {/* <ModalFooter></ModalFooter> */}
+        </ModalContent>
+      </Modal>
       <div className="w-full store_layout">
         {/* <div className="p-4 bg-white mt-4 mb-10 rounded-lg w-full"></div> */}
         <div className="flex items-center w-full justify-between">
           <h2
             onClick={() => {
-              router.push(router.asPath.replace("/checkout", ""));
+              router.push(`/store/${id}`);
             }}
             className="text-lg font-bold cursor-pointer"
           >
@@ -48,7 +123,19 @@ export default function Store() {
             <div className="text-base">{cart?.length}</div>
           </div>
         </div>
-        <div className="mt-10">{cart?.length === 0 && "No products found"}</div>
+        <div className="mt-10">
+          {cart?.length === 0 && (
+            <>
+              No products found -{" "}
+              <Link
+                href={`/store/${id}`}
+                className="text-blue-500 hover:text-blue-600 underline"
+              >
+                Back to the store
+              </Link>
+            </>
+          )}
+        </div>
         <div className="grid">
           {cart?.map((d, idx) => (
             <div
@@ -98,14 +185,14 @@ export default function Store() {
               placeholder={`Leave a message for the seller`}
             />
           </div>
-          {/* <button className="px-5 py-2 text-sm whitespace-nowrap gap-3 flex items-center font-bold rounded bg-primary-4-light text-white border border-primary-4-light hover:bg-white hover:text-primary-4-light">
-            Send
-          </button> */}
           or
-          <button className="px-5 py-2 text-sm whitespace-nowrap gap-3 flex items-center font-bold rounded bg-primary-4-light text-white border border-primary-4-light hover:bg-white hover:text-primary-4-light">
+          <Link
+            href={`/whatsapp/${id}`}
+            className="px-5 py-2 text-sm whitespace-nowrap gap-3 flex items-center font-bold rounded bg-primary-4-light text-white border border-primary-4-light hover:bg-white hover:text-primary-4-light"
+          >
             <BsWhatsapp className="w-4 h-4" />
             Chat with Us
-          </button>
+          </Link>
         </div>
         <div className="flex mt-10 items-center p-6 border-2 border-black w-full rounded-md">
           <div className="w-full font-bold">
@@ -113,7 +200,13 @@ export default function Store() {
             {cart?.reduce((p, c) => p + c?.number * c?.price, 0).toFixed(2)}
           </div>
           <div className="flex items-center gap-4">
-            <button className="px-5 py-2 text-sm font-bold rounded bg-primary-4-light text-white border border-primary-4-light hover:bg-white hover:text-primary-4-light">
+            <button
+              onClick={() => {
+                onOpen();
+              }}
+              disabled={cart?.length <= 0}
+              className="px-5 py-2 text-sm font-bold rounded disabled:bg-gray-400 disabled:border-none disabled:hover:text-white bg-primary-4-light text-white border border-primary-4-light hover:bg-white hover:text-primary-4-light"
+            >
               Checkout
             </button>
           </div>
