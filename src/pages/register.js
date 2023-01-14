@@ -1,25 +1,38 @@
 import {
   Box,
   Button,
+  Code,
   Flex,
   FormControl,
   FormHelperText,
   FormLabel,
+  HStack,
   Heading,
+  Icon,
   Input,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
   Select,
   Spinner,
   Text,
   Textarea,
   VStack,
+  useDisclosure,
+  useToast,
 } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 
+import { FaClipboard } from "react-icons/fa";
 import Head from "next/head";
 import { Inter } from "@next/font/google";
 import axios from "axios";
 import { slugify } from "./utils";
 import { useRouter } from "next/router";
-import { useState } from "react";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -33,6 +46,13 @@ export default function Register() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [inferring, setInferring] = useState(false);
   const router = useRouter();
+  const toast = useToast();
+
+  const {
+    isOpen: isOpenModal,
+    onOpen: onOpenModal,
+    onClose: onCloseModal,
+  } = useDisclosure();
 
   const createStore = async () => {
     supabase
@@ -43,10 +63,10 @@ export default function Register() {
         category,
         mobile_number: phoneNumber,
         owner: "Sidharrth Nagappan",
+        slug: slugify(name),
       })
       .then((data) => {
         console.log(data);
-        router.push(`/products/${slugify(name)}`);
       })
       .catch((error) => {
         console.log(error);
@@ -115,8 +135,20 @@ export default function Register() {
           <VStack width={400} spacing={4} maxWidth={"100%"}>
             <FormControl>
               <FormLabel>Business Name</FormLabel>
-              <Input type="name" onChange={(e) => setName(e.target.value)} />
+              <Input
+                type="name"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+              />
               <FormHelperText>Give your store a cool name.</FormHelperText>
+            </FormControl>{" "}
+            <FormControl>
+              <FormLabel>Phone Number</FormLabel>
+              <Input
+                name="phoneNumber"
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
+              />
             </FormControl>{" "}
             <FormControl>
               <FormLabel>Description</FormLabel>
@@ -150,15 +182,9 @@ export default function Register() {
               </FormHelperText>
             </FormControl>{" "}
             <FormControl>
-              <FormLabel>Phone Number</FormLabel>
-              <Input
-                name="description"
-                onChange={(e) => setPhoneNumber(e.target.value)}
-              />
-            </FormControl>{" "}
-            <FormControl>
               <FormLabel>What do you sell?</FormLabel>
               <Select
+                value={category}
                 variant={"filled"}
                 onChange={(e) => setCategory(e.target.value)}
               >
@@ -171,12 +197,77 @@ export default function Register() {
             variant={"solid"}
             colorScheme={"purple"}
             mt={6}
-            onClick={createStore}
+            onClick={() => {
+              if (name === "" || description === "" || category === "") {
+                return;
+              }
+              createStore();
+              toast({
+                title: "Store created!",
+                description: "We've created your store for you.",
+                status: "success",
+                duration: 9000,
+                isClosable: true,
+              });
+              onOpenModal();
+            }}
           >
             <Text color={"white"}>Proceed</Text>
           </Button>
         </Box>
       </Flex>
+
+      <Modal isOpen={isOpenModal} onClose={onCloseModal}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Let's get the word out!</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Box>
+              <Text mb={3}>Public URL:</Text>
+              <HStack mb={5}>
+                <Code padding={4}>https://{slugify(name)}.salesreflex.com</Code>
+                <Icon
+                  as={FaClipboard}
+                  onClick={() => {
+                    navigator.clipboard.writeText(
+                      `https://${slugify(name)}.salesreflex.com`
+                    );
+                  }}
+                />
+              </HStack>
+              <Text mb={3}>WhatsApp URL:</Text>
+              <HStack>
+                <Code padding={4} maxW={"80%"}>
+                  https://api.whatsapp.com/send?phone={phoneNumber}
+                  &text=Hi,I%am%20interested%20in%20your%20store%20{name}
+                </Code>
+                <Icon
+                  as={FaClipboard}
+                  onClick={() => {
+                    navigator.clipboard.writeText(
+                      `https://api.whatsapp.com/send?phone=${phoneNumber}
+                      &text=Hi,I%am%20interested%20in%20your%20store%20${name}`
+                    );
+                  }}
+                />
+              </HStack>
+            </Box>
+          </ModalBody>
+          <ModalFooter justifyContent={"space-between"}>
+            <Box></Box>
+            <Button
+              alignSelf={"flex-end"}
+              variant="ghost"
+              onClick={() => {
+                router.push(`/products/${slugify(name)}`);
+              }}
+            >
+              Go to store
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </>
   );
 }

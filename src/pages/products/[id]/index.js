@@ -341,15 +341,6 @@ export default function Register() {
                   />
                 </FormControl>{" "}
                 <FormControl>
-                  <FormLabel>Description</FormLabel>
-                  <Textarea
-                    name="description"
-                    value={productDescription}
-                    placeholder="Spicy..."
-                    onChange={(e) => setProductDescription(e.target.value)}
-                  />
-                </FormControl>{" "}
-                <FormControl>
                   <FormLabel>Price (number only)</FormLabel>
                   <Input
                     type="number"
@@ -386,6 +377,14 @@ export default function Register() {
                     Generate Name and Description
                   </Button>
                 )}
+                <FormControl>
+                  <FormLabel>Description</FormLabel>
+                  <Textarea
+                    name="description"
+                    placeholder="Spicy..."
+                    onChange={(e) => setProductDescription(e.target.value)}
+                  />
+                </FormControl>{" "}
               </VStack>
             </ModalBody>
             <ModalFooter
