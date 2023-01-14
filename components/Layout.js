@@ -1,20 +1,22 @@
+import cn from "classnames";
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import cn from "classnames";
+import React, { useEffect, useState } from "react";
 // import RandomAvatar from "uicore/RandomAvatar";
 import {
   BiBell,
   BiChart,
   BiCog,
   BiHome,
+  BiIntersect,
   BiPackage,
   BiWifi2,
-  BiIntersect,
 } from "react-icons/bi";
-import React, { useEffect, useState } from "react";
-import Image from "next/image";
+
 import RandomAvatar from "./core/RandomAvatar";
+
 // import AvatarSelector from "./core/AvatarSelector";
 
 const NavItem = ({ href, tooltip, className, children, logo }) => {
@@ -85,7 +87,13 @@ export default function Layout({ children, pageMeta }) {
               <NavItem href="/" logo={true}>
                 <BiWifi2 className="rotate-45 w-7 h-7 text-primary-1-light" />
               </NavItem>
-              <NavItem href="/" tooltip="Home" className="!p-3 mb-2">
+              <NavItem
+                href="/"
+                tooltip=" Home "
+                className="!
+               p -
+               3 mb - 2 "
+              >
                 <BiHome className="w-5 h-5" />
               </NavItem>
             </div>
@@ -95,13 +103,15 @@ export default function Layout({ children, pageMeta }) {
                 tooltip="Products"
                 className="!p-3 mb-2"
               >
+                {" "}
                 <BiPackage className="w-5 h-5" />
               </NavItem>
               <NavItem href={`/sales`} tooltip="Sales" className="!p-3 mb-2">
                 <BiChart className="w-5 h-5" />
               </NavItem>
               <NavItem
-                href={`/integration`}
+                href={` /
+          integration`}
                 tooltip="Integrations"
                 className="!p-3 mb-2"
               >
@@ -127,7 +137,8 @@ export default function Layout({ children, pageMeta }) {
                 <span key={index}>
                   <span className="px-3">/</span>
                   <Link
-                    href={`/${routes.slice(0, index + 1).join("/")}`}
+                    href={` /
+          $ { routes.slice(0, index + 1).join("/") } `}
                     className="hover:underline"
                   >
                     {route === "" ? "Home" : route}

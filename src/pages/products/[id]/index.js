@@ -1,3 +1,4 @@
+import { loadModel, nasi_lemak, predict } from "@/lib/food-classifier";
 import {
   Box,
   Button,
@@ -8,8 +9,8 @@ import {
   Flex,
   FormControl,
   FormLabel,
-  HStack,
   Heading,
+  HStack,
   Icon,
   Image,
   Input,
@@ -24,10 +25,17 @@ import {
   Skeleton,
   Text,
   Textarea,
-  VStack,
   useDisclosure,
   useToast,
+  VStack,
 } from "@chakra-ui/react";
+import { Inter } from "@next/font/google";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import Layout from "components/Layout";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import { useEffect, useRef, useState } from "react";
+import { FileUploader } from "react-drag-drop-files";
 import {
   FaArrowRight,
   FaPencilAlt,
@@ -35,15 +43,6 @@ import {
   FaSearch,
   FaTrash,
 } from "react-icons/fa";
-import { useEffect, useRef, useState } from "react";
-
-import { FileUploader } from "react-drag-drop-files";
-import Head from "next/head";
-import { Inter } from "@next/font/google";
-import Layout from "components/Layout";
-import { useRouter } from "next/router";
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
-import { loadModel, predict, nasi_lemak } from "@/lib/food-classifier";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -175,6 +174,7 @@ export default function Register() {
             boxShadow={"2xl"}
             mt={20}
           >
+            {" "}
             <HStack
               width={"100%"}
               justifyContent={"space-between"}
@@ -182,19 +182,19 @@ export default function Register() {
               px={20}
             >
               <Heading className={inter.className} mb={7}>
-                Manage your products
+                Manage your products{" "}
               </Heading>
 
               <Button
                 onClick={() => {
-                  router.push(`/store/${router.query.id}`);
+                  router.push(`/store /
+          $ { router.query.id } `);
                 }}
                 colorScheme="blue"
               >
                 Go to store <Icon as={FaArrowRight} ml={2} />
               </Button>
             </HStack>
-
             <Flex
               width={300}
               maxWidth={"80%"}
@@ -205,13 +205,12 @@ export default function Register() {
               <FormControl id="search" mb={5} position="relative">
                 <Input
                   type="text"
-                  placeholder={`Search`}
+                  placeholder={` Search`}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
                 <Icon as={FaSearch} position="absolute" top={3} right={3} />
               </FormControl>
             </Flex>
-
             <SimpleGrid
               spacing={4}
               templateColumns="repeat(auto-fill, minmax(250px, 1fr))"
@@ -362,7 +361,7 @@ export default function Register() {
                     // width={300}
                     // height={300}
                     className="w-full object-contain"
-                    alt={`upload`}
+                    alt={` upload`}
                     ref={imgRef}
                   />
                 )}
