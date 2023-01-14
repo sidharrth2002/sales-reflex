@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function RandomAvatar({ custom = [] }) {
+export default function RandomAvatar({custom = []}) {
   return (
     <Image
       src={`https://avatars.dicebear.com/api/${
