@@ -33,6 +33,7 @@ export default function Store() {
   const [filterData, setFilterData] = useState([]);
   const { cart, setCart } = useCart();
   const [number, setNumber] = useState(1);
+  const { id } = router.query;
   // console.log(cart);
   // console.log(router.asPath);
 
@@ -44,7 +45,7 @@ export default function Store() {
     };
 
     getProducts();
-  }, [supabase]);
+  }, [supabase, router]);
 
   useEffect(() => {
     setFilterData(
