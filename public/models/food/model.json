@@ -6597,12 +6597,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "T": {
@@ -6610,12 +6605,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "2",
-                "2",
-                "1"
-              ]
+              "i": ["1", "2", "2", "1"]
             }
           },
           "num_args": {
@@ -6632,9 +6622,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "data_format": {
@@ -6645,9 +6633,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "filter_format": {
@@ -6700,19 +6686,12 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "data_format": {
@@ -6726,12 +6705,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           }
         }
@@ -6877,12 +6851,7 @@
         "attr": {
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "explicit_paddings": {
@@ -6893,9 +6862,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "num_host_args": {
@@ -6909,12 +6876,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "data_format": {
@@ -6922,9 +6884,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "leakyrelu_alpha": {
@@ -6981,9 +6941,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "use_cudnn_on_gpu": {
@@ -7009,12 +6967,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "explicit_paddings": {
@@ -7025,19 +6978,12 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           }
         }
@@ -7082,12 +7028,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "num_args": {
@@ -7101,19 +7042,12 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "leakyrelu_alpha": {
@@ -7136,9 +7070,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           }
         }
@@ -7158,9 +7090,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "data_format": {
@@ -7171,12 +7101,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "use_cudnn_on_gpu": {
@@ -7184,9 +7109,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "epsilon": {
@@ -7197,12 +7120,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "padding": {
@@ -7274,12 +7192,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "explicit_paddings": {
@@ -7290,19 +7203,12 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "2",
-                "2",
-                "1"
-              ]
+              "i": ["1", "2", "2", "1"]
             }
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "num_args": {
@@ -7457,19 +7363,12 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "num_args": {
@@ -7486,19 +7385,12 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "explicit_paddings": {
@@ -7561,19 +7453,12 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "leakyrelu_alpha": {
@@ -7593,12 +7478,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "explicit_paddings": {
@@ -7606,9 +7486,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "num_args": {
@@ -7659,12 +7537,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "leakyrelu_alpha": {
@@ -7693,19 +7566,12 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "data_format": {
@@ -7713,9 +7579,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           }
         }
@@ -7741,9 +7605,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "explicit_paddings": {
@@ -7763,12 +7625,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "use_cudnn_on_gpu": {
@@ -7776,19 +7633,12 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "num_host_args": {
@@ -7835,9 +7685,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "num_args": {
@@ -7845,12 +7693,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "data_format": {
@@ -7858,12 +7701,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "padding": {
@@ -8015,12 +7853,7 @@
         "attr": {
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "num_host_args": {
@@ -8031,9 +7864,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "filter_format": {
@@ -8047,9 +7878,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "leakyrelu_alpha": {
@@ -8063,12 +7892,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "num_args": {
@@ -8122,9 +7946,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "data_format": {
@@ -8132,12 +7954,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "epsilon": {
@@ -8151,9 +7968,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "use_cudnn_on_gpu": {
@@ -8170,12 +7985,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           }
         }
@@ -8223,12 +8033,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "num_host_args": {
@@ -8236,9 +8041,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "use_cudnn_on_gpu": {
@@ -8246,19 +8049,12 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "data_format": {
@@ -8306,12 +8102,7 @@
         "attr": {
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "explicit_paddings": {
@@ -8325,12 +8116,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "leakyrelu_alpha": {
@@ -8344,9 +8130,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "filter_format": {
@@ -8357,9 +8141,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "data_format": {
@@ -8428,12 +8210,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "num_args": {
@@ -8444,19 +8221,12 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "2",
-                "2",
-                "1"
-              ]
+              "i": ["1", "2", "2", "1"]
             }
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "T": {
@@ -8605,22 +8375,12 @@
         "attr": {
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "filter_format": {
@@ -8628,9 +8388,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "num_host_args": {
@@ -8656,9 +8414,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "explicit_paddings": {
@@ -8706,9 +8462,7 @@
         "attr": {
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "filter_format": {
@@ -8719,12 +8473,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "epsilon": {
@@ -8735,12 +8484,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "T": {
@@ -8760,9 +8504,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "data_format": {
@@ -8816,9 +8558,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "T": {
@@ -8829,22 +8569,12 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "num_args": {
@@ -8858,9 +8588,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "num_host_args": {
@@ -8883,12 +8611,7 @@
         "attr": {
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "use_cudnn_on_gpu": {
@@ -8896,9 +8619,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "filter_format": {
@@ -8912,9 +8633,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "num_host_args": {
@@ -8922,12 +8641,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "data_format": {
@@ -8983,22 +8697,12 @@
         "attr": {
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "num_args": {
@@ -9018,9 +8722,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           }
         }
@@ -9166,9 +8868,7 @@
         "attr": {
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "data_format": {
@@ -9176,12 +8876,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "T": {
@@ -9192,12 +8887,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "num_args": {
@@ -9220,9 +8910,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "filter_format": {
@@ -9282,19 +8970,12 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "T": {
@@ -9305,12 +8986,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "filter_format": {
@@ -9318,9 +8994,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "leakyrelu_alpha": {
@@ -9368,12 +9042,7 @@
         "attr": {
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "num_host_args": {
@@ -9384,19 +9053,12 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "num_args": {
@@ -9410,9 +9072,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "data_format": {
@@ -9460,9 +9120,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "data_format": {
@@ -9482,19 +9140,12 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "num_host_args": {
@@ -9502,12 +9153,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "T": {
@@ -9579,19 +9225,12 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "num_args": {
@@ -9599,12 +9238,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "2",
-                "2",
-                "1"
-              ]
+              "i": ["1", "2", "2", "1"]
             }
           },
           "explicit_paddings": {
@@ -9762,9 +9396,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "padding": {
@@ -9772,12 +9404,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "filter_format": {
@@ -9788,9 +9415,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "epsilon": {
@@ -9804,12 +9429,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "leakyrelu_alpha": {
@@ -9863,12 +9483,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "num_host_args": {
@@ -9882,9 +9497,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "padding": {
@@ -9892,19 +9505,12 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "T": {
@@ -9958,9 +9564,7 @@
         "attr": {
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "T": {
@@ -9974,12 +9578,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "data_format": {
@@ -9993,19 +9592,12 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "filter_format": {
@@ -10034,12 +9626,7 @@
         "attr": {
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "num_host_args": {
@@ -10050,9 +9637,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "T": {
@@ -10075,19 +9660,12 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "leakyrelu_alpha": {
@@ -10137,22 +9715,12 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "data_format": {
@@ -10163,9 +9731,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "T": {
@@ -10320,9 +9886,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "leakyrelu_alpha": {
@@ -10339,12 +9903,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "use_cudnn_on_gpu": {
@@ -10361,12 +9920,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "explicit_paddings": {
@@ -10374,9 +9928,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           }
         }
@@ -10421,12 +9973,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "num_host_args": {
@@ -10440,9 +9987,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "epsilon": {
@@ -10450,9 +9995,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "padding": {
@@ -10469,12 +10012,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "leakyrelu_alpha": {
@@ -10528,9 +10066,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "data_format": {
@@ -10544,9 +10080,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "num_args": {
@@ -10557,12 +10091,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "leakyrelu_alpha": {
@@ -10573,12 +10102,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           }
         }
@@ -10626,22 +10150,12 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "use_cudnn_on_gpu": {
@@ -10652,9 +10166,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "padding": {
@@ -10665,9 +10177,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           }
         }
@@ -10711,19 +10221,12 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "T": {
@@ -10737,12 +10240,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "padding": {
@@ -10903,12 +10401,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "leakyrelu_alpha": {
@@ -10922,19 +10415,12 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "num_host_args": {
@@ -10948,9 +10434,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           }
         }
@@ -11007,19 +10491,12 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "T": {
@@ -11030,19 +10507,12 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "explicit_paddings": {
@@ -11114,12 +10584,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "T": {
@@ -11127,9 +10592,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "num_args": {
@@ -11140,19 +10603,12 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           }
         }
@@ -11185,22 +10641,12 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "data_format": {
@@ -11226,9 +10672,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "leakyrelu_alpha": {
@@ -11239,9 +10683,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           }
         }
@@ -11288,12 +10730,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "padding": {
@@ -11301,12 +10738,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "data_format": {
@@ -11317,9 +10749,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           }
         }
@@ -11465,12 +10895,7 @@
         "attr": {
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "explicit_paddings": {
@@ -11481,9 +10906,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "T": {
@@ -11503,9 +10926,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "leakyrelu_alpha": {
@@ -11519,12 +10940,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           }
         }
@@ -11572,22 +10988,12 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "data_format": {
@@ -11598,9 +11004,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "leakyrelu_alpha": {
@@ -11620,9 +11024,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "filter_format": {
@@ -11676,29 +11078,17 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "filter_format": {
@@ -11706,9 +11096,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "explicit_paddings": {
@@ -11743,16 +11131,12 @@
         "attr": {
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "filter_format": {
@@ -11763,12 +11147,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "explicit_paddings": {
@@ -11779,12 +11158,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "data_format": {
@@ -11846,19 +11220,12 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "padding": {
@@ -11869,12 +11236,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "T": {
@@ -12026,12 +11388,7 @@
         "attr": {
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "filter_format": {
@@ -12054,9 +11411,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "num_host_args": {
@@ -12073,19 +11428,12 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           }
         }
@@ -12130,9 +11478,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "padding": {
@@ -12143,12 +11489,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "use_cudnn_on_gpu": {
@@ -12156,12 +11497,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "explicit_paddings": {
@@ -12169,9 +11505,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "T": {
@@ -12234,19 +11568,12 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "explicit_paddings": {
@@ -12257,9 +11584,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "filter_format": {
@@ -12282,12 +11607,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           }
         }
@@ -12323,12 +11643,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "explicit_paddings": {
@@ -12339,12 +11654,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "data_format": {
@@ -12355,9 +11665,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "epsilon": {
@@ -12368,9 +11676,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "use_cudnn_on_gpu": {
@@ -12429,12 +11735,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "data_format": {
@@ -12442,19 +11743,12 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           }
         }
@@ -12609,9 +11903,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "num_args": {
@@ -12622,9 +11914,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "T": {
@@ -12644,22 +11934,12 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           }
         }
@@ -12716,19 +11996,12 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "leakyrelu_alpha": {
@@ -12739,19 +12012,12 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "num_args": {
@@ -12802,9 +12068,7 @@
         "attr": {
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "data_format": {
@@ -12818,29 +12082,17 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "num_host_args": {
@@ -12897,12 +12149,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "epsilon": {
@@ -12922,9 +12169,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "leakyrelu_alpha": {
@@ -12932,9 +12177,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "use_cudnn_on_gpu": {
@@ -12942,12 +12185,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "explicit_paddings": {
@@ -13007,12 +12245,7 @@
         "attr": {
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "2",
-                "2",
-                "1"
-              ]
+              "i": ["1", "2", "2", "1"]
             }
           },
           "padding": {
@@ -13023,9 +12256,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "data_format": {
@@ -13033,12 +12264,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "explicit_paddings": {
@@ -13214,12 +12440,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "T": {
@@ -13227,12 +12448,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "explicit_paddings": {
@@ -13240,16 +12456,12 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           }
         }
@@ -13291,19 +12503,12 @@
         "attr": {
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "padding": {
@@ -13320,12 +12525,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "data_format": {
@@ -13339,9 +12539,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "filter_format": {
@@ -13392,9 +12590,7 @@
         "attr": {
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "leakyrelu_alpha": {
@@ -13402,19 +12598,12 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "epsilon": {
@@ -13428,12 +12617,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "data_format": {
@@ -13471,9 +12655,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "epsilon": {
@@ -13493,12 +12675,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "explicit_paddings": {
@@ -13515,19 +12692,12 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           }
         }
@@ -13571,12 +12741,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "data_format": {
@@ -13584,9 +12749,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "num_args": {
@@ -13594,12 +12757,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "padding": {
@@ -13757,9 +12915,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "T": {
@@ -13767,19 +12923,12 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "num_host_args": {
@@ -13805,12 +12954,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           }
         }
@@ -13867,12 +13011,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "explicit_paddings": {
@@ -13880,9 +13019,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "T": {
@@ -13896,19 +13033,12 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "leakyrelu_alpha": {
@@ -13956,12 +13086,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "T": {
@@ -13975,19 +13100,12 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "num_host_args": {
@@ -14010,9 +13128,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           }
         }
@@ -14042,9 +13158,7 @@
         "attr": {
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "T": {
@@ -14055,12 +13169,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "num_host_args": {
@@ -14068,9 +13177,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "use_cudnn_on_gpu": {
@@ -14078,12 +13185,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "explicit_paddings": {
@@ -14145,9 +13247,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "num_args": {
@@ -14155,12 +13255,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "explicit_paddings": {
@@ -14171,12 +13266,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "data_format": {
@@ -14325,12 +13415,7 @@
         "attr": {
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "use_cudnn_on_gpu": {
@@ -14344,19 +13429,12 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "padding": {
@@ -14382,9 +13460,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           }
         }
@@ -14438,9 +13514,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "filter_format": {
@@ -14454,19 +13528,12 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "data_format": {
@@ -14474,12 +13541,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "use_cudnn_on_gpu": {
@@ -14545,9 +13607,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "T": {
@@ -14555,22 +13615,12 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "num_host_args": {
@@ -14581,9 +13631,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "explicit_paddings": {
@@ -14622,12 +13670,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "explicit_paddings": {
@@ -14635,19 +13678,12 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "padding": {
@@ -14664,9 +13700,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "epsilon": {
@@ -14722,19 +13756,12 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "T": {
@@ -14748,12 +13775,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           }
         }
@@ -14905,9 +13927,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "explicit_paddings": {
@@ -14921,22 +13941,12 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "num_args": {
@@ -14944,9 +13954,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "leakyrelu_alpha": {
@@ -15003,22 +14011,12 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "num_args": {
@@ -15047,9 +14045,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "padding": {
@@ -15057,9 +14053,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           }
         }
@@ -15101,19 +14095,12 @@
         "attr": {
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "epsilon": {
@@ -15127,9 +14114,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "filter_format": {
@@ -15140,12 +14125,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "explicit_paddings": {
@@ -15190,9 +14170,7 @@
         "attr": {
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "leakyrelu_alpha": {
@@ -15215,9 +14193,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "num_host_args": {
@@ -15228,12 +14204,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "filter_format": {
@@ -15241,12 +14212,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "T": {
@@ -15290,19 +14256,12 @@
         "attr": {
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "explicit_paddings": {
@@ -15316,12 +14275,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "padding": {
@@ -15473,12 +14427,7 @@
         "attr": {
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "T": {
@@ -15501,16 +14450,12 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "epsilon": {
@@ -15518,12 +14463,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "leakyrelu_alpha": {
@@ -15583,12 +14523,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "num_host_args": {
@@ -15605,9 +14540,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "explicit_paddings": {
@@ -15618,9 +14551,7 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "epsilon": {
@@ -15628,12 +14559,7 @@
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           }
         }
@@ -15681,19 +14607,12 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "epsilon": {
@@ -15707,9 +14626,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "padding": {
@@ -15720,12 +14637,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "explicit_paddings": {
@@ -15769,12 +14681,7 @@
           },
           "dilations": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "padding": {
@@ -15782,26 +14689,17 @@
           },
           "TArgs": {
             "list": {
-              "type": [
-                "DT_FLOAT"
-              ]
+              "type": ["DT_FLOAT"]
             }
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "strides": {
             "list": {
-              "i": [
-                "1",
-                "1",
-                "1",
-                "1"
-              ]
+              "i": ["1", "1", "1", "1"]
             }
           },
           "data_format": {
@@ -15877,9 +14775,7 @@
           },
           "fused_ops": {
             "list": {
-              "s": [
-                "Qmlhc0FkZA=="
-              ]
+              "s": ["Qmlhc0FkZA=="]
             }
           },
           "transpose_a": {
@@ -15899,9 +14795,7 @@
       {
         "name": "StatefulPartitionedCall/sequential_2/dense_2/Softmax",
         "op": "Softmax",
-        "input": [
-          "StatefulPartitionedCall/sequential_2/dense_2/BiasAdd"
-        ],
+        "input": ["StatefulPartitionedCall/sequential_2/dense_2/BiasAdd"],
         "attr": {
           "T": {
             "type": "DT_FLOAT"
@@ -15911,9 +14805,7 @@
       {
         "name": "Identity",
         "op": "Identity",
-        "input": [
-          "StatefulPartitionedCall/sequential_2/dense_2/Softmax"
-        ],
+        "input": ["StatefulPartitionedCall/sequential_2/dense_2/Softmax"],
         "attr": {
           "T": {
             "type": "DT_FLOAT"
@@ -15937,30 +14829,22 @@
       "weights": [
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6d_se_squeeze/Mean/reduction_indices",
-          "shape": [
-            2
-          ],
+          "shape": [2],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6d_se_reshape/strided_slice/stack",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6d_se_reshape/strided_slice/stack_1",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6d_se_reshape/strided_slice/stack_2",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
@@ -15980,64 +14864,42 @@
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6d_se_reduce/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            1152,
-            48
-          ],
+          "shape": [1, 1, 1152, 48],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6d_se_reduce/BiasAdd/ReadVariableOp",
-          "shape": [
-            48
-          ],
+          "shape": [48],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6d_se_expand/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            48,
-            1152
-          ],
+          "shape": [1, 1, 48, 1152],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6d_se_expand/BiasAdd/ReadVariableOp",
-          "shape": [
-            1152
-          ],
+          "shape": [1152],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6c_se_squeeze/Mean/reduction_indices",
-          "shape": [
-            2
-          ],
+          "shape": [2],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6c_se_reshape/strided_slice/stack",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6c_se_reshape/strided_slice/stack_1",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6c_se_reshape/strided_slice/stack_2",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
@@ -16057,64 +14919,42 @@
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6c_se_reduce/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            1152,
-            48
-          ],
+          "shape": [1, 1, 1152, 48],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6c_se_reduce/BiasAdd/ReadVariableOp",
-          "shape": [
-            48
-          ],
+          "shape": [48],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6c_se_expand/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            48,
-            1152
-          ],
+          "shape": [1, 1, 48, 1152],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6c_se_expand/BiasAdd/ReadVariableOp",
-          "shape": [
-            1152
-          ],
+          "shape": [1152],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6b_se_squeeze/Mean/reduction_indices",
-          "shape": [
-            2
-          ],
+          "shape": [2],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6b_se_reshape/strided_slice/stack",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6b_se_reshape/strided_slice/stack_1",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6b_se_reshape/strided_slice/stack_2",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
@@ -16134,64 +14974,42 @@
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6b_se_reduce/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            1152,
-            48
-          ],
+          "shape": [1, 1, 1152, 48],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6b_se_reduce/BiasAdd/ReadVariableOp",
-          "shape": [
-            48
-          ],
+          "shape": [48],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6b_se_expand/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            48,
-            1152
-          ],
+          "shape": [1, 1, 48, 1152],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6b_se_expand/BiasAdd/ReadVariableOp",
-          "shape": [
-            1152
-          ],
+          "shape": [1152],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5c_se_squeeze/Mean/reduction_indices",
-          "shape": [
-            2
-          ],
+          "shape": [2],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5c_se_reshape/strided_slice/stack",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5c_se_reshape/strided_slice/stack_1",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5c_se_reshape/strided_slice/stack_2",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
@@ -16211,64 +15029,42 @@
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5c_se_reduce/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            672,
-            28
-          ],
+          "shape": [1, 1, 672, 28],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5c_se_reduce/BiasAdd/ReadVariableOp",
-          "shape": [
-            28
-          ],
+          "shape": [28],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5c_se_expand/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            28,
-            672
-          ],
+          "shape": [1, 1, 28, 672],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5c_se_expand/BiasAdd/ReadVariableOp",
-          "shape": [
-            672
-          ],
+          "shape": [672],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5b_se_squeeze/Mean/reduction_indices",
-          "shape": [
-            2
-          ],
+          "shape": [2],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5b_se_reshape/strided_slice/stack",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5b_se_reshape/strided_slice/stack_1",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5b_se_reshape/strided_slice/stack_2",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
@@ -16288,64 +15084,42 @@
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5b_se_reduce/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            672,
-            28
-          ],
+          "shape": [1, 1, 672, 28],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5b_se_reduce/BiasAdd/ReadVariableOp",
-          "shape": [
-            28
-          ],
+          "shape": [28],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5b_se_expand/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            28,
-            672
-          ],
+          "shape": [1, 1, 28, 672],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5b_se_expand/BiasAdd/ReadVariableOp",
-          "shape": [
-            672
-          ],
+          "shape": [672],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4c_se_squeeze/Mean/reduction_indices",
-          "shape": [
-            2
-          ],
+          "shape": [2],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4c_se_reshape/strided_slice/stack",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4c_se_reshape/strided_slice/stack_1",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4c_se_reshape/strided_slice/stack_2",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
@@ -16365,64 +15139,42 @@
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4c_se_reduce/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            480,
-            20
-          ],
+          "shape": [1, 1, 480, 20],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4c_se_reduce/BiasAdd/ReadVariableOp",
-          "shape": [
-            20
-          ],
+          "shape": [20],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4c_se_expand/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            20,
-            480
-          ],
+          "shape": [1, 1, 20, 480],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4c_se_expand/BiasAdd/ReadVariableOp",
-          "shape": [
-            480
-          ],
+          "shape": [480],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4b_se_squeeze/Mean/reduction_indices",
-          "shape": [
-            2
-          ],
+          "shape": [2],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4b_se_reshape/strided_slice/stack",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4b_se_reshape/strided_slice/stack_1",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4b_se_reshape/strided_slice/stack_2",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
@@ -16442,64 +15194,42 @@
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4b_se_reduce/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            480,
-            20
-          ],
+          "shape": [1, 1, 480, 20],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4b_se_reduce/BiasAdd/ReadVariableOp",
-          "shape": [
-            20
-          ],
+          "shape": [20],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4b_se_expand/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            20,
-            480
-          ],
+          "shape": [1, 1, 20, 480],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4b_se_expand/BiasAdd/ReadVariableOp",
-          "shape": [
-            480
-          ],
+          "shape": [480],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3b_se_squeeze/Mean/reduction_indices",
-          "shape": [
-            2
-          ],
+          "shape": [2],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3b_se_reshape/strided_slice/stack",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3b_se_reshape/strided_slice/stack_1",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3b_se_reshape/strided_slice/stack_2",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
@@ -16519,64 +15249,42 @@
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3b_se_reduce/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            240,
-            10
-          ],
+          "shape": [1, 1, 240, 10],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3b_se_reduce/BiasAdd/ReadVariableOp",
-          "shape": [
-            10
-          ],
+          "shape": [10],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3b_se_expand/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            10,
-            240
-          ],
+          "shape": [1, 1, 10, 240],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3b_se_expand/BiasAdd/ReadVariableOp",
-          "shape": [
-            240
-          ],
+          "shape": [240],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2b_se_squeeze/Mean/reduction_indices",
-          "shape": [
-            2
-          ],
+          "shape": [2],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2b_se_reshape/strided_slice/stack",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2b_se_reshape/strided_slice/stack_1",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2b_se_reshape/strided_slice/stack_2",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
@@ -16596,36 +15304,22 @@
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2b_se_reduce/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            144,
-            6
-          ],
+          "shape": [1, 1, 144, 6],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2b_se_reduce/BiasAdd/ReadVariableOp",
-          "shape": [
-            6
-          ],
+          "shape": [6],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2b_se_expand/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            6,
-            144
-          ],
+          "shape": [1, 1, 6, 144],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2b_se_expand/BiasAdd/ReadVariableOp",
-          "shape": [
-            144
-          ],
+          "shape": [144],
           "dtype": "float32"
         },
         {
@@ -16635,58 +15329,37 @@
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/rescaling_1/add",
-          "shape": [
-            1,
-            1,
-            1,
-            3
-          ],
+          "shape": [1, 1, 1, 3],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/normalization_1/truediv",
-          "shape": [
-            1,
-            1,
-            1,
-            3
-          ],
+          "shape": [1, 1, 1, 3],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/stem_conv_pad/Pad/paddings",
-          "shape": [
-            4,
-            2
-          ],
+          "shape": [4, 2],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block1a_se_squeeze/Mean/reduction_indices",
-          "shape": [
-            2
-          ],
+          "shape": [2],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block1a_se_reshape/strided_slice/stack",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block1a_se_reshape/strided_slice/stack_1",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block1a_se_reshape/strided_slice/stack_2",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
@@ -16706,72 +15379,47 @@
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block1a_se_reduce/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            32,
-            8
-          ],
+          "shape": [1, 1, 32, 8],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block1a_se_reduce/BiasAdd/ReadVariableOp",
-          "shape": [
-            8
-          ],
+          "shape": [8],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block1a_se_expand/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            8,
-            32
-          ],
+          "shape": [1, 1, 8, 32],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block1a_se_expand/BiasAdd/ReadVariableOp",
-          "shape": [
-            32
-          ],
+          "shape": [32],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2a_dwconv_pad/Pad/paddings",
-          "shape": [
-            4,
-            2
-          ],
+          "shape": [4, 2],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2a_se_squeeze/Mean/reduction_indices",
-          "shape": [
-            2
-          ],
+          "shape": [2],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2a_se_reshape/strided_slice/stack",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2a_se_reshape/strided_slice/stack_1",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2a_se_reshape/strided_slice/stack_2",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
@@ -16791,72 +15439,47 @@
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2a_se_reduce/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            96,
-            4
-          ],
+          "shape": [1, 1, 96, 4],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2a_se_reduce/BiasAdd/ReadVariableOp",
-          "shape": [
-            4
-          ],
+          "shape": [4],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2a_se_expand/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            4,
-            96
-          ],
+          "shape": [1, 1, 4, 96],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2a_se_expand/BiasAdd/ReadVariableOp",
-          "shape": [
-            96
-          ],
+          "shape": [96],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3a_dwconv_pad/Pad/paddings",
-          "shape": [
-            4,
-            2
-          ],
+          "shape": [4, 2],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3a_se_squeeze/Mean/reduction_indices",
-          "shape": [
-            2
-          ],
+          "shape": [2],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3a_se_reshape/strided_slice/stack",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3a_se_reshape/strided_slice/stack_1",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3a_se_reshape/strided_slice/stack_2",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
@@ -16876,72 +15499,47 @@
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3a_se_reduce/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            144,
-            6
-          ],
+          "shape": [1, 1, 144, 6],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3a_se_reduce/BiasAdd/ReadVariableOp",
-          "shape": [
-            6
-          ],
+          "shape": [6],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3a_se_expand/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            6,
-            144
-          ],
+          "shape": [1, 1, 6, 144],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3a_se_expand/BiasAdd/ReadVariableOp",
-          "shape": [
-            144
-          ],
+          "shape": [144],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4a_dwconv_pad/Pad/paddings",
-          "shape": [
-            4,
-            2
-          ],
+          "shape": [4, 2],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4a_se_squeeze/Mean/reduction_indices",
-          "shape": [
-            2
-          ],
+          "shape": [2],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4a_se_reshape/strided_slice/stack",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4a_se_reshape/strided_slice/stack_1",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4a_se_reshape/strided_slice/stack_2",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
@@ -16961,64 +15559,42 @@
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4a_se_reduce/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            240,
-            10
-          ],
+          "shape": [1, 1, 240, 10],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4a_se_reduce/BiasAdd/ReadVariableOp",
-          "shape": [
-            10
-          ],
+          "shape": [10],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4a_se_expand/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            10,
-            240
-          ],
+          "shape": [1, 1, 10, 240],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4a_se_expand/BiasAdd/ReadVariableOp",
-          "shape": [
-            240
-          ],
+          "shape": [240],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5a_se_squeeze/Mean/reduction_indices",
-          "shape": [
-            2
-          ],
+          "shape": [2],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5a_se_reshape/strided_slice/stack",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5a_se_reshape/strided_slice/stack_1",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5a_se_reshape/strided_slice/stack_2",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
@@ -17038,72 +15614,47 @@
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5a_se_reduce/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            480,
-            20
-          ],
+          "shape": [1, 1, 480, 20],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5a_se_reduce/BiasAdd/ReadVariableOp",
-          "shape": [
-            20
-          ],
+          "shape": [20],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5a_se_expand/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            20,
-            480
-          ],
+          "shape": [1, 1, 20, 480],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5a_se_expand/BiasAdd/ReadVariableOp",
-          "shape": [
-            480
-          ],
+          "shape": [480],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6a_dwconv_pad/Pad/paddings",
-          "shape": [
-            4,
-            2
-          ],
+          "shape": [4, 2],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6a_se_squeeze/Mean/reduction_indices",
-          "shape": [
-            2
-          ],
+          "shape": [2],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6a_se_reshape/strided_slice/stack",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6a_se_reshape/strided_slice/stack_1",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6a_se_reshape/strided_slice/stack_2",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
@@ -17123,64 +15674,42 @@
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6a_se_reduce/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            672,
-            28
-          ],
+          "shape": [1, 1, 672, 28],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6a_se_reduce/BiasAdd/ReadVariableOp",
-          "shape": [
-            28
-          ],
+          "shape": [28],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6a_se_expand/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            28,
-            672
-          ],
+          "shape": [1, 1, 28, 672],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6a_se_expand/BiasAdd/ReadVariableOp",
-          "shape": [
-            672
-          ],
+          "shape": [672],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block7a_se_squeeze/Mean/reduction_indices",
-          "shape": [
-            2
-          ],
+          "shape": [2],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block7a_se_reshape/strided_slice/stack",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block7a_se_reshape/strided_slice/stack_1",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block7a_se_reshape/strided_slice/stack_2",
-          "shape": [
-            1
-          ],
+          "shape": [1],
           "dtype": "int32"
         },
         {
@@ -17200,891 +15729,527 @@
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block7a_se_reduce/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            1152,
-            48
-          ],
+          "shape": [1, 1, 1152, 48],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block7a_se_reduce/BiasAdd/ReadVariableOp",
-          "shape": [
-            48
-          ],
+          "shape": [48],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block7a_se_expand/Conv2D/ReadVariableOp",
-          "shape": [
-            1,
-            1,
-            48,
-            1152
-          ],
+          "shape": [1, 1, 48, 1152],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block7a_se_expand/BiasAdd/ReadVariableOp",
-          "shape": [
-            1152
-          ],
+          "shape": [1152],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/global_average_pooling2d_1/Mean/reduction_indices",
-          "shape": [
-            2
-          ],
+          "shape": [2],
           "dtype": "int32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/dense_2/MatMul/ReadVariableOp",
-          "shape": [
-            1280,
-            12
-          ],
+          "shape": [1280, 12],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/dense_2/BiasAdd/ReadVariableOp",
-          "shape": [
-            12
-          ],
+          "shape": [12],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/stem_conv/Conv2D_weights",
-          "shape": [
-            3,
-            3,
-            3,
-            32
-          ],
+          "shape": [3, 3, 3, 32],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/stem_conv/Conv2D_bn_offset",
-          "shape": [
-            32
-          ],
+          "shape": [32],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block1a_dwconv/depthwise_weights",
-          "shape": [
-            3,
-            3,
-            32,
-            1
-          ],
+          "shape": [3, 3, 32, 1],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block1a_dwconv/depthwise_bn_offset",
-          "shape": [
-            32
-          ],
+          "shape": [32],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6d_dwconv/depthwise_weights",
-          "shape": [
-            5,
-            5,
-            1152,
-            1
-          ],
+          "shape": [5, 5, 1152, 1],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block1a_project_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            32,
-            16
-          ],
+          "shape": [1, 1, 32, 16],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block1a_project_conv/Conv2D_bn_offset",
-          "shape": [
-            16
-          ],
+          "shape": [16],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2a_expand_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            16,
-            96
-          ],
+          "shape": [1, 1, 16, 96],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6d_dwconv/depthwise_bn_offset",
-          "shape": [
-            1152
-          ],
+          "shape": [1152],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2a_expand_conv/Conv2D_bn_offset",
-          "shape": [
-            96
-          ],
+          "shape": [96],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2a_dwconv/depthwise_weights",
-          "shape": [
-            3,
-            3,
-            96,
-            1
-          ],
+          "shape": [3, 3, 96, 1],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2a_dwconv/depthwise_bn_offset",
-          "shape": [
-            96
-          ],
+          "shape": [96],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2a_project_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            96,
-            24
-          ],
+          "shape": [1, 1, 96, 24],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2a_project_conv/Conv2D_bn_offset",
-          "shape": [
-            24
-          ],
+          "shape": [24],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2b_expand_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            24,
-            144
-          ],
+          "shape": [1, 1, 24, 144],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2b_expand_conv/Conv2D_bn_offset",
-          "shape": [
-            144
-          ],
+          "shape": [144],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2b_dwconv/depthwise_weights",
-          "shape": [
-            3,
-            3,
-            144,
-            1
-          ],
+          "shape": [3, 3, 144, 1],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2b_dwconv/depthwise_bn_offset",
-          "shape": [
-            144
-          ],
+          "shape": [144],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2b_project_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            144,
-            24
-          ],
+          "shape": [1, 1, 144, 24],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block2b_project_conv/Conv2D_bn_offset",
-          "shape": [
-            24
-          ],
+          "shape": [24],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3a_expand_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            24,
-            144
-          ],
+          "shape": [1, 1, 24, 144],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3a_expand_conv/Conv2D_bn_offset",
-          "shape": [
-            144
-          ],
+          "shape": [144],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3a_dwconv/depthwise_weights",
-          "shape": [
-            5,
-            5,
-            144,
-            1
-          ],
+          "shape": [5, 5, 144, 1],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3a_dwconv/depthwise_bn_offset",
-          "shape": [
-            144
-          ],
+          "shape": [144],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/top_conv/Conv2D_bn_offset",
-          "shape": [
-            1280
-          ],
+          "shape": [1280],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3a_project_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            144,
-            40
-          ],
+          "shape": [1, 1, 144, 40],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3a_project_conv/Conv2D_bn_offset",
-          "shape": [
-            40
-          ],
+          "shape": [40],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3b_expand_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            40,
-            240
-          ],
+          "shape": [1, 1, 40, 240],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3b_expand_conv/Conv2D_bn_offset",
-          "shape": [
-            240
-          ],
+          "shape": [240],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3b_dwconv/depthwise_weights",
-          "shape": [
-            5,
-            5,
-            240,
-            1
-          ],
+          "shape": [5, 5, 240, 1],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3b_dwconv/depthwise_bn_offset",
-          "shape": [
-            240
-          ],
+          "shape": [240],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3b_project_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            240,
-            40
-          ],
+          "shape": [1, 1, 240, 40],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block3b_project_conv/Conv2D_bn_offset",
-          "shape": [
-            40
-          ],
+          "shape": [40],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4a_expand_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            40,
-            240
-          ],
+          "shape": [1, 1, 40, 240],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4a_expand_conv/Conv2D_bn_offset",
-          "shape": [
-            240
-          ],
+          "shape": [240],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4a_dwconv/depthwise_weights",
-          "shape": [
-            3,
-            3,
-            240,
-            1
-          ],
+          "shape": [3, 3, 240, 1],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4a_dwconv/depthwise_bn_offset",
-          "shape": [
-            240
-          ],
+          "shape": [240],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6d_project_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            1152,
-            192
-          ],
+          "shape": [1, 1, 1152, 192],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4a_project_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            240,
-            80
-          ],
+          "shape": [1, 1, 240, 80],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6d_project_conv/Conv2D_bn_offset",
-          "shape": [
-            192
-          ],
+          "shape": [192],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4a_project_conv/Conv2D_bn_offset",
-          "shape": [
-            80
-          ],
+          "shape": [80],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4b_expand_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            80,
-            480
-          ],
+          "shape": [1, 1, 80, 480],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4b_expand_conv/Conv2D_bn_offset",
-          "shape": [
-            480
-          ],
+          "shape": [480],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4b_dwconv/depthwise_weights",
-          "shape": [
-            3,
-            3,
-            480,
-            1
-          ],
+          "shape": [3, 3, 480, 1],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4b_dwconv/depthwise_bn_offset",
-          "shape": [
-            480
-          ],
+          "shape": [480],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block7a_expand_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            192,
-            1152
-          ],
+          "shape": [1, 1, 192, 1152],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4b_project_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            480,
-            80
-          ],
+          "shape": [1, 1, 480, 80],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4b_project_conv/Conv2D_bn_offset",
-          "shape": [
-            80
-          ],
+          "shape": [80],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4c_expand_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            80,
-            480
-          ],
+          "shape": [1, 1, 80, 480],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block7a_expand_conv/Conv2D_bn_offset",
-          "shape": [
-            1152
-          ],
+          "shape": [1152],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4c_expand_conv/Conv2D_bn_offset",
-          "shape": [
-            480
-          ],
+          "shape": [480],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4c_dwconv/depthwise_weights",
-          "shape": [
-            3,
-            3,
-            480,
-            1
-          ],
+          "shape": [3, 3, 480, 1],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4c_dwconv/depthwise_bn_offset",
-          "shape": [
-            480
-          ],
+          "shape": [480],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4c_project_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            480,
-            80
-          ],
+          "shape": [1, 1, 480, 80],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block4c_project_conv/Conv2D_bn_offset",
-          "shape": [
-            80
-          ],
+          "shape": [80],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5a_expand_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            80,
-            480
-          ],
+          "shape": [1, 1, 80, 480],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block7a_dwconv/depthwise_weights",
-          "shape": [
-            3,
-            3,
-            1152,
-            1
-          ],
+          "shape": [3, 3, 1152, 1],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5a_expand_conv/Conv2D_bn_offset",
-          "shape": [
-            480
-          ],
+          "shape": [480],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5a_dwconv/depthwise_weights",
-          "shape": [
-            5,
-            5,
-            480,
-            1
-          ],
+          "shape": [5, 5, 480, 1],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5a_dwconv/depthwise_bn_offset",
-          "shape": [
-            480
-          ],
+          "shape": [480],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block7a_dwconv/depthwise_bn_offset",
-          "shape": [
-            1152
-          ],
+          "shape": [1152],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5a_project_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            480,
-            112
-          ],
+          "shape": [1, 1, 480, 112],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5a_project_conv/Conv2D_bn_offset",
-          "shape": [
-            112
-          ],
+          "shape": [112],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5b_expand_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            112,
-            672
-          ],
+          "shape": [1, 1, 112, 672],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5b_expand_conv/Conv2D_bn_offset",
-          "shape": [
-            672
-          ],
+          "shape": [672],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5b_dwconv/depthwise_weights",
-          "shape": [
-            5,
-            5,
-            672,
-            1
-          ],
+          "shape": [5, 5, 672, 1],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5b_dwconv/depthwise_bn_offset",
-          "shape": [
-            672
-          ],
+          "shape": [672],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5b_project_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            672,
-            112
-          ],
+          "shape": [1, 1, 672, 112],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5b_project_conv/Conv2D_bn_offset",
-          "shape": [
-            112
-          ],
+          "shape": [112],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5c_expand_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            112,
-            672
-          ],
+          "shape": [1, 1, 112, 672],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5c_expand_conv/Conv2D_bn_offset",
-          "shape": [
-            672
-          ],
+          "shape": [672],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5c_dwconv/depthwise_weights",
-          "shape": [
-            5,
-            5,
-            672,
-            1
-          ],
+          "shape": [5, 5, 672, 1],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5c_dwconv/depthwise_bn_offset",
-          "shape": [
-            672
-          ],
+          "shape": [672],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5c_project_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            672,
-            112
-          ],
+          "shape": [1, 1, 672, 112],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block5c_project_conv/Conv2D_bn_offset",
-          "shape": [
-            112
-          ],
+          "shape": [112],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6a_expand_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            112,
-            672
-          ],
+          "shape": [1, 1, 112, 672],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6a_expand_conv/Conv2D_bn_offset",
-          "shape": [
-            672
-          ],
+          "shape": [672],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6a_dwconv/depthwise_weights",
-          "shape": [
-            5,
-            5,
-            672,
-            1
-          ],
+          "shape": [5, 5, 672, 1],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6a_dwconv/depthwise_bn_offset",
-          "shape": [
-            672
-          ],
+          "shape": [672],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6a_project_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            672,
-            192
-          ],
+          "shape": [1, 1, 672, 192],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6a_project_conv/Conv2D_bn_offset",
-          "shape": [
-            192
-          ],
+          "shape": [192],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6b_expand_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            192,
-            1152
-          ],
+          "shape": [1, 1, 192, 1152],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6b_expand_conv/Conv2D_bn_offset",
-          "shape": [
-            1152
-          ],
+          "shape": [1152],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6b_dwconv/depthwise_weights",
-          "shape": [
-            5,
-            5,
-            1152,
-            1
-          ],
+          "shape": [5, 5, 1152, 1],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6b_dwconv/depthwise_bn_offset",
-          "shape": [
-            1152
-          ],
+          "shape": [1152],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6b_project_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            1152,
-            192
-          ],
+          "shape": [1, 1, 1152, 192],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block7a_project_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            1152,
-            320
-          ],
+          "shape": [1, 1, 1152, 320],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6b_project_conv/Conv2D_bn_offset",
-          "shape": [
-            192
-          ],
+          "shape": [192],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6c_expand_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            192,
-            1152
-          ],
+          "shape": [1, 1, 192, 1152],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6c_expand_conv/Conv2D_bn_offset",
-          "shape": [
-            1152
-          ],
+          "shape": [1152],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6c_dwconv/depthwise_weights",
-          "shape": [
-            5,
-            5,
-            1152,
-            1
-          ],
+          "shape": [5, 5, 1152, 1],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6c_dwconv/depthwise_bn_offset",
-          "shape": [
-            1152
-          ],
+          "shape": [1152],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block7a_project_conv/Conv2D_bn_offset",
-          "shape": [
-            320
-          ],
+          "shape": [320],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6c_project_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            1152,
-            192
-          ],
+          "shape": [1, 1, 1152, 192],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/top_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            320,
-            1280
-          ],
+          "shape": [1, 1, 320, 1280],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6c_project_conv/Conv2D_bn_offset",
-          "shape": [
-            192
-          ],
+          "shape": [192],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6d_expand_conv/Conv2D_weights",
-          "shape": [
-            1,
-            1,
-            192,
-            1152
-          ],
+          "shape": [1, 1, 192, 1152],
           "dtype": "float32"
         },
         {
           "name": "StatefulPartitionedCall/sequential_2/efficientnetb0/block6d_expand_conv/Conv2D_bn_offset",
-          "shape": [
-            1152
-          ],
+          "shape": [1152],
           "dtype": "float32"
         }
       ]
