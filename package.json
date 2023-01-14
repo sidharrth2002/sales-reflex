@@ -1,5 +1,5 @@
 {
-  "name": "sales-reflex",
+  "name": "test",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,15 +13,23 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@next/font": "13.1.2",
+    "@nivo/core": "^0.80.0",
+    "@nivo/line": "^0.80.0",
     "@supabase/auth-helpers-nextjs": "^0.5.2",
     "@supabase/auth-helpers-react": "^0.3.1",
     "@supabase/supabase-js": "^2.4.0",
+    "classnames": "^2.3.2",
     "eslint": "8.31.0",
     "eslint-config-next": "13.1.2",
-    "framer-motion": "^6.5.1",
+    "framer-motion": "^8.4.3",
     "next": "13.1.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.4"
   }
 }
