@@ -143,7 +143,7 @@ export default function Register() {
   };
 
   const generate = async () => {
-    await new Promise((r) => setTimeout(r, 2000));
+    await new Promise((r) => setTimeout(r, 1000));
     if (!hardCode) {
       const result = await predict(imgRef.current);
       console.log(result);
@@ -355,7 +355,7 @@ export default function Register() {
                     types={["JPG", "JPEG", "PNG", "GIF"]}
                   />
                 </FormControl>
-                {productImage && (
+                {!hardCode & productImage && (
                   <Image
                     crossOrigin="anonymous"
                     src={productImage}
@@ -382,6 +382,7 @@ export default function Register() {
                   <Textarea
                     name="description"
                     placeholder="Spicy..."
+                    value={productDescription}
                     onChange={(e) => setProductDescription(e.target.value)}
                   />
                 </FormControl>{" "}
