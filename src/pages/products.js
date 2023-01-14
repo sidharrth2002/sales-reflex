@@ -32,11 +32,26 @@ import { FaPencilAlt, FaPlus, FaTrash } from "react-icons/fa";
 
 import Head from "next/head";
 import { Inter } from "@next/font/google";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Register() {
+  const supabase = useSupabaseClient();
+
+  useEffect(() => {
+
+    const getProducts = async () => {
+      const {data, error} = await supabase.from("product")
+        .select("*")
+      console.log("supaProducts", data);
+    }
+
+    getProducts();
+  }, [])
+
   const [products, setProducts] = useState([
     {
       name: "Sambal",
