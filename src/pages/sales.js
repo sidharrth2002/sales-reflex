@@ -39,7 +39,7 @@ export default function Sales() {
             <BiDotsHorizontal className="w-5 h-5" />
           </div>
           <div className="mt-3">
-            <h1 className="font-thin">RM 15,570.00</h1>
+            <h1 className="font-thin text-3xl md:text-5xl">RM 15,570.00</h1>
           </div>
           <div className="mt-5">
             <h6 className="text-sm font-medium">
@@ -56,7 +56,7 @@ export default function Sales() {
             <BiDotsHorizontal className="w-5 h-5" />
           </div>
           <div className="mt-3">
-            <h1 className="font-thin">268</h1>
+            <h1 className="font-thin text-3xl md:text-5xl">268</h1>
           </div>
           <div className="mt-5">
             <h6 className="text-sm font-medium">
@@ -73,7 +73,7 @@ export default function Sales() {
             <BiDotsHorizontal className="w-5 h-5" />
           </div>
           <div className="mt-3">
-            <h1 className="font-thin">RM 6280.00</h1>
+            <h1 className="font-thin text-3xl md:text-5xl">RM 6280.00</h1>
           </div>
           <div className="mt-5">
             <h6 className="text-sm font-medium">
