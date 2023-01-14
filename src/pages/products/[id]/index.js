@@ -35,7 +35,7 @@ import {
   FaSearch,
   FaTrash,
 } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { FileUploader } from "react-drag-drop-files";
 import Head from "next/head";
@@ -43,21 +43,32 @@ import { Inter } from "@next/font/google";
 import Layout from "components/Layout";
 import { useRouter } from "next/router";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
+import { loadModel, predict, nasi_lemak } from "@/lib/food-classifier";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Register() {
+  const [hardCode, setHardCode] = useState(true);
+  const imgRef = useRef(null);
   const router = useRouter();
   const [products, setProducts] = useState([]);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState(0);
   const [productDescription, setProductDescription] = useState("");
-  const [productImage, setProductImage] = useState(null);
+  const [productImage, setProductImage] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
   const [uploaded, setUploaded] = useState(true);
+  const [inference, setInference] = useState(false);
+  const [classifierResult, setClassifierResult] = useState({});
   const supabase = useSupabaseClient();
+
+  useEffect(() => {
+    (async () => {
+      await loadModel("/models/food/model.json");
+    })();
+  }, []);
 
   useEffect(() => {
     if (router.isReady) {
@@ -127,6 +138,23 @@ export default function Register() {
       setProductImage(
         `https://malkpiqslwdctbpgjzzw.supabase.co/storage/v1/object/public/product-images/${data.path}`
       );
+      setInference(true);
+    }
+  };
+
+  const generate = async () => {
+    await new Promise((r) => setTimeout(r, 2000));
+    if (!hardCode) {
+      const result = await predict(imgRef.current);
+      console.log(result);
+      setClassifierResult(result);
+      setProductName(result?.name ?? "");
+      setProductDescription(result?.description ?? "");
+    } else {
+      const result = nasi_lemak;
+      setClassifierResult(result);
+      setProductName(result?.name ?? "");
+      setProductDescription(result?.description ?? "");
     }
   };
 
@@ -308,6 +336,7 @@ export default function Register() {
                   <FormLabel>Product Name</FormLabel>
                   <Input
                     type="name"
+                    value={productName}
                     onChange={(e) => setProductName(e.target.value)}
                   />
                 </FormControl>{" "}
@@ -326,6 +355,28 @@ export default function Register() {
                     types={["JPG", "JPEG", "PNG", "GIF"]}
                   />
                 </FormControl>
+                {productImage && (
+                  <Image
+                    crossOrigin="anonymous"
+                    src={productImage}
+                    // width={300}
+                    // height={300}
+                    className="w-full object-contain"
+                    alt={`upload`}
+                    ref={imgRef}
+                  />
+                )}
+                {productImage && (
+                  <Button
+                    onClick={() => {
+                      generate();
+                    }}
+                    className="w-full"
+                    colorScheme={"facebook"}
+                  >
+                    Generate Name and Description
+                  </Button>
+                )}
                 <FormControl>
                   <FormLabel>Description</FormLabel>
                   <Textarea
