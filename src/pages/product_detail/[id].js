@@ -2,11 +2,6 @@ import {
   Avatar,
   Box,
   Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Flex,
   FormControl,
   FormHelperText,
   FormLabel,
@@ -22,8 +17,6 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Select,
-  SimpleGrid,
   Text,
   Textarea,
   VStack,
@@ -31,19 +24,13 @@ import {
   useDisclosure,
   useToast,
 } from "@chakra-ui/react";
-import {
-  FaPencilAlt,
-  FaPlus,
-  FaRegStar,
-  FaStar,
-  FaStarHalf,
-  FaTrash,
-} from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { FaPlus, FaStar, FaStarHalf } from "react-icons/fa";
 
 import Head from "next/head";
 import { Inter } from "@next/font/google";
+import ReactStars from "react-rating-stars-component";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -74,12 +61,39 @@ export default function Register() {
       "https://www.rotinrice.com/wp-content/uploads/2014/09/AsamLaksa-1.jpg",
   });
 
+  const [name, setName] = useState("");
+  const [review, setReview] = useState("");
+  const [rating, setRating] = useState(0);
+
   const toast = useToast();
 
   const router = useRouter();
   const { id } = router.query;
 
   const { toggleColorMode } = useColorMode();
+
+  const ratingChanged = (newRating) => {
+    setRating(newRating);
+  };
+
+  const createReview = () => {
+    const newReview = {
+      id: reviews.length + 1,
+      name,
+      rating,
+      review,
+    };
+    // move to top of list
+    setReviews([newReview, ...reviews]);
+    toast({
+      title: "Review added.",
+      description: "We've added your review for this product.",
+      status: "success",
+      duration: 9000,
+      isClosable: true,
+    });
+    onClose();
+  };
 
   return (
     <>
@@ -90,7 +104,7 @@ export default function Register() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <HStack padding={20} justifyContent={"center"} spacing={16}>
-        <Box width={400} maxWidth={"50%"} alignSelf={"flex-start"}>
+        <Box maxW={"90%"} alignSelf={"flex-start"}>
           <Image
             src={product.image}
             alt={product.name}
@@ -99,7 +113,7 @@ export default function Register() {
           />
         </Box>
         <VStack
-          width={400}
+          width={600}
           maxWidth={"50%"}
           alignSelf={"flex-start"}
           spacing={3}
@@ -185,7 +199,7 @@ export default function Register() {
               >
                 <HStack width={"100%"} justifyContent={"space-between"}>
                   <HStack spacing={2}>
-                    <Avatar size={"sm"} name={"Dan Abrahmov"} />
+                    <Avatar size={"sm"} name={review.name} />
                     <Text fontWeight={600}>{review.name}</Text>
                   </HStack>
                   <HStack spacing={1} justifyContent={"flex-end"}>
@@ -310,31 +324,29 @@ export default function Register() {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Create New Product</ModalHeader>
+          <ModalHeader>Write a review</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <VStack width={400} spacing={4} maxWidth={"100%"}>
               <FormControl>
                 <FormLabel>Your Name</FormLabel>
-                <Input
-                  type="name"
-                  onChange={(e) => setProductName(e.target.value)}
-                />
+                <Input type="name" onChange={(e) => setName(e.target.value)} />
                 <FormHelperText>We'll never share your name.</FormHelperText>
               </FormControl>{" "}
               <FormControl>
-                <FormLabel>Description</FormLabel>
-                <Textarea
-                  name="description"
-                  placeholder="Spicy..."
-                  onChange={(e) => setProductDescription(e.target.value)}
+                <FormLabel>Rating</FormLabel>
+                <ReactStars
+                  count={5}
+                  onChange={ratingChanged}
+                  size={24}
+                  activeColor="#ffd700"
                 />
               </FormControl>{" "}
               <FormControl>
-                <FormLabel>Price (number only)</FormLabel>
-                <Input
-                  type="number"
-                  onChange={(e) => setProductPrice(e.target.value)}
+                <FormLabel>Review</FormLabel>
+                <Textarea
+                  type="review"
+                  onChange={(e) => setReview(e.target.value)}
                 />
               </FormControl>{" "}
             </VStack>
@@ -357,20 +369,7 @@ export default function Register() {
               colorScheme="green"
               mr={3}
               onClick={() => {
-                onClose();
-                createProduct(
-                  productName,
-                  productPrice,
-                  productDescription,
-                  productImage
-                );
-                toast({
-                  title: "Product created.",
-                  description: "We've created your product for you.",
-                  status: "success",
-                  duration: 9000,
-                  isClosable: true,
-                });
+                createReview();
               }}
               alignSelf={"flex-end"}
             >
