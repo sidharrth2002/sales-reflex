@@ -180,7 +180,9 @@ export default function Store({ id }) {
         {/* <div className="p-4 bg-white mt-4 mb-10 rounded-lg w-full"></div> */}
         {/* <Image src="" /> */}
         <div className="flex items-center w-full justify-between">
-          <h2 className="text-lg font-bold cursor-pointer">{storeInfo.name}</h2>
+          <h2 className="text-lg font-bold cursor-pointer">
+            {storeInfo?.name}
+          </h2>
           <div
             onClick={() => {
               router.push(

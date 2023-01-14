@@ -312,14 +312,6 @@ export default function Register() {
                   />
                 </FormControl>{" "}
                 <FormControl>
-                  <FormLabel>Description</FormLabel>
-                  <Textarea
-                    name="description"
-                    placeholder="Spicy..."
-                    onChange={(e) => setProductDescription(e.target.value)}
-                  />
-                </FormControl>{" "}
-                <FormControl>
                   <FormLabel>Price (number only)</FormLabel>
                   <Input
                     type="number"
@@ -334,6 +326,14 @@ export default function Register() {
                     types={["JPG", "JPEG", "PNG", "GIF"]}
                   />
                 </FormControl>
+                <FormControl>
+                  <FormLabel>Description</FormLabel>
+                  <Textarea
+                    name="description"
+                    placeholder="Spicy..."
+                    onChange={(e) => setProductDescription(e.target.value)}
+                  />
+                </FormControl>{" "}
               </VStack>
             </ModalBody>
             <ModalFooter
