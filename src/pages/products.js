@@ -6,13 +6,29 @@ import {
   CardFooter,
   CardHeader,
   Flex,
+  FormControl,
+  FormHelperText,
+  FormLabel,
   Heading,
   Icon,
   Image,
+  Input,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  Select,
   SimpleGrid,
   Text,
+  Textarea,
+  VStack,
+  useDisclosure,
+  useToast,
 } from "@chakra-ui/react";
-import { FaPlus, FaTrash } from "react-icons/fa";
+import { FaPencilAlt, FaPlus, FaTrash } from "react-icons/fa";
 
 import Head from "next/head";
 import { Inter } from "@next/font/google";
@@ -38,7 +54,38 @@ export default function Register() {
       image:
         "https://rasamalaysia.com/wp-content/uploads/2009/11/char-koay-teow-thumb.jpg",
     },
+    {
+      name: "Asam Laksa",
+      price: 10,
+      description:
+        "Asam laksa is a spicy noodle soup dish that is popular in Malaysia, Singapore, and Indonesia. It is a staple food in the Peranakan cuisine of Southeast Asia.",
+      image:
+        "https://www.rotinrice.com/wp-content/uploads/2014/09/AsamLaksa-1.jpg",
+    },
   ]);
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [productName, setProductName] = useState("");
+  const [productPrice, setProductPrice] = useState(0);
+  const [productDescription, setProductDescription] = useState("");
+  const [productImage, setProductImage] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
+
+  const createProduct = (name, price, description, image) => {
+    const newProduct = {
+      name,
+      price,
+      description,
+      image,
+    };
+    setProducts([...products, newProduct]);
+  };
+
+  const deleteProduct = (name) => {
+    const newProducts = products.filter((product) => product.name !== name);
+    setProducts(newProducts);
+  };
+
+  const toast = useToast();
 
   return (
     <>
@@ -51,8 +98,8 @@ export default function Register() {
       <Flex
         justifyContent={"center"}
         alignItems={"center"}
-        width={800}
-        maxWidth={"70%"}
+        width={1000}
+        maxWidth={"80%"}
         margin={"auto"}
         padding={12}
         flexDirection={"column"}
@@ -62,48 +109,90 @@ export default function Register() {
         <Heading className={inter.className} mb={7}>
           Manage your products
         </Heading>
+
+        <Flex
+          width={300}
+          justifyContent={"space-between"}
+          alignItems={"center"}
+          mb={5}
+        >
+          <FormControl id="search" mb={5}>
+            <Input
+              type="text"
+              placeholder="Search"
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </FormControl>
+        </Flex>
+
         <SimpleGrid
           spacing={4}
-          templateColumns="repeat(auto-fill, minmax(250px, 1fr))"
+          templateColumns="repeat(auto-fill, minmax(220px, 1fr))"
           justifyItems={"center"}
         >
-          {products.map((product) => (
-            <Card key={product.name} width={"100%"}>
-              <CardHeader
-                display={"flex"}
-                justifyContent={"space-between"}
-                flexDirection={"row"}
-                mb={-4}
-              >
-                <Heading size="md">{product.name}</Heading>
-                <Text color={"blue.600"}>RM {product.price}</Text>
-              </CardHeader>
-              <CardBody>
-                <Text mb={8}>
-                  {product.description.substring(0, 100) + "..."}
-                </Text>
-                <Flex
-                  alignItems={"center"}
-                  width={"100%"}
-                  justifyContent={"center"}
+          {products
+            .filter((product) => {
+              if (searchTerm === "") {
+                return product;
+              } else if (
+                product.name.toLowerCase().includes(searchTerm.toLowerCase())
+              ) {
+                return product;
+              }
+            })
+            .map((product) => (
+              <Card key={product.name} width={"100%"}>
+                <CardHeader
+                  display={"flex"}
+                  justifyContent={"space-between"}
+                  flexDirection={"row"}
+                  mb={-4}
                 >
-                  <Image
-                    borderRadius={10}
-                    src={product.image}
-                    width={250}
-                    maxWidth={"90%"}
-                    alt="product"
+                  <Heading size="md">{product.name}</Heading>
+                  <Text color={"blue.600"}>RM {product.price}</Text>
+                </CardHeader>
+                <CardBody>
+                  <Text mb={8}>
+                    {product.description.substring(0, 100) + "..."}
+                  </Text>
+                  <Flex
+                    alignItems={"center"}
+                    width={"100%"}
+                    justifyContent={"center"}
+                  >
+                    <Image
+                      borderRadius={10}
+                      src={product.image}
+                      width={250}
+                      maxWidth={"90%"}
+                      alt="product"
+                      textAlign={"center"}
+                    />
+                  </Flex>
+                </CardBody>
+                <CardFooter display={"flex"} justifyContent={"space-between"}>
+                  <Button
                     textAlign={"center"}
-                  />
-                </Flex>
-              </CardBody>
-              <CardFooter>
-                <Button textAlign={"center"}>
-                  <Icon as={FaTrash} />
-                </Button>
-              </CardFooter>
-            </Card>
-          ))}
+                    onClick={() => {
+                      deleteProduct(product.name);
+                      toast({
+                        title: "Product deleted.",
+                        description: "We've deleted the product for you.",
+                        status: "success",
+                        duration: 9000,
+                        isClosable: true,
+                        position: "top",
+                      });
+                    }}
+                  >
+                    <Icon as={FaTrash} color={"red.800"} />
+                  </Button>
+                  <Button textAlign={"center"}>
+                    <Icon as={FaPencilAlt} />
+                  </Button>
+                </CardFooter>
+              </Card>
+            ))}
           <Card width={"100%"}>
             <CardHeader
               display={"flex"}
@@ -117,14 +206,101 @@ export default function Register() {
                 width={"100%"}
                 justifyContent={"center"}
               >
-                <Box backgroundColor={"gray.100"} borderRadius={10} p={8}>
-                  <Icon color={"#0f0f0f"} as={FaPlus} fontSize={"5xl"} />
-                </Box>
+                <VStack
+                  backgroundColor={"gray.100"}
+                  borderRadius={10}
+                  p={8}
+                  display={"flex"}
+                  flexDirection={"column"}
+                  alignItems={"center"}
+                  justifyContent={"center"}
+                  onClick={onOpen}
+                  spacing={4}
+                >
+                  <Icon
+                    color={"#0f0f0f"}
+                    as={FaPlus}
+                    fontSize={"5xl"}
+                    onClick={onOpen}
+                  />
+                  <Text>Add a new product</Text>
+                </VStack>
               </Flex>
             </CardBody>
           </Card>
         </SimpleGrid>
       </Flex>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Create New Product</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <VStack width={400} spacing={4} maxWidth={"100%"}>
+              <FormControl>
+                <FormLabel>Product Name</FormLabel>
+                <Input
+                  type="name"
+                  onChange={(e) => setProductName(e.target.value)}
+                />
+              </FormControl>{" "}
+              <FormControl>
+                <FormLabel>Description</FormLabel>
+                <Textarea
+                  name="description"
+                  placeholder="Spicy..."
+                  onChange={(e) => setProductDescription(e.target.value)}
+                />
+              </FormControl>{" "}
+              <FormControl>
+                <FormLabel>Price (number only)</FormLabel>
+                <Input
+                  type="number"
+                  onChange={(e) => setProductPrice(e.target.value)}
+                />
+              </FormControl>{" "}
+            </VStack>
+          </ModalBody>
+          <ModalFooter
+            display={"flex"}
+            justifyContent={"space-between"}
+            flexDirection={"row"}
+          >
+            <Button
+              mr={3}
+              onClick={() => {
+                onClose();
+              }}
+              alignSelf={"flex-end"}
+            >
+              Cancel
+            </Button>
+            <Button
+              colorScheme="green"
+              mr={3}
+              onClick={() => {
+                onClose();
+                createProduct(
+                  productName,
+                  productPrice,
+                  productDescription,
+                  productImage
+                );
+                toast({
+                  title: "Product created.",
+                  description: "We've created your product for you.",
+                  status: "success",
+                  duration: 9000,
+                  isClosable: true,
+                });
+              }}
+              alignSelf={"flex-end"}
+            >
+              Create
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </>
   );
 }
