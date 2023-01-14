@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Card,
   CardBody,
@@ -7,6 +8,7 @@ import {
   Flex,
   FormControl,
   FormLabel,
+  HStack,
   Heading,
   Icon,
   Image,
@@ -26,57 +28,74 @@ import {
   useDisclosure,
   useToast,
 } from "@chakra-ui/react";
-import { FaPencilAlt, FaPlus, FaTrash } from "react-icons/fa";
+import {
+  FaArrowRight,
+  FaPencilAlt,
+  FaPlus,
+  FaSearch,
+  FaTrash,
+} from "react-icons/fa";
 import { useEffect, useState } from "react";
 
 import { FileUploader } from "react-drag-drop-files";
 import Head from "next/head";
 import { Inter } from "@next/font/google";
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import Layout from "components/Layout";
+import { useRouter } from "next/router";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Register() {
+  const router = useRouter();
   const [products, setProducts] = useState([]);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState(0);
   const [productDescription, setProductDescription] = useState("");
-  const [productImage, setProductImage] = useState("");
+  const [productImage, setProductImage] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
+  const [uploaded, setUploaded] = useState(true);
   const supabase = useSupabaseClient();
 
   useEffect(() => {
-    const getProducts = async () => {
-      setLoading(true);
-      const { data, error } = await supabase.from("product").select("*");
-      if (error) {
-        console.log("error", error);
-      } else {
-        setProducts(data);
-      }
-      setLoading(false);
-    };
+    if (router.isReady) {
+      const getProducts = async () => {
+        const { id } = router.query;
 
-    getProducts();
-  }, [supabase]);
+        setLoading(true);
+        // const { data, error } = await supabase.from("product").select("*");
+        // select from supabase where store = brian
+        const { data, error } = await supabase
+          .from("product")
+          .select("*")
+          .match({ store: id });
 
-  const createProduct = (name, price, description, image) => {
+        if (error) {
+        } else {
+          setProducts(data);
+        }
+        setLoading(false);
+      };
+
+      getProducts();
+    }
+  }, [router.isReady]);
+
+  const createProduct = async () => {
     const newProduct = {
-      name,
-      price,
-      description,
-      image_path: image,
+      name: productName,
+      price: productPrice,
+      description: productDescription,
+      image_path: productImage,
+      store: router.query.id,
     };
     // add to supabase
     supabase
       .from("product")
       .insert(newProduct)
-      .then((response) => {
-        console.log(response);
-      });
+      .then((response) => {});
 
     setProducts([...products, newProduct]);
   };
@@ -88,7 +107,6 @@ export default function Register() {
       .delete()
       .match({ name })
       .then((response) => {
-        console.log(response);
         const newProducts = products.filter((product) => product.name !== name);
         setProducts(newProducts);
       });
@@ -96,12 +114,16 @@ export default function Register() {
 
   const uploadImage = async (file) => {
     // upload image to supabase
+    setUploaded(false);
     const { data, error } = await supabase.storage
       .from("product-images")
       .upload(file.name, file);
     if (error) {
-      console.log("error", error);
+      setUploaded(true);
+      return setProductImage("");
     } else {
+      setUploaded(true);
+      console.log(data.path);
       setProductImage(
         `https://malkpiqslwdctbpgjzzw.supabase.co/storage/v1/object/public/product-images/${data.path}`
       );
@@ -125,28 +147,47 @@ export default function Register() {
             boxShadow={"2xl"}
             mt={20}
           >
-            <Heading className={inter.className} mb={7}>
-              Manage your products
-            </Heading>
+            <HStack
+              width={"100%"}
+              justifyContent={"space-between"}
+              alignItems={"center"}
+              px={20}
+            >
+              <Heading className={inter.className} mb={7}>
+                Manage your products
+              </Heading>
+
+              <Button
+                onClick={() => {
+                  router.push(`/store/${router.query.id}`);
+                }}
+                colorScheme="blue"
+              >
+                Go to store <Icon as={FaArrowRight} ml={2} />
+              </Button>
+            </HStack>
 
             <Flex
               width={300}
+              maxWidth={"80%"}
               justifyContent={"space-between"}
               alignItems={"center"}
               mb={5}
             >
-              <FormControl id="search" mb={5}>
+              <FormControl id="search" mb={5} position="relative">
                 <Input
                   type="text"
-                  placeholder="Search"
+                  placeholder={`Search`}
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
+                <Icon as={FaSearch} position="absolute" top={3} right={3} />
               </FormControl>
             </Flex>
 
             <SimpleGrid
               spacing={4}
-              templateColumns="repeat(auto-fill, minmax(220px, 1fr))"
+              templateColumns="repeat(auto-fill, minmax(250px, 1fr))"
+              flexWrap={"wrap"}
               justifyItems={"center"}
             >
               {products
@@ -188,6 +229,7 @@ export default function Register() {
                           maxWidth={"90%"}
                           alt="product"
                           textAlign={"center"}
+                          className="object-cover w-full group-hover:scale-110 transition-all h-[200px] rounded-md"
                         />
                       </Flex>
                     </CardBody>
@@ -287,10 +329,7 @@ export default function Register() {
                 <FormControl>
                   <FormLabel>Image</FormLabel>
                   <FileUploader
-                    handleChange={(e) => {
-                      console.log(e);
-                      uploadImage(e);
-                    }}
+                    handleChange={(e) => uploadImage(e)}
                     name="file"
                     types={["JPG", "JPEG", "PNG", "GIF"]}
                   />
@@ -309,38 +348,26 @@ export default function Register() {
                 }}
                 alignSelf={"flex-end"}
               >
-                <Button
-                  mr={3}
-                  onClick={() => {
-                    onClose();
-                  }}
-                  alignSelf={"flex-end"}
-                >
-                  Cancel
-                </Button>
-                <Button
-                  colorScheme="green"
-                  mr={3}
-                  onClick={() => {
-                    onClose();
-                    createProduct(
-                      productName,
-                      productPrice,
-                      productDescription,
-                      productImage
-                    );
-                    toast({
-                      title: "Product created.",
-                      description: "We've created your product for you.",
-                      status: "success",
-                      duration: 9000,
-                      isClosable: true,
-                    });
-                  }}
-                  alignSelf={"flex-end"}
-                >
-                  Create
-                </Button>
+                Cancel
+              </Button>
+              <Button
+                colorScheme="green"
+                mr={3}
+                onClick={() => {
+                  onClose();
+                  createProduct();
+                  toast({
+                    title: "Product created.",
+                    description: "We've created your product for you.",
+                    status: "success",
+                    duration: 9000,
+                    isClosable: true,
+                  });
+                }}
+                alignSelf={"flex-end"}
+                disabled={!uploaded}
+              >
+                Create
               </Button>
             </ModalFooter>
           </ModalContent>

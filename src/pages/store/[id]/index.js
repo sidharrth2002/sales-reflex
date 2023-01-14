@@ -1,26 +1,27 @@
-// @ts-nocheck
-import { useCart } from "@/context/cart";
-import { useSupabaseClient } from "@supabase/auth-helpers-react";
-import Image from "next/image";
-import { useEffect, useState } from "react";
 import { BiCart, BiSearchAlt } from "react-icons/bi";
 import {
+  Button,
   Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
-  useDisclosure,
-  Button,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  NumberDecrementStepper,
+  NumberIncrementStepper,
   NumberInput,
   NumberInputField,
   NumberInputStepper,
-  NumberIncrementStepper,
-  NumberDecrementStepper,
+  useDisclosure,
 } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+
+import Image from "next/image";
+// @ts-nocheck
+import { useCart } from "@/context/cart";
 import { useRouter } from "next/router";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 export default function Store() {
   const router = useRouter();

@@ -8,6 +8,7 @@ import {
   Heading,
   Input,
   Select,
+  Spinner,
   Text,
   Textarea,
   VStack,
@@ -15,10 +16,69 @@ import {
 
 import Head from "next/head";
 import { Inter } from "@next/font/google";
+import axios from "axios";
+import { slugify } from "./utils";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Register() {
+  const supabase = useSupabaseClient();
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [category, setCategory] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [inferring, setInferring] = useState(false);
+  const router = useRouter();
+
+  const createStore = async () => {
+    supabase
+      .from("store")
+      .insert({
+        name,
+        description,
+        category,
+        mobile_number: phoneNumber,
+        owner: "Sidharrth Nagappan",
+      })
+      .then((data) => {
+        console.log(data);
+        router.push(`/products/${slugify(name)}`);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  const autocomplete = async (prompt) => {
+    const { error, data } = await axios.post("http://localhost:8000/gpt2", {
+      text: prompt,
+    });
+    if (error) {
+      console.log(error);
+    } else {
+      console.log(data);
+      return data;
+    }
+  };
+
+  // remove extra whitespace in string
+  const removeExtraSpaces = (str) => {
+    return str.replace(/\s+/g, " ").trim();
+  };
+
+  const handleKeyPress = async () => {
+    setInferring(true);
+    // const prompt = description.split(" ").slice(0, 10).join(" ");
+    const prompt = description;
+    const response = await autocomplete(prompt);
+    setDescription(removeExtraSpaces(response));
+    setInferring(false);
+  };
+
   return (
     <>
       <Head>
@@ -55,25 +115,64 @@ export default function Register() {
           <VStack width={400} spacing={4} maxWidth={"100%"}>
             <FormControl>
               <FormLabel>Business Name</FormLabel>
-              <Input type="name" />
+              <Input type="name" onChange={(e) => setName(e.target.value)} />
               <FormHelperText>Give your store a cool name.</FormHelperText>
             </FormControl>{" "}
             <FormControl>
               <FormLabel>Description</FormLabel>
-              <Textarea name="description" />
+              {description.split(" ").length >= 5 && (
+                <Button
+                  variant={"link"}
+                  color={"green"}
+                  my={3}
+                  onClick={() => handleKeyPress()}
+                >
+                  Auto-generate a description.
+                </Button>
+              )}
+              {inferring ? (
+                <Flex
+                  height={100}
+                  alignItems={"center"}
+                  justifyContent={"center"}
+                >
+                  <Spinner />
+                </Flex>
+              ) : (
+                <Textarea
+                  name="description"
+                  value={description}
+                  onChange={(e) => setDescription(e.target.value)}
+                />
+              )}
               <FormHelperText>
                 What do you do? What sets you apart?
               </FormHelperText>
             </FormControl>{" "}
             <FormControl>
+              <FormLabel>Phone Number</FormLabel>
+              <Input
+                name="description"
+                onChange={(e) => setPhoneNumber(e.target.value)}
+              />
+            </FormControl>{" "}
+            <FormControl>
               <FormLabel>What do you sell?</FormLabel>
-              <Select variant={"filled"}>
+              <Select
+                variant={"filled"}
+                onChange={(e) => setCategory(e.target.value)}
+              >
                 <option value="Food">Food</option>
                 <option value="Services">Services</option>
               </Select>
             </FormControl>{" "}
           </VStack>
-          <Button variant={"solid"} colorScheme={"purple"} mt={6}>
+          <Button
+            variant={"solid"}
+            colorScheme={"purple"}
+            mt={6}
+            onClick={createStore}
+          >
             <Text color={"white"}>Proceed</Text>
           </Button>
         </Box>
