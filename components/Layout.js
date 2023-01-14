@@ -91,7 +91,7 @@ export default function Layout({ children, pageMeta }) {
             </div>
             <div className="w-full space-y-2">
               <NavItem
-                href={`/products`}
+                href={`/products/sid`}
                 tooltip="Products"
                 className="!p-3 mb-2"
               >
