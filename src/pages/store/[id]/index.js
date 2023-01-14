@@ -13,6 +13,7 @@ import {
   NumberInput,
   NumberInputField,
   NumberInputStepper,
+  Text,
   useDisclosure,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
@@ -38,23 +39,42 @@ export default function Store({ id }) {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [current, setCurrent] = useState({});
   const [data, setData] = useState([]);
+  const [storeInfo, setStoreInfo] = useState({});
   const [search, setSearch] = useState("");
   const [filterData, setFilterData] = useState([]);
   const { cart, setCart } = useCart();
   const [number, setNumber] = useState(1);
-  const { id } = router.query;
   // console.log(cart);
   // console.log(router.asPath);
 
   useEffect(() => {
-    const getProducts = async () => {
-      const { data, error } = await supabase.from("product").select("*");
-      setData(data);
-      setFilterData(data);
+    const getData = async () => {
+      const { data, error } = await supabase
+        .from("store")
+        .select("*")
+        .match({ slug: id })
+        .single();
+
+      if (!error) {
+        setStoreInfo(data);
+      }
+
+      console.log(id);
+
+      const { data: productData, error: productError } = await supabase
+        .from("product")
+        .select("*")
+        .match({ store: id });
+
+      if (!productError) {
+        console.log(productData);
+        setData(productData);
+        setFilterData(productData);
+      }
     };
 
-    getProducts();
-  }, [supabase, router]);
+    getData();
+  }, [supabase, router.isReady]);
 
   useEffect(() => {
     setFilterData(
@@ -160,7 +180,7 @@ export default function Store({ id }) {
         {/* <div className="p-4 bg-white mt-4 mb-10 rounded-lg w-full"></div> */}
         {/* <Image src="" /> */}
         <div className="flex items-center w-full justify-between">
-          <h2 className="text-lg font-bold cursor-pointer">Sid{"'"}s Store</h2>
+          <h2 className="text-lg font-bold cursor-pointer">{storeInfo.name}</h2>
           <div
             onClick={() => {
               router.push(
