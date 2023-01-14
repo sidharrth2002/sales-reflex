@@ -30,13 +30,13 @@ export default function Store() {
     };
 
     getProducts();
-  }, []);
+  }, [supabase]);
 
   useEffect(() => {
     setFilterData(
       data?.filter((d) => d?.name.toLowerCase()?.includes(search.toLowerCase()))
     );
-  }, [search]);
+  }, [data, search]);
 
   return (
     <div className="bg-gradient-to-r min-h-[100vh] from-rose-100 to-teal-100">
