@@ -1,3 +1,4 @@
+import { CartProvider } from "@/context/cart";
 import "@/styles/globals.css";
 
 import { ChakraProvider } from "@chakra-ui/react";
@@ -14,7 +15,9 @@ export default function App({ Component, pageProps }) {
         supabaseClient={supabaseClient}
         initialSession={pageProps.initialSession}
       >
-        <Component {...pageProps} />
+        <CartProvider>
+          <Component {...pageProps} />
+        </CartProvider>
       </SessionContextProvider>
     </ChakraProvider>
   );
