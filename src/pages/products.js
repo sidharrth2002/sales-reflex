@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   Card,
   CardBody,
@@ -7,7 +6,6 @@ import {
   CardHeader,
   Flex,
   FormControl,
-  FormHelperText,
   FormLabel,
   Heading,
   Icon,
@@ -20,8 +18,8 @@ import {
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-  Select,
   SimpleGrid,
+  Skeleton,
   Text,
   Textarea,
   VStack,
@@ -29,74 +27,85 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { FaPencilAlt, FaPlus, FaTrash } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
+import { FileUploader } from "react-drag-drop-files";
 import Head from "next/head";
 import { Inter } from "@next/font/google";
-import { useState, useEffect } from "react";
-
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import Layout from "components/Layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Register() {
-  const supabase = useSupabaseClient();
-
-  useEffect(() => {
-    const getProducts = async () => {
-      const { data, error } = await supabase.from("product").select("*");
-      console.log("supaProducts", data);
-    };
-
-    getProducts();
-  }, []);
-
-  const [products, setProducts] = useState([
-    {
-      name: "Sambal",
-      price: 10,
-      description:
-        "Sambal is a spicy condiment made from a paste of ground chilies, shallots, garlic, and other seasonings. It is a staple condiment in Indonesian, Malaysian, Singaporean, and Bruneian cuisine.",
-      image:
-        "https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/e8547f4b-df54-4d29-a432-629ce45f8aaa/Derivates/312a8b0d-199e-4b0c-b4cf-8ce9509ea6b0.jpg",
-    },
-    {
-      name: "Kuey Teow",
-      price: 10,
-      description:
-        "Kuey teow is a flat rice noodle dish that is popular in Southeast Asia. It is a staple food in Malaysia, Singapore, Indonesia, Brunei, and southern Thailand. It is also popular in the southern Chinese provinces of Guangdong, Fujian, and Hainan.",
-      image:
-        "https://rasamalaysia.com/wp-content/uploads/2009/11/char-koay-teow-thumb.jpg",
-    },
-    {
-      name: "Asam Laksa",
-      price: 10,
-      description:
-        "Asam laksa is a spicy noodle soup dish that is popular in Malaysia, Singapore, and Indonesia. It is a staple food in the Peranakan cuisine of Southeast Asia.",
-      image:
-        "https://www.rotinrice.com/wp-content/uploads/2014/09/AsamLaksa-1.jpg",
-    },
-  ]);
+  const [products, setProducts] = useState([]);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState(0);
   const [productDescription, setProductDescription] = useState("");
   const [productImage, setProductImage] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(false);
+  const supabase = useSupabaseClient();
+
+  useEffect(() => {
+    const getProducts = async () => {
+      setLoading(true);
+      const { data, error } = await supabase.from("product").select("*");
+      if (error) {
+        console.log("error", error);
+      } else {
+        setProducts(data);
+      }
+      setLoading(false);
+    };
+
+    getProducts();
+  }, []);
 
   const createProduct = (name, price, description, image) => {
     const newProduct = {
       name,
       price,
       description,
-      image,
+      image_path: image,
     };
+    // add to supabase
+    supabase
+      .from("product")
+      .insert(newProduct)
+      .then((response) => {
+        console.log(response);
+      });
+
     setProducts([...products, newProduct]);
   };
 
   const deleteProduct = (name) => {
-    const newProducts = products.filter((product) => product.name !== name);
-    setProducts(newProducts);
+    // delete from supabase
+    supabase
+      .from("product")
+      .delete()
+      .match({ name })
+      .then((response) => {
+        console.log(response);
+        const newProducts = products.filter((product) => product.name !== name);
+        setProducts(newProducts);
+      });
+  };
+
+  const uploadImage = async (file) => {
+    // upload image to supabase
+    const { data, error } = await supabase.storage
+      .from("product-images")
+      .upload(file.name, file);
+    if (error) {
+      console.log("error", error);
+    } else {
+      setProductImage(
+        `https://malkpiqslwdctbpgjzzw.supabase.co/storage/v1/object/public/product-images/${data.path}`
+      );
+    }
   };
 
   const toast = useToast();
@@ -104,6 +113,7 @@ export default function Register() {
   return (
     <>
       <Layout>
+      <Skeleton isLoaded={!loading}>
         <Flex
           justifyContent={"center"}
           alignItems={"center"}
@@ -171,7 +181,7 @@ export default function Register() {
                     >
                       <Image
                         borderRadius={10}
-                        src={product.image}
+                        src={product.image_path}
                         width={250}
                         maxWidth={"90%"}
                         alt="product"
@@ -239,41 +249,60 @@ export default function Register() {
             </Card>
           </SimpleGrid>
         </Flex>
-        <Modal isOpen={isOpen} onClose={onClose}>
-          <ModalOverlay />
-          <ModalContent>
-            <ModalHeader>Create New Product</ModalHeader>
-            <ModalCloseButton />
-            <ModalBody>
-              <VStack width={400} spacing={4} maxWidth={"100%"}>
-                <FormControl>
-                  <FormLabel>Product Name</FormLabel>
-                  <Input
-                    type="name"
-                    onChange={(e) => setProductName(e.target.value)}
-                  />
-                </FormControl>{" "}
-                <FormControl>
-                  <FormLabel>Description</FormLabel>
-                  <Textarea
-                    name="description"
-                    placeholder="Spicy..."
-                    onChange={(e) => setProductDescription(e.target.value)}
-                  />
-                </FormControl>{" "}
-                <FormControl>
-                  <FormLabel>Price (number only)</FormLabel>
-                  <Input
-                    type="number"
-                    onChange={(e) => setProductPrice(e.target.value)}
-                  />
-                </FormControl>{" "}
-              </VStack>
-            </ModalBody>
-            <ModalFooter
-              display={"flex"}
-              justifyContent={"space-between"}
-              flexDirection={"row"}
+      </Skeleton>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Create New Product</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <VStack width={400} spacing={4} maxWidth={"100%"}>
+              <FormControl>
+                <FormLabel>Product Name</FormLabel>
+                <Input
+                  type="name"
+                  onChange={(e) => setProductName(e.target.value)}
+                />
+              </FormControl>{" "}
+              <FormControl>
+                <FormLabel>Description</FormLabel>
+                <Textarea
+                  name="description"
+                  placeholder="Spicy..."
+                  onChange={(e) => setProductDescription(e.target.value)}
+                />
+              </FormControl>{" "}
+              <FormControl>
+                <FormLabel>Price (number only)</FormLabel>
+                <Input
+                  type="number"
+                  onChange={(e) => setProductPrice(e.target.value)}
+                />
+              </FormControl>{" "}
+              <FormControl>
+                <FormLabel>Image</FormLabel>
+                <FileUploader
+                  handleChange={(e) => {
+                    console.log(e);
+                    uploadImage(e);
+                  }}
+                  name="file"
+                  types={["JPG", "JPEG", "PNG", "GIF"]}
+                />
+              </FormControl>
+            </VStack>
+          </ModalBody>
+          <ModalFooter
+            display={"flex"}
+            justifyContent={"space-between"}
+            flexDirection={"row"}
+          >
+            <Button
+              mr={3}
+              onClick={() => {
+                onClose();
+              }}
+              alignSelf={"flex-end"}
             >
               <Button
                 mr={3}
