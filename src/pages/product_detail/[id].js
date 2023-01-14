@@ -24,40 +24,40 @@ import {
   useToast,
   VStack,
 } from "@chakra-ui/react";
-import {Inter} from "@next/font/google";
+import { Inter } from "@next/font/google";
 import Head from "next/head";
-import {useRouter} from "next/router";
-import {useState} from "react";
-import {FaPlus, FaStar, FaStarHalf} from "react-icons/fa";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import { FaPlus, FaStar, FaStarHalf } from "react-icons/fa";
 import ReactStars from "react-rating-stars-component";
 
-const inter = Inter({subsets : [ "latin" ]});
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Register() {
   const [reviews, setReviews] = useState([
     {
-      id : 1,
-      name : "John Doe",
-      rating : 4,
-      review :
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl eu nunc. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl eu nunc.",
+      id: 1,
+      name: "John Doe",
+      rating: 4,
+      review:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl eu nunc. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl eu nunc.",
     },
     {
-      id : 2,
-      name : "Jane Doe",
-      rating : 5,
-      review :
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl eu nunc. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl eu nunc.",
+      id: 2,
+      name: "Jane Doe",
+      rating: 5,
+      review:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl eu nunc. Sed euismod, nunc vel tincidunt lacinia, nunc nisl aliquam mauris, eget aliquam nisl nisl eu nunc.",
     },
   ]);
-  const {isOpen, onOpen, onClose} = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const [product, setProduct] = useState({
-    name : "Asam Laksa",
-    price : 10,
-    description :
-        "Asam laksa is a spicy noodle soup dish that is popular in Malaysia, Singapore, and Indonesia. It is a staple food in the Peranakan cuisine of Southeast Asia.",
-    image :
-        "https://www.rotinrice.com/wp-content/uploads/2014/09/AsamLaksa-1.jpg",
+    name: "Asam Laksa",
+    price: 10,
+    description:
+      "Asam laksa is a spicy noodle soup dish that is popular in Malaysia, Singapore, and Indonesia. It is a staple food in the Peranakan cuisine of Southeast Asia.",
+    image:
+      "https://www.rotinrice.com/wp-content/uploads/2014/09/AsamLaksa-1.jpg",
   });
 
   const [name, setName] = useState("");
@@ -67,27 +67,29 @@ export default function Register() {
   const toast = useToast();
 
   const router = useRouter();
-  const {id} = router.query;
+  const { id } = router.query;
 
-  const {toggleColorMode} = useColorMode();
+  const { toggleColorMode } = useColorMode();
 
-  const ratingChanged = (newRating) => { setRating(newRating); };
+  const ratingChanged = (newRating) => {
+    setRating(newRating);
+  };
 
   const createReview = () => {
     const newReview = {
-      id : reviews.length + 1,
+      id: reviews.length + 1,
       name,
       rating,
       review,
     };
     // move to top of list
-    setReviews([ newReview, ...reviews ]);
+    setReviews([newReview, ...reviews]);
     toast({
-      title : "Review added.",
-      description : "We've added your review for this product.",
-      status : "success",
-      duration : 9000,
-      isClosable : true,
+      title: "Review added.",
+      description: "We've added your review for this product.",
+      status: "success",
+      duration: 9000,
+      isClosable: true,
     });
     onClose();
   };
@@ -143,8 +145,7 @@ export default function Register() {
                 as={FaStar}
                 color={"yellow.400"}
                 boxSize={6}
-                alignSelf={
-    "center"}
+                alignSelf={"center"}
               />
               <Icon
                 as={FaStar}
@@ -156,8 +157,7 @@ export default function Register() {
                 as={FaStar}
                 color={"yellow.400"}
                 boxSize={6}
-                alignSelf={
-    "center"}
+                alignSelf={"center"}
               />
               <Icon
                 as={FaStarHalf}
@@ -178,7 +178,7 @@ export default function Register() {
               Reviews
             </Heading>
             <Button
-  leftIcon = {<Icon as={FaPlus} />}
+              leftIcon={<Icon as={FaPlus} />}
               colorScheme={"blue"}
               onClick={onOpen}
             >

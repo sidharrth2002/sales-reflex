@@ -1,4 +1,4 @@
-import {BiChart, BiDotsHorizontal, BiEditAlt, BiExport} from "react-icons/bi";
+import { BiChart, BiDotsHorizontal, BiEditAlt, BiExport } from "react-icons/bi";
 
 import LineChart from "../../components/chart/LineChart";
 import LineUIChart from "../../components/chart/LineUIChart";
@@ -11,10 +11,10 @@ export default function Sales() {
   return (
     <Layout>
       <section
-  // style={{
-  //   backgroundImage:
-  //   `url('https://www.transparenttextures.com/patterns/cartographer.png')`,
-  // }}
+        // style={{
+        //   backgroundImage:
+        //   `url('https://www.transparenttextures.com/patterns/cartographer.png')`,
+        // }}
         className="flex items-center justify-between w-full py-6 mb-10 border-b-2 border-primary-4-light"
       >
         <div>
@@ -48,8 +48,7 @@ export default function Sales() {
             </h6>
           </div>
           <div className="absolute top-0 right-0 h-40 w-[45%]">
-            <LineUIChart data={
-    [sales_data[1]]} />
+            <LineUIChart data={[sales_data[1]]} />
           </div>
         </div>
         <div className="relative px-5 py-4">
@@ -66,8 +65,7 @@ export default function Sales() {
             </h6>
           </div>
           <div className="absolute top-0 right-0 h-40 w-[45%]">
-            <LineUIChart data={
-    [sales_data[0]]} />
+            <LineUIChart data={[sales_data[0]]} />
           </div>
         </div>
         <div className="relative px-5 py-4">
@@ -84,8 +82,7 @@ export default function Sales() {
             </h6>
           </div>
           <div className="absolute top-0 right-0 h-40 w-[45%]">
-            <LineUIChart data={
-    [sales_data[2]]} />
+            <LineUIChart data={[sales_data[2]]} />
           </div>
         </div>
       </section>
@@ -155,8 +152,7 @@ export default function Sales() {
         {invoice?.map((data, idx) => (
           <div key={idx} className="grid grid-cols-9 gap-2 py-2 mt-4">
             <div className="flex items-center col-span-2 text-sm text-gray-900">
-              <RandomAvatar custom={
-    ["micah"]} />{" "}
+              <RandomAvatar custom={["micah"]} />{" "}
               <span className="ml-3 truncate ">{data?.name}</span>
             </div>
             <div className="col-span-1 text-sm text-gray-500">
