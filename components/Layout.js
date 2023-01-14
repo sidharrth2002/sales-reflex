@@ -140,7 +140,7 @@ export default function Layout({ children, pageMeta }) {
                 setOpened={setProfilePictureSelection}
                 defaultUrl={user?.profileUrl}
               /> */}
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-3">
               <div className="">
                 <NavItem href="/" logo={true}>
                   <BiBell className="w-5 h-5 hover:text-primary-4-light" />
@@ -148,6 +148,13 @@ export default function Layout({ children, pageMeta }) {
               </div>
               <div>
                 <RandomAvatar />
+              </div>
+              <div className="">
+                <NavItem href="/store/sid" logo={true}>
+                  <button className="text-xs px-4 py-2 rounded-md hover:text-primary-4-light hover:bg-white bg-primary-4-light border border-primary-4-light text-white">
+                    Store Console
+                  </button>
+                </NavItem>
               </div>
             </div>
           </nav>
