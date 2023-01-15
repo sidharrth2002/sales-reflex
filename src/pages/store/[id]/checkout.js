@@ -120,7 +120,7 @@ export default function Store({ id }) {
                   <div className="text-xs mt-2 text-green-400">{`Copied Successfully! ${copy}`}</div>
                 )}
                 <Link
-                  href={`https://api.whatsapp.com/send?phone=60163132154`}
+                  href={`https://api.whatsapp.com/send?phone=60108375380`}
                   target={"_blank"}
                   className="mt-8 w-full mb-3 rounded-md text-sm px-5 py-2 flex items-center justify-center bg-blue-500 font-medium text-white shadow"
                 >
