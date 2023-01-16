@@ -220,7 +220,7 @@ export default function Register() {
       <Modal isOpen={isOpenModal} onClose={onCloseModal}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Let's get the word out!</ModalHeader>
+          <ModalHeader>Lets get the word out!</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
             <Box>

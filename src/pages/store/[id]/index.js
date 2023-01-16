@@ -197,6 +197,8 @@ export default function Store({ id }) {
             <div className="text-base">{cart?.length}</div>
           </div>
         </div>
+        <p>{storeInfo?.description}</p>
+
         <div className="flex items-center w-full px-3 py-3 mt-4 bg-white rounded-lg shadow-md focus:outline-2 focus:outline-primary-4-light">
           <BiSearchAlt className="w-5 h-5 ml-1 mr-4" />
           <input
