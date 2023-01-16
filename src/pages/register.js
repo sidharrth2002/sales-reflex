@@ -31,7 +31,7 @@ import { FaClipboard } from "react-icons/fa";
 import Head from "next/head";
 import { Inter } from "@next/font/google";
 import axios from "axios";
-import { slugify } from "./utils";
+import { slugify } from "../utils";
 import { useRouter } from "next/router";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
