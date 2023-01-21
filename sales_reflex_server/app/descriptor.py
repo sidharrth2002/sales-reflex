@@ -10,7 +10,7 @@ def download_model():
         "model",
         "ashrielbrian/t5-base-wikipedia-companies-keywords",
         token=token,
-        git_user="ashrielbrian"
+        git_user="ashrielbrian",
     )
 
     model.load_model(model_dir="model", use_gpu=True)
