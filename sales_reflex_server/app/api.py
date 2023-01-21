@@ -1,6 +1,5 @@
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License.
-
 import os
 from collections import defaultdict
 
@@ -8,16 +7,21 @@ import spacy
 import srsly
 import uvicorn
 from app.descriptor import download_model
-from app.models import (ENT_PROP_MAP, CompanyDescriptionRequest,
-                        CompanyDescriptionResponse,
-                        RecordsEntitiesByTypeResponse, RecordsRequest,
-                        RecordsResponse, SentimentRequest)
+from app.models import CompanyDescriptionRequest
+from app.models import CompanyDescriptionResponse
+from app.models import ENT_PROP_MAP
+from app.models import RecordsEntitiesByTypeResponse
+from app.models import RecordsRequest
+from app.models import RecordsResponse
+from app.models import SentimentRequest
 from app.spacy_extractor import SpacyExtractor
-from fastapi import Body, FastAPI
+from fastapi import Body
+from fastapi import FastAPI
 from starlette.middleware.cors import CORSMiddleware
 from starlette.responses import RedirectResponse
 from textblob import TextBlob
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoModelForCausalLM
+from transformers import AutoTokenizer
 from wordwise import Extractor
 
 tokenizer = AutoTokenizer.from_pretrained("gpt2")
