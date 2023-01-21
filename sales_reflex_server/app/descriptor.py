@@ -1,5 +1,6 @@
-from keytotext import trainer 
+from keytotext import trainer
 from huggingface_hub import Repository
+
 
 def download_model():
     model = trainer()

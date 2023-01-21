@@ -122,9 +122,11 @@ async def extract_entities_by_type(body: RecordsRequest = Body(..., example=exam
 
     return {"values": res}
 
+
 @app.post(
     "/descriptions", response_model=CompanyDescriptionResponse
 )
 async def get_company_descriptions_from_keywords(body: CompanyDescriptionRequest):
-    description = company_description_model.predict(keywords=body.keywords, use_gpu=True)
+    description = company_description_model.predict(
+        keywords=body.keywords, use_gpu=True)
     return {"description": description}
