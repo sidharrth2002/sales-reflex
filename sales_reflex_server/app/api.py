@@ -64,10 +64,8 @@ async def sentiment(body: SentimentRequest):
 async def gpt2(body: SentimentRequest, num_words: int = 30):
     # generate 200 words from the given text
     return tokenizer.decode(
-        model.generate(
-            tokenizer.encode(body.text, return_tensors="pt"), max_length=num_words
-        )[0]
-    )
+        model.generate(tokenizer.encode(body.text, return_tensors="pt"),
+                       max_length=num_words)[0])
 
 
 @app.post("/extraction", tags=["Wordwise"])
@@ -76,7 +74,8 @@ async def extraction(body: SentimentRequest):
 
 
 @app.post("/entities", response_model=RecordsResponse, tags=["NER"])
-async def extract_entities(body: RecordsRequest = Body(..., example=example_request)):
+async def extract_entities(body: RecordsRequest = Body(
+    ..., example=example_request)):
     """Extract Named Entities from a batch of Records."""
 
     res = []
@@ -87,20 +86,21 @@ async def extract_entities(body: RecordsRequest = Body(..., example=example_requ
 
     entities_res = extractor.extract_entities(documents)
 
-    res = [
-        {"recordId": er["id"], "data": {"entities": er["entities"]}}
-        for er in entities_res
-    ]
+    res = [{
+        "recordId": er["id"],
+        "data": {
+            "entities": er["entities"]
+        }
+    } for er in entities_res]
 
     return {"values": res}
 
 
-@app.post(
-    "/entities_by_type", response_model=RecordsEntitiesByTypeResponse, tags=["NER"]
-)
-async def extract_entities_by_type(
-    body: RecordsRequest = Body(..., example=example_request)
-):
+@app.post("/entities_by_type",
+          response_model=RecordsEntitiesByTypeResponse,
+          tags=["NER"])
+async def extract_entities_by_type(body: RecordsRequest = Body(
+    ..., example=example_request)):
     """Extract Named Entities from a batch of Records separated by entity label.
     This route can be used directly as a Cognitive Skill in Azure Search
     For Documentation on integration with Azure Search, see here:
@@ -127,8 +127,8 @@ async def extract_entities_by_type(
 
 
 @app.post("/descriptions", response_model=CompanyDescriptionResponse)
-async def get_company_descriptions_from_keywords(body: CompanyDescriptionRequest):
-    description = company_description_model.predict(
-        keywords=body.keywords, use_gpu=True
-    )
+async def get_company_descriptions_from_keywords(
+        body: CompanyDescriptionRequest):
+    description = company_description_model.predict(keywords=body.keywords,
+                                                    use_gpu=True)
     return {"description": description}
