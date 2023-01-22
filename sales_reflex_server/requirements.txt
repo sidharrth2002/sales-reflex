@@ -5,3 +5,5 @@ transformers
 textblob
 wordwise
 python-dotenv
+keytotext
+opencv-python

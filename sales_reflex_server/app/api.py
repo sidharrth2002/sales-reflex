@@ -17,8 +17,11 @@ from app.models import (
     RecordsRequest,
     RecordsResponse,
     RecordsEntitiesByTypeResponse,
-    SentimentRequest
+    SentimentRequest,
+    CompanyDescriptionRequest,
+    CompanyDescriptionResponse
 )
+from app.descriptor import download_model
 from app.spacy_extractor import SpacyExtractor
 from wordwise import Extractor
 
@@ -46,6 +49,8 @@ example_request = srsly.read_json("app/data/example_request.json")
 
 nlp = spacy.load("en_core_web_sm")
 extractor = SpacyExtractor(nlp)
+
+company_description_model = download_model()
 
 
 @app.get("/", include_in_schema=False)
@@ -116,3 +121,10 @@ async def extract_entities_by_type(body: RecordsRequest = Body(..., example=exam
         res.append(record)
 
     return {"values": res}
+
+@app.post(
+    "/descriptions", response_model=CompanyDescriptionResponse
+)
+async def get_company_descriptions_from_keywords(body: CompanyDescriptionRequest):
+    description = company_description_model.predict(keywords=body.keywords, use_gpu=True)
+    return {"description": description}
