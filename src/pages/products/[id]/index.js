@@ -22,6 +22,9 @@ import {
   ModalOverlay,
   SimpleGrid,
   Skeleton,
+  Tag,
+  TagCloseButton,
+  TagLabel,
   Text,
   Textarea,
   VStack,
@@ -35,6 +38,7 @@ import {
   FaSearch,
   FaTrash,
 } from "react-icons/fa";
+import { loadModel, nasi_lemak, predict } from "@/lib/food-classifier";
 import { useEffect, useRef, useState } from "react";
 
 import { FileUploader } from "react-drag-drop-files";
@@ -43,7 +47,6 @@ import { Inter } from "@next/font/google";
 import Layout from "components/Layout";
 import { useRouter } from "next/router";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
-import { loadModel, predict, nasi_lemak } from "@/lib/food-classifier";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -56,6 +59,8 @@ export default function Register() {
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState(0);
   const [productDescription, setProductDescription] = useState("");
+  const [keyword, setKeyword] = useState("");
+  const [keywords, setKeywords] = useState([]);
   const [productImage, setProductImage] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
@@ -366,6 +371,54 @@ export default function Register() {
                     ref={imgRef}
                   />
                 )}
+                <FormControl>
+                  <FormLabel>Keywords</FormLabel>
+                  <HStack spacing={4} mb={4}>
+                    {keywords.map((word) => (
+                      <Tag
+                        size={word}
+                        key={word}
+                        borderRadius="full"
+                        variant="solid"
+                        // randomColor
+                        colorScheme={
+                          ["red", "green", "blue", "yellow", "purple"][
+                            Math.floor(
+                              Math.random() *
+                                ["red", "green", "blue", "yellow", "purple"]
+                                  .length
+                            )
+                          ]
+                        }
+                        padding={2}
+                      >
+                        <TagLabel>{word}</TagLabel>
+                        <TagCloseButton
+                          onClick={() =>
+                            setKeywords(keywords.filter((w) => w !== word))
+                          }
+                        />
+                      </Tag>
+                    ))}
+                  </HStack>
+                  <HStack>
+                    <Input
+                      type="text"
+                      value={keyword}
+                      onChange={(e) => setKeyword(e.target.value)}
+                      placeholder="Add keywords that describe your business"
+                      width={"80%"}
+                    />
+                    <Button
+                      onClick={() => {
+                        setKeywords([...keywords, keyword]);
+                        setKeyword("");
+                      }}
+                    >
+                      Add
+                    </Button>
+                  </HStack>
+                </FormControl>
                 {productImage && (
                   <Button
                     onClick={() => {

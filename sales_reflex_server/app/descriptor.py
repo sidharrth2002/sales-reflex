@@ -1,5 +1,7 @@
-from keytotext import trainer 
+from keytotext import trainer
 from huggingface_hub import Repository
+import torch
+
 
 def download_model():
     model = trainer()
@@ -11,6 +13,11 @@ def download_model():
         token=token,
         git_user="ashrielbrian"
     )
+
+    use_gpu = False
+    # check if gpu is available
+    if torch.cuda.is_available():
+        use_gpu = True
 
     model.load_model(model_dir="model", use_gpu=True)
     return model
