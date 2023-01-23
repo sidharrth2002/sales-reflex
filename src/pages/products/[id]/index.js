@@ -45,6 +45,7 @@ import { FileUploader } from "react-drag-drop-files";
 import Head from "next/head";
 import { Inter } from "@next/font/google";
 import Layout from "components/Layout";
+import axios from "axios";
 import { useRouter } from "next/router";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
@@ -161,6 +162,16 @@ export default function Register() {
       setProductName(result?.name ?? "");
       setProductDescription(result?.description ?? "");
     }
+  };
+
+  const generateDescriptionFromKeywords = async () => {
+    const description = await axios.post(
+      "http://localhost:8000/api/descriptions",
+      {
+        keywords,
+      }
+    );
+    setProductDescription(description.data.description);
   };
 
   const toast = useToast();
