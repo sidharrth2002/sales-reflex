@@ -78,7 +78,7 @@ export default function Store({ id }) {
           <ModalContent>
             <ModalHeader>Checkout</ModalHeader>
             <ModalCloseButton />
-            <ModalBody className="w-full flex items-center flex-col gap-5">
+            <ModalBody className="flex flex-col items-center w-full gap-5">
               <div className="w-full text-sm">
                 Total: RM{" "}
                 <span className="text-xl font-bold">
@@ -87,24 +87,24 @@ export default function Store({ id }) {
                     .toFixed(2)}
                 </span>
               </div>
-              <div className="font-bold w-full mt-4">
+              <div className="w-full mt-4 font-bold">
                 <div>Payment Methods</div>
-                <div className="text-sm flex items-center font-normal text-gray-500 text-justify">
+                <div className="flex items-center text-sm font-normal text-justify text-gray-500">
                   This vendor personally allow only RHB and Manual Transfer.
                 </div>
               </div>
-              <button className="px-4 flex items-center gap-5 hover:bg-blue-50 transition-all hover:text-primary-4-light justify-center py-3 border-2 text-sm rounded-md shadow border-primary-4-light w-full">
+              <button className="flex items-center justify-center w-full gap-5 px-4 py-3 text-sm transition-all border-2 rounded-md shadow hover:bg-blue-50 hover:text-primary-4-light border-primary-4-light">
                 <Image src={`/rhb.png`} width={50} height={50} alt="rhb" />
                 PayDirect powered by RHB Bank
               </button>
-              <div className="font-bold text-sm">or</div>
-              <div className="w-full relative">
-                <div className="grid grid-cols-7 w-full bg-gray-100 border p-2 rounded-t-md text-xs gap-4">
+              <div className="text-sm font-bold">or</div>
+              <div className="relative w-full">
+                <div className="grid w-full grid-cols-7 gap-4 p-2 text-xs bg-gray-100 border rounded-t-md">
                   <div className="col-span-2">Account Details</div>
                   <div className="col-span-2">Name</div>
                   <div className="col-span-2">Bank</div>
                 </div>
-                <div className="grid grid-cols-7 w-full border-x border-b p-2 rounded-b-md text-xs gap-4">
+                <div className="grid w-full grid-cols-7 gap-4 p-2 text-xs border-b border-x rounded-b-md">
                   <div className="col-span-2">8921 0230 1310 2122</div>
                   <div className="col-span-2">Sidharrth</div>
                   <div className="col-span-2">RHB Bank</div>
@@ -117,12 +117,12 @@ export default function Store({ id }) {
                   />
                 </div>
                 {copy.length > 0 && (
-                  <div className="text-xs mt-2 text-green-400">{`Copied Successfully! ${copy}`}</div>
+                  <div className="mt-2 text-xs text-green-400">{`Copied Successfully! ${copy}`}</div>
                 )}
                 <Link
                   href={`https://api.whatsapp.com/send?phone=60108375380`}
                   target={"_blank"}
-                  className="mt-8 w-full mb-3 rounded-md text-sm px-5 py-2 flex items-center justify-center bg-blue-500 font-medium text-white shadow"
+                  className="flex items-center justify-center w-full px-5 py-2 mt-8 mb-3 text-sm font-medium text-white bg-blue-500 rounded-md shadow"
                 >
                   {"Send Proof of Payment".toUpperCase()}
                 </Link>
@@ -133,8 +133,8 @@ export default function Store({ id }) {
           </ModalContent>
         </Modal>
         <div className="w-full store_layout">
-          {/* <div className="p-4 bg-white mt-4 mb-10 rounded-lg w-full"></div> */}
-          <div className="flex items-center w-full justify-between">
+          {/* <div className="w-full p-4 mt-4 mb-10 bg-white rounded-lg"></div> */}
+          <div className="flex items-center justify-between w-full">
             <h2
               onClick={() => {
                 router.push(`/store/${id}`);
@@ -143,7 +143,7 @@ export default function Store({ id }) {
             >
               {store?.name}
             </h2>
-            <div className="flex px-2 py-1 items-center gap-3 hover:bg-gray-100 rounded cursor-pointer transition-all">
+            <div className="flex items-center gap-3 px-2 py-1 transition-all rounded cursor-pointer hover:bg-gray-100">
               <div className="">
                 <BiCart className="w-5 h-5" />
               </div>
@@ -156,28 +156,28 @@ export default function Store({ id }) {
                 No products found -{" "}
                 <Link
                   href={`/store/${id}`}
-                  className="text-blue-500 hover:text-blue-600 underline"
+                  className="text-blue-500 underline hover:text-blue-600"
                 >
                   Back to the store
                 </Link>
               </>
             )}
           </div>
-          <div className="grid">
+          <div className="grid w-full">
             {cart?.map((d, idx) => (
               <div
                 key={idx}
-                className="relative flex justify-between gap-10 group mb-8 cursor-pointer group"
+                className="relative flex justify-between gap-10 mb-8 cursor-pointer group"
               >
                 <div
                   onClick={() => {
                     setCart(cart?.filter((c) => c?.id !== d?.id));
                   }}
-                  className="absolute group-hover:block hidden p-1 hover:bg-gray-50 top-0 right-0"
+                  className="absolute top-0 right-0 hidden p-1 group-hover:block hover:bg-gray-50"
                 >
                   <BiTrash className="w-4 h-4" />
                 </div>
-                <div className="overflow-hidden w-full rounded-md">
+                <div className="w-full overflow-hidden rounded-md">
                   <Image
                     src={d?.image_path}
                     alt={d?.name}
@@ -204,24 +204,24 @@ export default function Store({ id }) {
               </div>
             ))}
           </div>
-          <div className="flex mt-10 items-center gap-3 p-6 border-2 border-black w-full rounded-md">
+          <div className="flex items-center w-full gap-3 p-6 mt-10 border-2 border-black rounded-md">
             <div className="w-full font-bold">
               <input
                 type="text"
-                className="w-full px-4 py-2 bg-transparent border-2 text-sm font-medium border-primary-4-light rounded-md"
+                className="w-full px-4 py-2 text-sm font-medium bg-transparent border-2 rounded-md border-primary-4-light"
                 placeholder={`Leave a message for the seller`}
               />
             </div>
             or
             <Link
               href={`/whatsapp/${id}`}
-              className="px-5 py-2 text-sm whitespace-nowrap gap-3 flex items-center font-bold rounded bg-primary-4-light text-white border border-primary-4-light hover:bg-white hover:text-primary-4-light"
+              className="flex items-center gap-3 px-5 py-2 text-sm font-bold text-white border rounded whitespace-nowrap bg-primary-4-light border-primary-4-light hover:bg-white hover:text-primary-4-light"
             >
               <BsWhatsapp className="w-4 h-4" />
               Chat with Us
             </Link>
           </div>
-          <div className="flex mt-10 items-center p-6 border-2 border-black w-full rounded-md">
+          <div className="flex items-center w-full p-6 mt-10 border-2 border-black rounded-md">
             <div className="w-full font-bold">
               Total: RM{" "}
               {cart?.reduce((p, c) => p + c?.number * c?.price, 0).toFixed(2)}
@@ -232,7 +232,7 @@ export default function Store({ id }) {
                   onOpen();
                 }}
                 disabled={cart?.length <= 0}
-                className="px-5 py-2 text-sm font-bold rounded disabled:bg-gray-400 disabled:border-none disabled:hover:text-white bg-primary-4-light text-white border border-primary-4-light hover:bg-white hover:text-primary-4-light"
+                className="px-5 py-2 text-sm font-bold text-white border rounded disabled:bg-gray-400 disabled:border-none disabled:hover:text-white bg-primary-4-light border-primary-4-light hover:bg-white hover:text-primary-4-light"
               >
                 Checkout
               </button>

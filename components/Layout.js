@@ -91,7 +91,7 @@ export default function Layout({ children, pageMeta }) {
             </div>
             <div className="w-full space-y-2">
               <NavItem
-                href={`/products/sid`}
+                href={`/products/sids-barn`}
                 tooltip="Products"
                 className="!p-3 mb-2"
               >
@@ -150,8 +150,8 @@ export default function Layout({ children, pageMeta }) {
                 <RandomAvatar />
               </div>
               <div className="">
-                <NavItem href="/store/sid" logo={true}>
-                  <button className="text-xs px-4 py-2 rounded-md hover:text-primary-4-light hover:bg-white bg-primary-4-light border border-primary-4-light text-white">
+                <NavItem href="/store/sids-barn" logo={true}>
+                  <button className="px-4 py-2 text-xs text-white border rounded-md hover:text-primary-4-light hover:bg-white bg-primary-4-light border-primary-4-light">
                     Store Console
                   </button>
                 </NavItem>
