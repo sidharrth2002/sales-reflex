@@ -33,11 +33,14 @@ import {
 } from "@chakra-ui/react";
 import {
   FaArrowRight,
+  FaDollarSign,
   FaPencilAlt,
   FaPlus,
   FaSearch,
   FaTrash,
 } from "react-icons/fa";
+// import scatter plot from nivo
+import { Node, ResponsiveScatterPlot } from "@nivo/scatterplot";
 import { loadModel, nasi_lemak, predict } from "@/lib/food-classifier";
 import { useEffect, useRef, useState } from "react";
 
@@ -50,6 +53,46 @@ import { useRouter } from "next/router";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
 const inter = Inter({ subsets: ["latin"] });
+
+// function to generate random list of numbers from x1 to x2
+const generateRandom = (x1, x2, num = 100) => {
+  let list = [];
+  for (let i = 0; i < num; i++) {
+    let num = Math.floor(Math.random() * (x2 - x1 + 1)) + x1;
+    list.push({
+      x: "c" + i,
+      y: num,
+    });
+  }
+  return list;
+};
+
+// function to add midpoint to a list of numbers
+const addMidpoint = (list, num = 100) => {
+  let sum = 0;
+  for (let i = 0; i < list.length; i++) {
+    sum += list[i].y;
+  }
+  return list.concat([
+    {
+      x: "c" + num,
+      y: sum / list.length,
+    },
+  ]);
+};
+
+// function to find the midpoint of a list of numbers
+const findMidpoint = (list) => {
+  let sum = 0;
+  for (let i = 0; i < list.length; i++) {
+    sum += list[i].y;
+  }
+  return sum / list.length;
+};
+
+const round = (value, decimals) => {
+  return Number(Math.round(value + "e" + decimals) + "e-" + decimals);
+};
 
 export default function Register() {
   const [hardCode, setHardCode] = useState(true);
@@ -68,6 +111,13 @@ export default function Register() {
   const [uploaded, setUploaded] = useState(true);
   const [inference, setInference] = useState(false);
   const [classifierResult, setClassifierResult] = useState({});
+  const [pricingData, setPricingData] = useState([
+    {
+      id: "cake",
+      data: addMidpoint(generateRandom(5, 100)),
+    },
+  ]);
+  const [recommendPrice, setRecommendPrice] = useState(false);
   const supabase = useSupabaseClient();
 
   useEffect(() => {
@@ -165,12 +215,9 @@ export default function Register() {
   };
 
   const generateDescriptionFromKeywords = async () => {
-    const description = await axios.post(
-      "http://localhost:8000/api/descriptions",
-      {
-        keywords,
-      }
-    );
+    const description = await axios.post("http://localhost:8000/descriptions", {
+      keywords,
+    });
     setProductDescription(description.data.description);
   };
 
@@ -358,11 +405,100 @@ export default function Register() {
                 </FormControl>{" "}
                 <FormControl>
                   <FormLabel>Price (number only)</FormLabel>
-                  <Input
-                    type="number"
-                    onChange={(e) => setProductPrice(e.target.value)}
-                  />
+                  <HStack>
+                    <Button
+                      width={"70%"}
+                      onClick={() => {
+                        setRecommendPrice(true);
+                        setProductPrice(
+                          round(findMidpoint(pricingData[0]["data"]), 2)
+                        );
+                      }}
+                    >
+                      <Icon as={FaDollarSign} />
+                      <Text>Recommend {"\n"} price: </Text>
+                    </Button>
+                    <Input
+                      type="number"
+                      value={productPrice}
+                      onChange={(e) => setProductPrice(e.target.value)}
+                    />
+                  </HStack>
                 </FormControl>{" "}
+                {/* plot to show pricing of competitor products */}
+                {pricingData &&
+                  pricingData[0]["data"].length > 0 &&
+                  recommendPrice && (
+                    <VStack height={300} width={"100%"}>
+                      <ResponsiveScatterPlot
+                        data={pricingData}
+                        margin={{ top: 40, right: 40, bottom: 40, left: 40 }}
+                        xScale={{
+                          type: "point",
+                          // hide x axis ticks
+                          tickSize: 0,
+                        }}
+                        // yScale is price
+                        yScale={{ type: "linear", min: "auto", max: "auto" }}
+                        axisTop={null}
+                        axisRight={null}
+                        axisBottom={{
+                          orient: "bottom",
+                          tickSize: 0,
+                          tickPadding: 5,
+                          tickRotation: 0,
+                          format: () => "",
+                        }}
+                        axisLeft={{
+                          orient: "left",
+                          tickSize: 5,
+                          tickPadding: 5,
+                          tickRotation: 0,
+                          legend: "Price (RM)",
+                          legendPosition: "middle",
+                          legendOffset: -60,
+                        }}
+                        colors={(node) => {
+                          return node.y === findMidpoint(pricingData[0].data)
+                            ? "red"
+                            : "orange";
+                        }}
+                        pointSize={10}
+                        pointColor={{ theme: "background" }}
+                        pointBorderWidth={2}
+                        pointBorderColor={{ from: "serieColor" }}
+                        pointLabel="y"
+                        pointLabelYOffset={-12}
+                        useMesh={true}
+                        legends={[
+                          {
+                            anchor: "bottom-right",
+                            direction: "column",
+                            justify: false,
+                            translateX: 130,
+                            translateY: 0,
+                            itemsSpacing: 0,
+                            itemDirection: "left-to-right",
+                            itemWidth: 100,
+                            itemHeight: 20,
+                            itemOpacity: 0.75,
+                            symbolSize: 12,
+                            symbolShape: "circle",
+                            symbolBorderColor: "rgba(0, 0, 0, .5)",
+                            effects: [
+                              {
+                                on: "hover",
+                                style: {
+                                  itemBackground: "rgba(0, 0, 0, .03)",
+                                  itemOpacity: 1,
+                                },
+                              },
+                            ],
+                          },
+                        ]}
+                      />
+                    </VStack>
+                  )}
                 <FormControl>
                   <FormLabel>Image</FormLabel>
                   <FileUploader
@@ -433,7 +569,7 @@ export default function Register() {
                 {productImage && (
                   <Button
                     onClick={() => {
-                      generate();
+                      generateDescriptionFromKeywords();
                     }}
                     className="w-full"
                     colorScheme={"facebook"}

@@ -2,16 +2,18 @@ from keytotext import trainer
 from huggingface_hub import Repository
 import torch
 
+sid_token = "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"
+brian_token = "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"
+
 
 def download_model():
     model = trainer()
 
-    token = "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"
     model_repo = Repository(
         "model",
         "ashrielbrian/t5-base-wikipedia-companies-keywords",
-        token=token,
-        git_user="ashrielbrian"
+        token=sid_token,
+        git_user="ashrielbrian",
     )
 
     use_gpu = False
@@ -19,7 +21,7 @@ def download_model():
     if torch.cuda.is_available():
         use_gpu = True
 
-    model.load_model(model_dir="model", use_gpu=True)
+    model.load_model(model_dir="model", use_gpu=False)
     return model
 
 
