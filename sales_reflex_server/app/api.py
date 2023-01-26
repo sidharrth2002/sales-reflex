@@ -19,7 +19,7 @@ from app.models import (
     RecordsEntitiesByTypeResponse,
     SentimentRequest,
     CompanyDescriptionRequest,
-    CompanyDescriptionResponse
+    CompanyDescriptionResponse,
 )
 from app.descriptor import download_model
 from app.spacy_extractor import SpacyExtractor
@@ -66,7 +66,11 @@ async def sentiment(body: SentimentRequest):
 @app.post("/gpt2", tags=["GPT2"])
 async def gpt2(body: SentimentRequest, num_words: int = 30):
     # generate 200 words from the given text
-    return tokenizer.decode(model.generate(tokenizer.encode(body.text, return_tensors='pt'), max_length=num_words)[0])
+    return tokenizer.decode(
+        model.generate(
+            tokenizer.encode(body.text, return_tensors="pt"), max_length=num_words
+        )[0]
+    )
 
 
 @app.post("/extraction", tags=["Wordwise"])
@@ -97,11 +101,13 @@ async def extract_entities(body: RecordsRequest = Body(..., example=example_requ
 @app.post(
     "/entities_by_type", response_model=RecordsEntitiesByTypeResponse, tags=["NER"]
 )
-async def extract_entities_by_type(body: RecordsRequest = Body(..., example=example_request)):
+async def extract_entities_by_type(
+    body: RecordsRequest = Body(..., example=example_request)
+):
     """Extract Named Entities from a batch of Records separated by entity label.
-        This route can be used directly as a Cognitive Skill in Azure Search
-        For Documentation on integration with Azure Search, see here:
-        https://docs.microsoft.com/en-us/azure/search/cognitive-search-custom-skill-interface"""
+    This route can be used directly as a Cognitive Skill in Azure Search
+    For Documentation on integration with Azure Search, see here:
+    https://docs.microsoft.com/en-us/azure/search/cognitive-search-custom-skill-interface"""
 
     res = []
     documents = []
@@ -123,11 +129,10 @@ async def extract_entities_by_type(body: RecordsRequest = Body(..., example=exam
     return {"values": res}
 
 
-@app.post(
-    "/descriptions", response_model=CompanyDescriptionResponse
-)
+@app.post("/descriptions", response_model=CompanyDescriptionResponse)
 async def get_company_descriptions_from_keywords(body: CompanyDescriptionRequest):
     description = company_description_model.predict(
-        keywords=body.keywords, use_gpu=False)
+        keywords=body.keywords, use_gpu=False
+    )
     print(description)
     return {"description": description}
