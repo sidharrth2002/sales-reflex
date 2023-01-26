@@ -17,13 +17,21 @@ import Image from "next/image";
 import RandomAvatar from "./core/RandomAvatar";
 // import AvatarSelector from "./core/AvatarSelector";
 
-const NavItem = ({ href, tooltip, className, children, logo }) => {
+const NavItem = ({
+  href,
+  target = "_self",
+  tooltip,
+  className,
+  children,
+  logo,
+}) => {
   const router = useRouter();
   const isActive = router.asPath === href;
   return (
     <Link
       href={href}
       passHref
+      target={target}
       className={cn(
         "p-2 my-1 w-full relative group transition-all duration-300 text-gray-500 flex rounded-md justify-center items-center",
         !logo && className,
@@ -82,16 +90,16 @@ export default function Layout({ children, pageMeta }) {
         <nav className="fixed z-50 !bg-white w-[60px] border-r-2 border-r-gray-50 h-[100vh] flex flex-col items-center justify-between py-2">
           <div>
             <div className="mb-2 border-b border-b-gray-100">
-              <NavItem href="/" logo={true}>
+              <NavItem href="/home" logo={true}>
                 <BiWifi2 className="rotate-45 w-7 h-7 text-primary-1-light" />
               </NavItem>
-              <NavItem href="/" tooltip="Home" className="!p-3 mb-2">
+              <NavItem href="/home" tooltip="Home" className="!p-3 mb-2">
                 <BiHome className="w-5 h-5" />
               </NavItem>
             </div>
             <div className="w-full space-y-2">
               <NavItem
-                href={`/products/sids-barn`}
+                href={`/product`}
                 tooltip="Products"
                 className="!p-3 mb-2"
               >
@@ -150,7 +158,7 @@ export default function Layout({ children, pageMeta }) {
                 <RandomAvatar />
               </div>
               <div className="">
-                <NavItem href="/store/sids-barn" logo={true}>
+                <NavItem target="_blank" href="/" logo={true}>
                   <button className="px-4 py-2 text-xs text-white border rounded-md hover:text-primary-4-light hover:bg-white bg-primary-4-light border-primary-4-light">
                     Store Console
                   </button>

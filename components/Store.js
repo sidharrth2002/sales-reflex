@@ -1,4 +1,4 @@
-import { BiCart, BiSearchAlt } from "react-icons/bi";
+import { BiCart, BiEditAlt, BiSearchAlt } from "react-icons/bi";
 import {
   Button,
   Modal,
@@ -19,21 +19,11 @@ import {
 import { useEffect, useState } from "react";
 
 import Image from "next/image";
-// @ts-nocheck
 import { useCart } from "@/context/cart";
 import { useRouter } from "next/router";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
-export async function getServerSideProps({ params }) {
-  const { id } = params;
-  return {
-    props: {
-      id,
-    },
-  };
-}
-
-export default function Store({ id }) {
+export default function Store() {
   const router = useRouter();
   const supabase = useSupabaseClient();
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -48,28 +38,33 @@ export default function Store({ id }) {
   // console.log(router.asPath);
 
   useEffect(() => {
+    const { host } = window.location;
+    let isDev = host.includes("localhost");
+    let wildcard = host.split(".")[0];
+
     const getData = async () => {
       const { data, error } = await supabase
         .from("store")
         .select("*")
-        .match({ slug: id })
+        .match({ slug: wildcard })
         .single();
 
+      if (!data) {
+        router.push("404");
+      }
       if (!error) {
         setStoreInfo(data);
       }
 
-      console.log(id);
-
       const { data: productData, error: productError } = await supabase
         .from("product")
         .select("*")
-        .match({ store: id });
+        .match({ store: wildcard });
 
       if (!productError) {
-        console.log(productData);
+        // console.log(productData);
         setData(productData);
-        setFilterData(productData);
+        // setFilterData(productData);
       }
     };
 
@@ -166,7 +161,7 @@ export default function Store({ id }) {
                 } else {
                   setCart([...cart, { ...current, number }]);
                 }
-                router.push(`/store/${id}/checkout`);
+                router.push(`/checkout`);
                 onClose();
               }}
             >
@@ -177,24 +172,35 @@ export default function Store({ id }) {
         </ModalContent>
       </Modal>
       <div className="w-full store_layout">
-        {/* <div className="p-4 bg-white mt-4 mb-10 rounded-lg w-full"></div> */}
+        {/* <div className="w-full p-4 mt-4 mb-10 bg-white rounded-lg"></div> */}
         {/* <Image src="" /> */}
-        <div className="flex items-center w-full justify-between">
+        <div className="flex items-center justify-between w-full">
           <h2 className="text-lg font-bold cursor-pointer">
             {storeInfo?.name}
           </h2>
-          <div
-            onClick={() => {
-              router.push(
-                `/store/${router.asPath.replace("/store/", "")}/checkout`
-              );
-            }}
-            className="flex px-2 py-1 items-center gap-3 hover:bg-gray-100 rounded cursor-pointer transition-all"
-          >
-            <div className="">
-              <BiCart className="w-5 h-5" />
+          <div className="flex items-center gap-3">
+            <div
+              onClick={() => {
+                router.push(`/product`);
+              }}
+              className="flex items-center gap-3 px-2 py-1 transition-all rounded cursor-pointer hover:bg-gray-100"
+            >
+              <div className="">
+                <BiEditAlt className="w-5 h-5" />
+              </div>
+              <div className="text-sm">Edit</div>
             </div>
-            <div className="text-base">{cart?.length}</div>
+            <div
+              onClick={() => {
+                router.push(`/checkout`);
+              }}
+              className="flex items-center gap-3 px-2 py-1 transition-all rounded cursor-pointer hover:bg-gray-100"
+            >
+              <div className="">
+                <BiCart className="w-5 h-5" />
+              </div>
+              <div className="text-base">{cart?.length}</div>
+            </div>
           </div>
         </div>
         <p>{storeInfo?.description}</p>

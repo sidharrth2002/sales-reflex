@@ -27,16 +27,16 @@ import { useCart } from "@/context/cart";
 import { useRouter } from "next/router";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
-export async function getServerSideProps({ params }) {
-  const { id } = params;
-  return {
-    props: {
-      id,
-    },
-  };
-}
+// export async function getServerSideProps({ params }) {
+//   const { id } = params;
+//   return {
+//     props: {
+//       id,
+//     },
+//   };
+// }
 
-export default function Store({ id }) {
+export default function Store() {
   const router = useRouter();
   const [copy, setCopy] = useState("");
   const [store, setStore] = useState({});
@@ -44,15 +44,26 @@ export default function Store({ id }) {
   const { cart, setCart } = useCart();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const supabase = useSupabaseClient();
+  const [wildcard, setWildcard] = useState("");
+
+  useEffect(() => {
+    const { host } = window.location;
+    let isDev = host.includes("localhost");
+    let _wildcard = host.split(".")[0];
+    setWildcard(_wildcard);
+  }, []);
 
   useEffect(() => {
     if (router.isReady) {
+      const { host } = window.location;
+      let isDev = host.includes("localhost");
+      let _wildcard = host.split(".")[0];
       setLoading(true);
       const getData = async () => {
         const { data, error } = await supabase
           .from("store")
           .select("*")
-          .match({ slug: id })
+          .match({ slug: _wildcard })
           .single();
         if (!error) {
           setStore(data);
@@ -120,7 +131,7 @@ export default function Store({ id }) {
                   <div className="mt-2 text-xs text-green-400">{`Copied Successfully! ${copy}`}</div>
                 )}
                 <Link
-                  href={`https://api.whatsapp.com/send?phone=60108375380`}
+                  href={`https://api.whatsapp.com/send?phone=${store?.mobile_number}`}
                   target={"_blank"}
                   className="flex items-center justify-center w-full px-5 py-2 mt-8 mb-3 text-sm font-medium text-white bg-blue-500 rounded-md shadow"
                 >
@@ -137,7 +148,7 @@ export default function Store({ id }) {
           <div className="flex items-center justify-between w-full">
             <h2
               onClick={() => {
-                router.push(`/store/${id}`);
+                router.push(`/`);
               }}
               className="text-lg font-bold cursor-pointer"
             >
@@ -155,7 +166,7 @@ export default function Store({ id }) {
               <>
                 No products found -{" "}
                 <Link
-                  href={`/store/${id}`}
+                  href={`/`}
                   className="text-blue-500 underline hover:text-blue-600"
                 >
                   Back to the store
@@ -214,7 +225,7 @@ export default function Store({ id }) {
             </div>
             or
             <Link
-              href={`/whatsapp/${id}`}
+              href={`/whatsapp`}
               className="flex items-center gap-3 px-5 py-2 text-sm font-bold text-white border rounded whitespace-nowrap bg-primary-4-light border-primary-4-light hover:bg-white hover:text-primary-4-light"
             >
               <BsWhatsapp className="w-4 h-4" />

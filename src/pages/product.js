@@ -37,7 +37,7 @@ import {
 } from "react-icons/fa";
 import { useEffect, useRef, useState } from "react";
 import NextImage from "next/image";
-import sales_data from "../../../../data/sales";
+import sales_data from "../../data/sales";
 
 import { FileUploader } from "react-drag-drop-files";
 import Head from "next/head";
@@ -68,17 +68,28 @@ export default function Register() {
   const [inference, setInference] = useState(false);
   const [classifierResult, setClassifierResult] = useState({});
   const supabase = useSupabaseClient();
+  // const [wildcard, setWildcard] = useState("");
 
-  useEffect(() => {
-    (async () => {
-      await loadModel("/models/food/model.json");
-    })();
-  }, []);
+  // useEffect(() => {
+  //   const { host } = window.location;
+  //   let isDev = host.includes("localhost");
+  //   let _wildcard = host.split(".")[0];
+  //   setWildcard(_wildcard);
+  // }, []);
+
+  // useEffect(() => {
+  //   (async () => {
+  //     await loadModel("/models/food/model.json");
+  //   })();
+  // }, []);
 
   useEffect(() => {
     if (router.isReady) {
       const getProducts = async () => {
-        const { id } = router.query;
+        // const { id } = router.query;
+        const { host } = window.location;
+        let isDev = host.includes("localhost");
+        let _wildcard = host.split(".")[0];
 
         setLoading(true);
         // const { data, error } = await supabase.from("product").select("*");
@@ -86,9 +97,10 @@ export default function Register() {
         const { data, error } = await supabase
           .from("product")
           .select("*")
-          .match({ store: id });
+          .match({ store: _wildcard });
 
         if (error) {
+          // router.push("404");
         } else {
           setProducts(data);
         }
@@ -257,7 +269,7 @@ export default function Register() {
                   </button>
                   <button
                     onClick={() => {
-                      router.push(`/store/${router.query.id}`);
+                      router.push(`/`);
                     }}
                     className="px-4 py-2 text-xs text-white border whitespace-nowrap hover:text-primary-4-light hover:bg-white bg-primary-4-light border-primary-4-light"
                   >

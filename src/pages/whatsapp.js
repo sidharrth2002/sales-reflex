@@ -10,16 +10,7 @@ import { useCart } from "@/context/cart";
 import { useRouter } from "next/router";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
-export async function getServerSideProps({ params }) {
-  const { id } = params;
-  return {
-    props: {
-      id,
-    },
-  };
-}
-
-export default function Whatsapp({ id }) {
+export default function Whatsapp() {
   const router = useRouter();
   const { cart, setCart } = useCart();
   const [name, setName] = useState("");
@@ -28,15 +19,20 @@ export default function Whatsapp({ id }) {
   const [store, setStore] = useState({});
 
   const supabase = useSupabaseClient();
+  const [wildcard, setWildcard] = useState("");
 
   useEffect(() => {
     if (router.isReady) {
+      const { host } = window.location;
+      let isDev = host.includes("localhost");
+      let _wildcard = host.split(".")[0];
+      setWildcard(_wildcard);
       setLoading(true);
       const getData = async () => {
         const { data, error } = await supabase
           .from("store")
           .select("*")
-          .match({ slug: id })
+          .match({ slug: _wildcard })
           .single();
         if (!error) {
           setStore(data);
@@ -52,10 +48,10 @@ export default function Whatsapp({ id }) {
     <Skeleton isLoaded={!loading}>
       <div className="bg-gradient-to-r min-h-[100vh] from-rose-100 to-teal-100">
         <div className="w-full store_layout">
-          <div className="flex items-center w-full justify-between">
+          <div className="flex items-center justify-between w-full">
             <h2
               onClick={() => {
-                router.push(`/store/${id}`);
+                router.push(`/`);
               }}
               className="text-lg font-bold cursor-pointer"
             >
@@ -63,9 +59,9 @@ export default function Whatsapp({ id }) {
             </h2>
             <div
               onClick={() => {
-                router.push(`/store/${id}/checkout`);
+                router.push(`/checkout`);
               }}
-              className="flex px-2 py-1 items-center gap-3 hover:bg-gray-100 rounded cursor-pointer transition-all"
+              className="flex items-center gap-3 px-2 py-1 transition-all rounded cursor-pointer hover:bg-gray-100"
             >
               <div className="">
                 <BiCart className="w-5 h-5" />
@@ -77,7 +73,7 @@ export default function Whatsapp({ id }) {
             {cart?.length === 0 && "No products found"}
           </div>
           <div className="w-full">
-            <div className="flex mb-10 flex-col items-center gap-5">
+            <div className="flex flex-col items-center gap-5 mb-10">
               <BsWhatsapp className="w-8 h-8" />
               <div className="text-center">
                 <div>Send a message to Sid{"'"} Store</div>
@@ -89,19 +85,19 @@ export default function Whatsapp({ id }) {
               <input
                 type="text"
                 value={name}
-                className="w-full px-4 py-2 shadow rounded-md border focus:outline-primary-4-light"
+                className="w-full px-4 py-2 border rounded-md shadow focus:outline-primary-4-light"
                 onChange={(e) => {
                   setName(e.target.value);
                 }}
                 placeholder="Tim"
               />
             </div>
-            <div className="space-y-3 mt-8 mb-10">
+            <div className="mt-8 mb-10 space-y-3">
               <div>Phone</div>
               <input
                 type="text"
                 value={phone}
-                className="w-full px-4 py-2 shadow rounded-md border focus:outline-primary-4-light"
+                className="w-full px-4 py-2 border rounded-md shadow focus:outline-primary-4-light"
                 onChange={(e) => {
                   setPhone(e.target.value);
                 }}
@@ -114,17 +110,17 @@ export default function Whatsapp({ id }) {
             {cart?.map((d, idx) => (
               <div
                 key={idx}
-                className="relative flex justify-between gap-10 group mb-8 cursor-pointer group"
+                className="relative flex justify-between gap-10 mb-8 cursor-pointer group"
               >
                 <div
                   onClick={() => {
                     setCart(cart?.filter((c) => c?.id !== d?.id));
                   }}
-                  className="absolute group-hover:block hidden p-1 hover:bg-gray-50 top-0 right-0"
+                  className="absolute top-0 right-0 hidden p-1 group-hover:block hover:bg-gray-50"
                 >
                   <BiTrash className="w-4 h-4" />
                 </div>
-                <div className="overflow-hidden w-full rounded-md">
+                <div className="w-full overflow-hidden rounded-md">
                   <Image
                     src={d?.image_path}
                     alt={d?.name}
@@ -153,13 +149,15 @@ export default function Whatsapp({ id }) {
           </div>
           <Link
             target={`_blank`}
-            href={`https://api.whatsapp.com/send?phone=60108375380&text=Hi, I am ${name},%0a%0d%0a
+            href={`https://api.whatsapp.com/send?phone=${
+              store?.mobile_number
+            }&text=Hi, I am ${name},%0a%0d%0a
 
 I am interested in the following products:
 
 ${cart?.reduce((p, c) => p + "%0a%0d%0a" + c?.name, "")}
 `}
-            className="px-5 py-2 mt-8 w-full justify-center text-sm whitespace-nowrap gap-3 flex items-center font-bold rounded bg-green-500 text-white border border-green-500 hover:bg-white hover:text-green-500"
+            className="flex items-center justify-center w-full gap-3 px-5 py-2 mt-8 text-sm font-bold text-white bg-green-500 border border-green-500 rounded whitespace-nowrap hover:bg-white hover:text-green-500"
           >
             Whatsapp Now!
           </Link>
