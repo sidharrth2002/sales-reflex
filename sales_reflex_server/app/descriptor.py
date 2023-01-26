@@ -1,6 +1,6 @@
-from keytotext import trainer
-from huggingface_hub import Repository
 import torch
+from huggingface_hub import Repository
+from keytotext import trainer
 
 sid_token = "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"
 brian_token = "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"
