@@ -1,6 +1,7 @@
 import Image from "next/image";
+import React from "react";
 
-export default function RandomAvatar({ custom = [] }) {
+function RandomAvatar({ custom = [] }) {
   return (
     <Image
       src={`https://avatars.dicebear.com/api/${
@@ -25,3 +26,5 @@ export default function RandomAvatar({ custom = [] }) {
     />
   );
 }
+
+export default React.memo(RandomAvatar);

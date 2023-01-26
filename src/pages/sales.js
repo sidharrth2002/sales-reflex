@@ -17,7 +17,7 @@ export default function Sales() {
         className="flex items-center justify-between w-full py-6 mb-10 border-b-2 border-primary-4-light"
       >
         <div>
-          <h2 className="flex items-center text-primary-4-light">
+          <h2 className="flex items-center text-2xl font-bold md:text-3xl text-primary-4-light">
             <BiChart className="w-8 h-8 mr-5" />
             Sales Dashboa<span className="text-primary-1-light">rd</span>
           </h2>
@@ -39,7 +39,7 @@ export default function Sales() {
             <BiDotsHorizontal className="w-5 h-5" />
           </div>
           <div className="mt-3">
-            <h1 className="font-thin text-3xl md:text-5xl">RM 15,570.00</h1>
+            <h1 className="text-3xl font-thin md:text-5xl">RM 15,570.00</h1>
           </div>
           <div className="mt-5">
             <h6 className="text-sm font-medium">
@@ -56,7 +56,7 @@ export default function Sales() {
             <BiDotsHorizontal className="w-5 h-5" />
           </div>
           <div className="mt-3">
-            <h1 className="font-thin text-3xl md:text-5xl">268</h1>
+            <h1 className="text-3xl font-thin md:text-5xl">268</h1>
           </div>
           <div className="mt-5">
             <h6 className="text-sm font-medium">
@@ -73,7 +73,7 @@ export default function Sales() {
             <BiDotsHorizontal className="w-5 h-5" />
           </div>
           <div className="mt-3">
-            <h1 className="font-thin text-3xl md:text-5xl">RM 6280.00</h1>
+            <h1 className="text-3xl font-thin md:text-5xl">RM 6280.00</h1>
           </div>
           <div className="mt-5">
             <h6 className="text-sm font-medium">

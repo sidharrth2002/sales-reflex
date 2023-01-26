@@ -31,7 +31,7 @@ import { FaClipboard } from "react-icons/fa";
 import Head from "next/head";
 import { Inter } from "@next/font/google";
 import axios from "axios";
-import { slugify } from "../utils";
+import { slugify } from "../src/utils";
 import { useRouter } from "next/router";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
@@ -64,7 +64,7 @@ export default function Register() {
         category,
         mobile_number: phoneNumber,
         owner: "Sidharrth Nagappan",
-        slug: slugify(name),
+        slug: slugify(slug),
       })
       .then((data) => {
         console.log(data);
@@ -145,12 +145,19 @@ export default function Register() {
             </FormControl>{" "}
             <FormControl>
               <FormLabel>Domain</FormLabel>
-              <Input
-                type="slug"
-                onChange={(e) => setSlug(e.target.value)}
-                value={slug}
-              />
-              <FormHelperText>Give your store a cool name.</FormHelperText>
+              <div className="flex items-center gap-1">
+                <Input
+                  className="w-full text-right"
+                  placeholder="lol"
+                  type="slug"
+                  onChange={(e) => setSlug(slugify(e.target.value))}
+                  value={slug}
+                />
+                <div className="px-1">.salesreflex.com</div>
+              </div>
+              {/* <FormHelperText>
+                Preview: {slug ? `${slugify(slug)}.salesreflex.com` : "--"}
+              </FormHelperText> */}
             </FormControl>{" "}
             <FormControl>
               <FormLabel>Phone Number</FormLabel>
