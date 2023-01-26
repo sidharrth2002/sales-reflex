@@ -23,8 +23,7 @@ export default function Home() {
 
   return (
     <>
-      {!wildcard.includes("localhost") &&
-      !wildcard.includes("salesreflex.com") ? (
+      {!wildcard.includes("localhost") && !wildcard.includes("www") ? (
         <Store />
       ) : (
         <Register />
