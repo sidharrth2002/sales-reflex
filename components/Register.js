@@ -40,6 +40,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Register() {
   const supabase = useSupabaseClient();
   const [name, setName] = useState("");
+  const [slug, setSlug] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [email, setEmail] = useState("");
@@ -63,7 +64,7 @@ export default function Register() {
         category,
         mobile_number: phoneNumber,
         owner: "Sidharrth Nagappan",
-        slug: slugify(name),
+        slug: slugify(slug),
       })
       .then((data) => {
         console.log(data);
@@ -141,6 +142,22 @@ export default function Register() {
                 value={name}
               />
               <FormHelperText>Give your store a cool name.</FormHelperText>
+            </FormControl>{" "}
+            <FormControl>
+              <FormLabel>Domain</FormLabel>
+              <div className="flex items-center gap-1">
+                <Input
+                  className="w-full text-right"
+                  placeholder="lol"
+                  type="slug"
+                  onChange={(e) => setSlug(slugify(e.target.value))}
+                  value={slug}
+                />
+                <div className="px-1">.salesreflex.com</div>
+              </div>
+              {/* <FormHelperText>
+                Preview: {slug ? `${slugify(slug)}.salesreflex.com` : "--"}
+              </FormHelperText> */}
             </FormControl>{" "}
             <FormControl>
               <FormLabel>Phone Number</FormLabel>

@@ -6,24 +6,29 @@ import Layout from "components/Layout";
 import { useEffect, useState } from "react";
 import Store from "components/Store";
 import Register from "components/Register";
+import { useRouter } from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const router = useRouter();
   const [wildcard, setWildcard] = useState("");
 
   useEffect(() => {
     const { host } = window.location;
-    let isDev = host.includes("localhost");
     let _wildcard = host.split(".")[0];
+    console.log(_wildcard);
     setWildcard(_wildcard);
-  }, []);
+  }, [router.isReady]);
 
-  if (wildcard.includes("localhost")) {
-    return <Register />;
-  } else if (!wildcard?.includes("localhost")) {
-    return <Store />;
-  }
-
-  return <></>;
+  return (
+    <>
+      {!wildcard.includes("localhost") &&
+      !wildcard.includes("salesreflex.com") ? (
+        <Store />
+      ) : (
+        <Register />
+      )}
+    </>
+  );
 }

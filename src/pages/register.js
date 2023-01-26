@@ -40,6 +40,7 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Register() {
   const supabase = useSupabaseClient();
   const [name, setName] = useState("");
+  const [slug, setSlug] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
   const [email, setEmail] = useState("");
@@ -139,6 +140,15 @@ export default function Register() {
                 type="name"
                 onChange={(e) => setName(e.target.value)}
                 value={name}
+              />
+              <FormHelperText>Give your store a cool name.</FormHelperText>
+            </FormControl>{" "}
+            <FormControl>
+              <FormLabel>Domain</FormLabel>
+              <Input
+                type="slug"
+                onChange={(e) => setSlug(e.target.value)}
+                value={slug}
               />
               <FormHelperText>Give your store a cool name.</FormHelperText>
             </FormControl>{" "}
