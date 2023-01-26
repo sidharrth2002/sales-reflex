@@ -1,4 +1,4 @@
-import {loadModel, nasi_lemak, predict} from "@/lib/food-classifier";
+import { loadModel, nasi_lemak, predict } from "@/lib/food-classifier";
 import {
   Box,
   Button,
@@ -32,16 +32,16 @@ import {
   useToast,
   VStack,
 } from "@chakra-ui/react";
-import {Inter} from "@next/font/google";
+import { Inter } from "@next/font/google";
 // import scatter plot from nivo
-import {Node, ResponsiveScatterPlot} from "@nivo/scatterplot";
-import {useSupabaseClient} from "@supabase/auth-helpers-react";
+import { Node, ResponsiveScatterPlot } from "@nivo/scatterplot";
+import { useSupabaseClient } from "@supabase/auth-helpers-react";
 import axios from "axios";
 import Layout from "components/Layout";
 import Head from "next/head";
-import {useRouter} from "next/router";
-import {useEffect, useRef, useState} from "react";
-import {FileUploader} from "react-drag-drop-files";
+import { useRouter } from "next/router";
+import { useEffect, useRef, useState } from "react";
+import { FileUploader } from "react-drag-drop-files";
 import {
   FaArrowRight,
   FaDollarSign,
@@ -51,7 +51,7 @@ import {
   FaTrash,
 } from "react-icons/fa";
 
-const inter = Inter({subsets : [ "latin" ]});
+const inter = Inter({ subsets: ["latin"] });
 
 // function to generate random list of numbers from x1 to x2
 const generateRandom = (x1, x2, num = 100) => {
@@ -59,8 +59,8 @@ const generateRandom = (x1, x2, num = 100) => {
   for (let i = 0; i < num; i++) {
     let num = Math.floor(Math.random() * (x2 - x1 + 1)) + x1;
     list.push({
-      x : "c" + i,
-      y : num,
+      x: "c" + i,
+      y: num,
     });
   }
   return list;
@@ -74,8 +74,8 @@ const addMidpoint = (list, num = 100) => {
   }
   return list.concat([
     {
-      x : "c" + num,
-      y : sum / list.length,
+      x: "c" + num,
+      y: sum / list.length,
     },
   ]);
 };
@@ -98,7 +98,7 @@ export default function Register() {
   const imgRef = useRef(null);
   const router = useRouter();
   const [products, setProducts] = useState([]);
-  const {isOpen, onOpen, onClose} = useDisclosure();
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState(0);
   const [productDescription, setProductDescription] = useState("");
@@ -112,27 +112,31 @@ export default function Register() {
   const [classifierResult, setClassifierResult] = useState({});
   const [pricingData, setPricingData] = useState([
     {
-      id : "cake",
-      data : addMidpoint(generateRandom(5, 100)),
+      id: "cake",
+      data: addMidpoint(generateRandom(5, 100)),
     },
   ]);
   const [recommendPrice, setRecommendPrice] = useState(false);
   const supabase = useSupabaseClient();
 
   useEffect(() => {
-    (async () => { await loadModel("/models/food/model.json"); })();
+    (async () => {
+      await loadModel("/models/food/model.json");
+    })();
   }, []);
 
   useEffect(() => {
     if (router.isReady) {
       const getProducts = async () => {
-        const {id} = router.query;
+        const { id } = router.query;
 
         setLoading(true);
         // const { data, error } = await supabase.from("product").select("*");
         // select from supabase where store = brian
-        const {data, error} =
-            await supabase.from("product").select("*").match({store : id});
+        const { data, error } = await supabase
+          .from("product")
+          .select("*")
+          .match({ store: id });
 
         if (error) {
         } else {
@@ -143,35 +147,43 @@ export default function Register() {
 
       getProducts();
     }
-  }, [ router.isReady ]);
+  }, [router.isReady]);
 
   const createProduct = async () => {
     const newProduct = {
-      name : productName,
-      price : productPrice,
-      description : productDescription,
-      image_path : productImage,
-      store : router.query.id,
+      name: productName,
+      price: productPrice,
+      description: productDescription,
+      image_path: productImage,
+      store: router.query.id,
     };
     // add to supabase
-    supabase.from("product").insert(newProduct).then((response) => {});
+    supabase
+      .from("product")
+      .insert(newProduct)
+      .then((response) => {});
 
-    setProducts([...products, newProduct ]);
+    setProducts([...products, newProduct]);
   };
 
   const deleteProduct = (name) => {
     // delete from supabase
-    supabase.from("product").delete().match({name}).then((response) => {
-      const newProducts = products.filter((product) => product.name !== name);
-      setProducts(newProducts);
-    });
+    supabase
+      .from("product")
+      .delete()
+      .match({ name })
+      .then((response) => {
+        const newProducts = products.filter((product) => product.name !== name);
+        setProducts(newProducts);
+      });
   };
 
   const uploadImage = async (file) => {
     // upload image to supabase
     setUploaded(false);
-    const {data, error} =
-        await supabase.storage.from("product-images").upload(file.name, file);
+    const { data, error } = await supabase.storage
+      .from("product-images")
+      .upload(file.name, file);
     if (error) {
       setUploaded(true);
       return setProductImage("");
@@ -179,8 +191,8 @@ export default function Register() {
       setUploaded(true);
       console.log(data.path);
       setProductImage(
-          `https://malkpiqslwdctbpgjzzw.supabase.co/storage/v1/object/public/product-images/${
-              data.path}`);
+        `https://malkpiqslwdctbpgjzzw.supabase.co/storage/v1/object/public/product-images/${data.path}`
+      );
       setInference(true);
     }
   };
@@ -215,13 +227,26 @@ export default function Register() {
       <Layout>
         <Skeleton isLoaded={!loading}>
           <Flex
-  justifyContent = {"center"} alignItems = {"center"} width = {1000} maxWidth =
-      {"80%"} margin = {"auto"} padding = {12} flexDirection = {
-          "column"} boxShadow = {"2xl"} mt = {20} > < HStack
-  width = {"100%"} justifyContent = {"space-between"} alignItems = {"center"} px =
-      {20} >
-      <Heading className = {inter.className} mb = {7}>Manage your products <
-      /Heading>
+            justifyContent={"center"}
+            alignItems={"center"}
+            width={1000}
+            maxWidth={"80%"}
+            margin={"auto"}
+            padding={12}
+            flexDirection={"column"}
+            boxShadow={"2xl"}
+            mt={20}
+          >
+            {" "}
+            <HStack
+              width={"100%"}
+              justifyContent={"space-between"}
+              alignItems={"center"}
+              px={20}
+            >
+              <Heading className={inter.className} mb={7}>
+                Manage your products{" "}
+              </Heading>
 
               <Button
                 onClick={() => {
@@ -233,7 +258,6 @@ export default function Register() {
                 Go to store <Icon as={FaArrowRight} ml={2} />
               </Button>
             </HStack>
-
             <Flex
               width={300}
               maxWidth={"80%"}
@@ -250,7 +274,6 @@ export default function Register() {
                 <Icon as={FaSearch} position="absolute" top={3} right={3} />
               </FormControl>
             </Flex>
-
             <SimpleGrid
               spacing={4}
               templateColumns="repeat(auto-fill, minmax(250px, 1fr))"
