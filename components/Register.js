@@ -19,6 +19,9 @@ import {
   ModalOverlay,
   Select,
   Spinner,
+  Tag,
+  TagCloseButton,
+  TagLabel,
   Text,
   Textarea,
   VStack,
@@ -46,6 +49,8 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [inferring, setInferring] = useState(false);
+  const [keyword, setKeyword] = useState("");
+  const [keywords, setKeywords] = useState([]);
   const router = useRouter();
   const toast = useToast();
 
@@ -98,6 +103,17 @@ export default function Register() {
     const response = await autocomplete(prompt);
     setDescription(removeExtraSpaces(response));
     setInferring(false);
+  };
+
+  const generateDescriptionFromKeywords = async () => {
+    const description = await axios.post("http://localhost:8000/descriptions", {
+      keywords,
+    });
+    setDescription(capitaliseFirstLetter(description.data.description));
+  };
+
+  const capitaliseFirstLetter = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
   };
 
   return (
@@ -168,8 +184,56 @@ export default function Register() {
               />
             </FormControl>{" "}
             <FormControl>
+              <FormLabel>Keywords</FormLabel>
+              <HStack spacing={4} mb={4}>
+                {keywords.map((word) => (
+                  <Tag
+                    size={word}
+                    key={word}
+                    borderRadius="full"
+                    variant="solid"
+                    // randomColor
+                    colorScheme={"red"}
+                    padding={2}
+                  >
+                    <TagLabel>{word}</TagLabel>
+                    <TagCloseButton
+                      onClick={() =>
+                        setKeywords(keywords.filter((w) => w !== word))
+                      }
+                    />
+                  </Tag>
+                ))}
+              </HStack>
+              <HStack>
+                <Input
+                  type="text"
+                  value={keyword}
+                  onChange={(e) => setKeyword(e.target.value)}
+                  placeholder="Add keywords that describe your business"
+                  width={"80%"}
+                />
+                <Button
+                  onClick={() => {
+                    setKeywords([...keywords, keyword]);
+                    setKeyword("");
+                  }}
+                >
+                  Add
+                </Button>
+              </HStack>
+            </FormControl>
+            {keywords.length >= 1 && (
+              <Button
+                onClick={() => generateDescriptionFromKeywords()}
+                colorScheme="green"
+              >
+                Generate Description
+              </Button>
+            )}
+            <FormControl>
               <FormLabel>Description</FormLabel>
-              {description.split(" ").length >= 5 && (
+              {/* {description.split(" ").length >= 5 && (
                 <Button
                   variant={"link"}
                   color={"green"}
@@ -178,7 +242,7 @@ export default function Register() {
                 >
                   Auto-generate a description.
                 </Button>
-              )}
+              )} */}
               {inferring ? (
                 <Flex
                   height={100}
