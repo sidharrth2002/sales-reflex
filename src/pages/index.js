@@ -1,18 +1,54 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Store from "components/Store";
 import Register3D from "components/Register3D";
 import { useRouter } from "next/router";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
 import Link from "next/link";
+import { useCursor } from "@react-three/drei";
 
-const inter = Inter({ subsets: ["latin"] });
+function Sphere() {
+  const ref = useRef();
+  const [active, setActive] = useState(false);
+  const [zoom, set] = useState(true);
+  useCursor(active);
+  useFrame((state) => {
+    ref.current.position.y = Math.sin(state.clock.getElapsedTime() / 10) / 10;
+    state.camera.position.lerp(
+      { x: zoom ? 0.2 : -3, y: zoom ? 1 : 1.8, z: zoom ? 4 : 5 },
+      0.03
+    );
+    state.camera.lookAt(0, 0, 0);
+  });
+  return (
+    <mesh
+      ref={ref}
+      receiveShadow
+      // castShadow
+      onClick={() => set(!zoom)}
+      onPointerOver={() => setActive(true)}
+      onPointerOut={() => setActive(false)}
+      position={[-2.5, 0.25, -0.9]}
+    >
+      <sphereGeometry args={[0.1, 20, 20]} />
+      <meshStandardMaterial
+        // color={active ? "#041b74" : "#041b74"}
+        color="#041b74"
+        // clearcoat={1}
+        // clearcoatRoughness={0}
+        // roughness={0}
+        // metalness={0.25}
+      />
+    </mesh>
+  );
+}
 
 export default function Home() {
   const router = useRouter();
   const [wildcard, setWildcard] = useState("");
+  const [right, setRight] = useState(false);
 
   useEffect(() => {
     const { host } = window.location;
@@ -40,10 +76,12 @@ export default function Home() {
               fov: 45,
               near: 0.1,
               far: 2000,
-              position: [-3, 1.5, 4],
+              // position: [-3, 1.5, 4],
+              position: right ? [0, 1, 5] : [-3, 1.5, 4],
             }}
           >
-            <Register3D />
+            <Register3D right={right} setRight={setRight} />
+            <Sphere />
           </Canvas>
         </div>
       )}

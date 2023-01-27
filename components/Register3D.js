@@ -8,7 +8,7 @@ import {
   useGLTF,
 } from "@react-three/drei";
 
-export default function Experience() {
+export default function Register3D({ right, setRight }) {
   const computer = useGLTF(
     "https://vazxmixjsiawhamofees.supabase.co/storage/v1/object/public/models/macbook/model.gltf"
   );
@@ -60,6 +60,10 @@ export default function Experience() {
           </primitive>
 
           <Text
+            onClick={() => {
+              setRight(!right);
+            }}
+            className="cursor-pointer"
             font="./bangers-v20-latin-regular.woff"
             fontSize={1}
             position={[2, 0.75, 0.75]}
