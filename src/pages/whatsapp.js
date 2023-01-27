@@ -149,8 +149,8 @@ export default function Whatsapp() {
           </div>
           <Link
             target={`_blank`}
-            href={`https://api.whatsapp.com/send?phone=${
-              store?.mobile_number
+            href={`https://web.whatsapp.com/send?phone=${
+              +60108375380
             }&text=Hi, I am ${name},%0a%0d%0a
 
 I am interested in the following products:
