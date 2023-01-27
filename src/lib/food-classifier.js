@@ -1,9 +1,9 @@
 import * as tf from "@tensorflow/tfjs";
 
 export const nasi_lemak = {
-  name: "Nasi Lemak",
+  name: "Cookies",
   description:
-    "a dish originating in Malay cuisine that consists of fragrant rice cooked in coconut milk and pandan leaf. It is commonly found in Malaysia, where it is considered the national dish.[7][8][9] It is also the native dish in neighbouring areas with significant Malay populations such as Singapore,[10] Brunei, and Southern Thailand.",
+    "Salted double-chocolate chip cookies with a chewy center and crisp edges, baked to perfection.",
 };
 
 const classnames = [
