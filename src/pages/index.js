@@ -17,7 +17,7 @@ function Sphere() {
   useFrame((state) => {
     ref.current.position.y = Math.sin(state.clock.getElapsedTime() / 10) / 10;
     state.camera.position.lerp(
-      { x: zoom ? 0.2 : -3, y: zoom ? 1 : 1.8, z: zoom ? 4 : 5 },
+      { x: zoom ? 0.2 : -3, y: zoom ? 0.5 : 1.8, z: zoom ? 3 : 5 },
       0.03
     );
     state.camera.lookAt(0, 0, 0);
@@ -30,16 +30,16 @@ function Sphere() {
       onClick={() => set(!zoom)}
       onPointerOver={() => setActive(true)}
       onPointerOut={() => setActive(false)}
-      position={[-2.5, 0.25, -0.9]}
+      position={[1.3, 0.25, -0.4]}
     >
       <sphereGeometry args={[0.1, 20, 20]} />
       <meshStandardMaterial
         // color={active ? "#041b74" : "#041b74"}
         color="#041b74"
-        // clearcoat={1}
-        // clearcoatRoughness={0}
-        // roughness={0}
-        // metalness={0.25}
+        clearcoat={1}
+        clearcoatRoughness={0}
+        roughness={0}
+        metalness={0.25}
       />
     </mesh>
   );
