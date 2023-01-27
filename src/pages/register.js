@@ -38,7 +38,7 @@ import { slugify } from "../utils";
 import { useRouter } from "next/router";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export default function Register() {
   const supabase = useSupabaseClient();

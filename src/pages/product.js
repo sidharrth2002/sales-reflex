@@ -251,7 +251,7 @@ export default function Register() {
                   <span className="text-primary-1-light">Total Pr</span>oducts
                 </h1>
                 <div className="flex items-center justify-between">
-                  <h5 className="text-[8px]">Updated last tuesday</h5>
+                  <h5 className="text-[13px]">Updated last tuesday</h5>
                   <div className="flex items-center gap-1 text-primary-1-light">
                     <BiUpArrow className="w-3 h-3" />
                     <h5 className="text-[12px] font-bold">15.2 %</h5>
@@ -279,7 +279,7 @@ export default function Register() {
                   Tag
                 </h1>
                 <div className="flex items-center justify-between">
-                  <h5 className="text-[8px]">Updated last tuesday</h5>
+                  <h5 className="text-[13px]">Updated last tuesday</h5>
                   <div className="flex items-center gap-1 text-primary-1-light">
                     <BiUpArrow className="w-3 h-3" />
                     <h5 className="text-[12px] font-bold">8.2 %</h5>

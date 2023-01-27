@@ -171,7 +171,7 @@ export default function Store() {
                       })
                       .then((response) => {});
                     window.open(
-                      `https://api.whatsapp.com/send?phone=${store?.mobile_number}`,
+                      `https://web.whatsapp.com/send?phone=${+60108375380}`,
                       "_blank"
                     );
                   }}
