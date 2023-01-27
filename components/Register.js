@@ -40,7 +40,7 @@ import { slugify } from "../src/utils";
 import { useRouter } from "next/router";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
 
-const inter = Inter({ subsets: ["latin"] });
+// const inter = Inter({ subsets: ["latin"] });
 
 export default function Register() {
   const supabase = useSupabaseClient();
@@ -53,7 +53,6 @@ export default function Register() {
   const [inferring, setInferring] = useState(false);
   const [keyword, setKeyword] = useState("");
   const [keywords, setKeywords] = useState([]);
-  const [descriptionLoading, setDescriptionLoading] = useState(false);
   const router = useRouter();
   const toast = useToast();
 
@@ -112,7 +111,7 @@ export default function Register() {
   };
 
   const generateDescriptionFromKeywords = async () => {
-    setDesc;
+    setInferring(true);
     const description = await axios.post(
       `${process.env.NEXT_PUBLIC_API_URL}/descriptions`,
       {
@@ -120,6 +119,7 @@ export default function Register() {
       }
     );
     setDescription(capitaliseFirstLetter(description.data.description));
+    setInferring(false);
   };
 
   const capitaliseFirstLetter = (str) => {
@@ -153,7 +153,7 @@ export default function Register() {
           <Heading
             color={"#0067b1"}
             as={"h2"}
-            className={inter.className}
+            // className={inter.className}
             fontSize="4xl"
             mb={4}
           >
@@ -241,6 +241,7 @@ export default function Register() {
                 </Button>
               </HStack>
             </FormControl>
+
             {keywords.length >= 1 && (
               <Button
                 onClick={() => generateDescriptionFromKeywords()}
