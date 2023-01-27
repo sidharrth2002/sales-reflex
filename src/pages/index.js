@@ -12,7 +12,7 @@ import { useCursor } from "@react-three/drei";
 function Sphere() {
   const ref = useRef();
   const [active, setActive] = useState(false);
-  const [zoom, set] = useState(true);
+  const [zoom, set] = useState(false);
   useCursor(active);
   useFrame((state) => {
     ref.current.position.y = Math.sin(state.clock.getElapsedTime() / 10) / 10;
@@ -26,7 +26,7 @@ function Sphere() {
     <mesh
       ref={ref}
       receiveShadow
-      // castShadow
+      castShadow
       onClick={() => set(!zoom)}
       onPointerOver={() => setActive(true)}
       onPointerOut={() => setActive(false)}
