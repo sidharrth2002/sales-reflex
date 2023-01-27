@@ -118,14 +118,13 @@ export default function Register() {
   ]);
   const [recommendPrice, setRecommendPrice] = useState(false);
 
-  // const [wildcard, setWildcard] = useState("");
+  const [wildcard, setWildcard] = useState("");
 
-  // useEffect(() => {
-  //   const { host } = window.location;
-  //   let isDev = host.includes("localhost");
-  //   let _wildcard = host.split(".")[0];
-  //   setWildcard(_wildcard);
-  // }, []);
+  useEffect(() => {
+    const { host } = window.location;
+    let _wildcard = host.split(".")[0];
+    setWildcard(_wildcard);
+  }, []);
 
   // useEffect(() => {
   //   (async () => {
@@ -167,7 +166,8 @@ export default function Register() {
       price: productPrice,
       description: productDescription,
       image_path: productImage,
-      store: router.query.id,
+      // store: router.query.id,
+      store: wildcard,
     };
     // add to supabase
     supabase

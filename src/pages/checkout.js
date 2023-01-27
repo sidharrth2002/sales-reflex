@@ -45,6 +45,8 @@ export default function Store() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const supabase = useSupabaseClient();
   const [wildcard, setWildcard] = useState("");
+  const [name, setName] = useState("");
+  const [sendProof, setSendProof] = useState(true);
 
   useEffect(() => {
     const { host } = window.location;
@@ -109,6 +111,7 @@ export default function Store() {
                 PayDirect powered by RHB Bank
               </button>
               <div className="text-sm font-bold">or</div>
+
               <div className="relative w-full">
                 <div className="grid w-full grid-cols-7 gap-4 p-2 text-xs bg-gray-100 border rounded-t-md">
                   <div className="col-span-2">Account Details</div>
@@ -130,13 +133,54 @@ export default function Store() {
                 {copy.length > 0 && (
                   <div className="mt-2 text-xs text-green-400">{`Copied Successfully! ${copy}`}</div>
                 )}
-                <Link
-                  href={`https://api.whatsapp.com/send?phone=${store?.mobile_number}`}
-                  target={"_blank"}
-                  className="flex items-center justify-center w-full px-5 py-2 mt-8 mb-3 text-sm font-medium text-white bg-blue-500 rounded-md shadow"
+
+                <div className="w-full mt-10 text-sm">
+                  <div className="font-bold">Your Name</div>
+                  <input
+                    type="text"
+                    className="w-full px-3 py-2 mt-3 border rounded"
+                    placeholder="name"
+                    onChange={(e) => {
+                      setName(e.target.value);
+                    }}
+                    value={name}
+                  />
+                </div>
+                <button
+                  // href={`https://api.whatsapp.com/send?phone=${store?.mobile_number}`}
+                  // target={"_blank"}
+                  disabled={!sendProof}
+                  onClick={async () => {
+                    setSendProof(false);
+                    // add to supabase
+                    supabase
+                      .from("order")
+                      .insert({
+                        name,
+                        amount: cart
+                          ?.reduce((p, c) => p + c?.number * c?.price, 0)
+                          .toFixed(2),
+                        store: store?.slug,
+                        detail: cart.map((c) => {
+                          return {
+                            name: c?.name,
+                            price: c?.price,
+                            number: c?.number,
+                          };
+                        }),
+                      })
+                      .then((response) => {});
+                    window.open(
+                      `https://api.whatsapp.com/send?phone=${store?.mobile_number}`,
+                      "_blank"
+                    );
+                  }}
+                  className="flex items-center justify-center w-full px-5 py-2 mt-8 mb-3 text-sm font-medium text-white bg-blue-500 rounded-md shadow disabled:bg-gray-400"
                 >
-                  {"Send Proof of Payment".toUpperCase()}
-                </Link>
+                  {!sendProof
+                    ? "Thank You".toUpperCase()
+                    : "Send Proof of Payment".toUpperCase()}
+                </button>
               </div>
             </ModalBody>
 

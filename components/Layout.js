@@ -93,9 +93,9 @@ export default function Layout({ children, pageMeta }) {
               <NavItem href="/home" logo={true}>
                 <BiWifi2 className="rotate-45 w-7 h-7 text-primary-1-light" />
               </NavItem>
-              <NavItem href="/home" tooltip="Home" className="!p-3 mb-2">
+              {/* <NavItem href="/home" tooltip="Home" className="!p-3 mb-2">
                 <BiHome className="w-5 h-5" />
-              </NavItem>
+              </NavItem> */}
             </div>
             <div className="w-full space-y-2">
               <NavItem
