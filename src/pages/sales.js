@@ -37,8 +37,6 @@ export default function Sales() {
   const [order, setOrder] = useState([]);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [current, setCurrent] = useState({}); // current invoice, use to show modal
-  console.log(current);
-  console.log(order);
 
   useEffect(() => {
     const { host } = window.location;
