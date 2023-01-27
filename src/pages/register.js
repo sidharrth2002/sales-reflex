@@ -49,10 +49,10 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [inferring, setInferring] = useState(false);
-  const router = useRouter();
-  const toast = useToast();
   const [keyword, setKeyword] = useState("");
   const [keywords, setKeywords] = useState([]);
+  const router = useRouter();
+  const toast = useToast();
 
   const {
     isOpen: isOpenModal,
@@ -69,7 +69,7 @@ export default function Register() {
         category,
         mobile_number: phoneNumber,
         owner: "Sidharrth Nagappan",
-        slug: slugify(name),
+        slug: slugify(slug),
       })
       .then((data) => {
         console.log(data);
@@ -115,7 +115,11 @@ export default function Register() {
         keywords,
       }
     );
-    setDescription(description.data.description);
+    setDescription(capitaliseFirstLetter(description.data.description));
+  };
+
+  const capitaliseFirstLetter = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
   };
 
   return (
@@ -126,108 +130,108 @@ export default function Register() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Flex
-        minH={"100vh"}
-        justifyContent={"center"}
-        alignItems={"center"}
-        width={"100%"}
-      >
-        <Box
-          //   maxW={"100%"}
-          display={"flex"}
-          justifyContent="center"
-          alignItems={"center"}
-          margin={"auto"}
-          flexDirection={"column"}
-          boxShadow={"2xl"}
-          padding={12}
-        >
-          <Heading
-            color={"#0067b1"}
-            as={"h2"}
-            className={inter.className}
-            fontSize="4xl"
-            mb={4}
-          >
-            Registrations
-          </Heading>
-          <VStack width={400} spacing={4} maxWidth={"100%"}>
-            <FormControl>
-              <FormLabel>Business Name</FormLabel>
-              <Input
-                type="name"
-                onChange={(e) => setName(e.target.value)}
-                value={name}
-              />
-              <FormHelperText>Give your store a cool name.</FormHelperText>
-            </FormControl>{" "}
-            <FormControl>
-              <FormLabel>Domain</FormLabel>
-              <Input
-                type="slug"
-                onChange={(e) => setSlug(e.target.value)}
-                value={slug}
-              />
-              <FormHelperText>Give your store a cool name.</FormHelperText>
-            </FormControl>{" "}
-            <FormControl>
-              <FormLabel>Phone Number</FormLabel>
-              <Input
-                name="phoneNumber"
-                value={phoneNumber}
-                onChange={(e) => setPhoneNumber(e.target.value)}
-              />
-            </FormControl>{" "}
-            <FormControl>
-              <FormLabel>Keywords</FormLabel>
-              <HStack spacing={4} mb={4}>
-                {keywords.map((word) => (
-                  <Tag
-                    size={word}
-                    key={word}
-                    borderRadius="full"
-                    variant="solid"
-                    // randomColor
-                    colorScheme={
-                      ["red", "green", "blue", "yellow", "purple"][
-                        Math.floor(
-                          Math.random() *
-                            ["red", "green", "blue", "yellow", "purple"].length
-                        )
-                      ]
-                    }
-                    padding={2}
-                  >
-                    <TagLabel>{word}</TagLabel>
-                    <TagCloseButton
-                      onClick={() =>
-                        setKeywords(keywords.filter((w) => w !== word))
-                      }
-                    />
-                  </Tag>
-                ))}
-              </HStack>
-              <HStack>
+      <div className="flex min-h-[100vh] justify-center items-center w-full py-10">
+        <div className="relative">
+          <div className="absolute rounded-full bg-primary-4-light -top-4 -z-10 opacity-30 -left-4 w-72 h-72 mix-blend-multiply filter blur-xl animate-blob" />
+          <div className="absolute rounded-full bg-primary-1-light -bottom-10 -z-10 opacity-30 -right-12 w-72 h-72 mix-blend-multiply filter blur-xl animate-blob-2000" />
+          <div className="z-20 flex flex-col items-center justify-center p-8 bg-white shadow-2xl">
+            <Heading color={"#0067b1"} as={"h2"} fontSize="4xl" mb={4}>
+              <span className="text-primary-4-light">Registra</span>
+              <span className="text-primary-1-light">tion</span>
+            </Heading>
+            <VStack width={400} spacing={5} maxWidth={"100%"}>
+              <FormControl>
+                <FormLabel className="text-primary-4-light">
+                  Business Name
+                </FormLabel>
                 <Input
-                  type="text"
-                  value={keyword}
-                  onChange={(e) => setKeyword(e.target.value)}
-                  placeholder="Add keywords that describe your business"
-                  width={"80%"}
+                  type="name"
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
                 />
+                <FormHelperText>Give your store a cool name.</FormHelperText>
+              </FormControl>{" "}
+              <FormControl>
+                <FormLabel className="text-primary-4-light">Domain</FormLabel>
+                <div className="flex items-center gap-1">
+                  <Input
+                    className="w-full text-right"
+                    placeholder="lol"
+                    type="slug"
+                    onChange={(e) => setSlug(slugify(e.target.value))}
+                    value={slug}
+                  />
+                  <div className="px-1">.salesreflex.com</div>
+                </div>
+                {/* <FormHelperText>
+                Preview: {slug ? `${slugify(slug)}.salesreflex.com` : "--"}
+              </FormHelperText> */}
+              </FormControl>{" "}
+              <FormControl>
+                <FormLabel className="text-primary-4-light">
+                  Phone Number
+                </FormLabel>
+                <Input
+                  name="phoneNumber"
+                  value={phoneNumber}
+                  onChange={(e) => setPhoneNumber(e.target.value)}
+                />
+              </FormControl>{" "}
+              <FormControl>
+                <FormLabel className="text-primary-4-light">Keywords</FormLabel>
+                <HStack spacing={4} mb={4}>
+                  {keywords.map((word) => (
+                    <Tag
+                      size={word}
+                      key={word}
+                      borderRadius="full"
+                      variant="solid"
+                      // randomColor
+                      colorScheme={"teal"}
+                      className="bg-primary-4-light"
+                      padding={2}
+                    >
+                      <TagLabel>{word}</TagLabel>
+                      <TagCloseButton
+                        onClick={() =>
+                          setKeywords(keywords.filter((w) => w !== word))
+                        }
+                      />
+                    </Tag>
+                  ))}
+                </HStack>
+                <HStack>
+                  <Input
+                    type="text"
+                    value={keyword}
+                    onChange={(e) => setKeyword(e.target.value)}
+                    placeholder="Add keywords that describe your business"
+                    width={"80%"}
+                  />
+                  <Button
+                    onClick={() => {
+                      setKeywords([...keywords, keyword]);
+                      setKeyword("");
+                    }}
+                  >
+                    Add
+                  </Button>
+                </HStack>
+              </FormControl>
+              {keywords.length >= 1 && (
                 <Button
-                  onClick={() => {
-                    setKeywords([...keywords, keyword]);
-                    setKeyword("");
-                  }}
+                  onClick={() => generateDescriptionFromKeywords()}
+                  colorScheme="teal"
+                  className="w-full"
                 >
-                  Add
+                  Generate Description
                 </Button>
-              </HStack>
-            </FormControl>
-            <FormControl>
-              <FormLabel>Description</FormLabel>
-              {/* {description.split(" ").length >= 5 && (
+              )}
+              <FormControl>
+                <FormLabel className="text-primary-4-light">
+                  Description
+                </FormLabel>
+                {/* {description.split(" ").length >= 5 && (
                 <Button
                   variant={"link"}
                   color={"green"}
@@ -237,60 +241,64 @@ export default function Register() {
                   Auto-generate a description.
                 </Button>
               )} */}
-              {inferring ? (
-                <Flex
-                  height={100}
-                  alignItems={"center"}
-                  justifyContent={"center"}
+                {inferring ? (
+                  <Flex
+                    height={100}
+                    alignItems={"center"}
+                    justifyContent={"center"}
+                  >
+                    <Spinner />
+                  </Flex>
+                ) : (
+                  <Textarea
+                    name="description"
+                    value={description}
+                    onChange={(e) => setDescription(e.target.value)}
+                  />
+                )}
+                <FormHelperText>
+                  What do you do? What sets you apart?
+                </FormHelperText>
+              </FormControl>{" "}
+              <FormControl>
+                <FormLabel className="text-primary-4-light">
+                  What do you sell?
+                </FormLabel>
+                <Select
+                  value={category}
+                  variant={"filled"}
+                  onChange={(e) => setCategory(e.target.value)}
                 >
-                  <Spinner />
-                </Flex>
-              ) : (
-                <Textarea
-                  name="description"
-                  value={description}
-                  onChange={(e) => setDescription(e.target.value)}
-                />
-              )}
-              <FormHelperText>
-                What do you do? What sets you apart?
-              </FormHelperText>
-            </FormControl>{" "}
-            <FormControl>
-              <FormLabel>What do you sell?</FormLabel>
-              <Select
-                value={category}
-                variant={"filled"}
-                onChange={(e) => setCategory(e.target.value)}
-              >
-                <option value="Food">Food</option>
-                <option value="Services">Services</option>
-              </Select>
-            </FormControl>{" "}
-          </VStack>
-          <Button
-            variant={"solid"}
-            colorScheme={"purple"}
-            mt={6}
-            onClick={() => {
-              if (name === "" || description === "" || category === "") {
-                return;
-              }
-              createStore();
-              toast({
-                title: "Store created!",
-                description: "We've created your store for you.",
-                status: "success",
-                duration: 9000,
-                isClosable: true,
-              });
-              onOpenModal();
-            }}
-          >
-            <Text color={"white"}>Proceed</Text>
-          </Button>
-        </Box>
-      </Flex>
+                  <option value="Food">Food</option>
+                  <option value="Services">Services</option>
+                </Select>
+              </FormControl>{" "}
+            </VStack>
+            <Button
+              variant={"solid"}
+              colorScheme={"teal"}
+              className="w-full"
+              mt={6}
+              onClick={() => {
+                if (name === "" || description === "" || category === "") {
+                  return;
+                }
+                createStore();
+                toast({
+                  title: "Store created!",
+                  description: "We've created your store for you.",
+                  status: "success",
+                  duration: 9000,
+                  isClosable: true,
+                });
+                onOpenModal();
+              }}
+            >
+              <Text color={"white"}>Proceed</Text>
+            </Button>
+          </div>
+        </div>
+      </div>
 
       <Modal isOpen={isOpenModal} onClose={onCloseModal}>
         <ModalOverlay />
