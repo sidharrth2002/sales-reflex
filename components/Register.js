@@ -80,9 +80,12 @@ export default function Register() {
   };
 
   const autocomplete = async (prompt) => {
-    const { error, data } = await axios.post("http://localhost:8000/gpt2", {
-      text: prompt,
-    });
+    const { error, data } = await axios.post(
+      `${process.env.NEXT_API_URL}/gpt2`,
+      {
+        text: prompt,
+      }
+    );
     if (error) {
       console.log(error);
     } else {
@@ -106,9 +109,12 @@ export default function Register() {
   };
 
   const generateDescriptionFromKeywords = async () => {
-    const description = await axios.post("http://localhost:8000/descriptions", {
-      keywords,
-    });
+    const description = await axios.post(
+      `${process.env.NEXT_API_URL}/descriptions`,
+      {
+        keywords,
+      }
+    );
     setDescription(capitaliseFirstLetter(description.data.description));
   };
 

@@ -215,9 +215,12 @@ export default function Register() {
   };
 
   const generateDescriptionFromKeywords = async () => {
-    const description = await axios.post("http://localhost:8000/descriptions", {
-      keywords,
-    });
+    const description = await axios.post(
+      `${process.env.NEXT_API_URL}/descriptions`,
+      {
+        keywords,
+      }
+    );
     setProductDescription(description.data.description);
   };
 
