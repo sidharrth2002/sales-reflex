@@ -16,7 +16,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import TimeAgo from "javascript-time-ago";
 import { createBrowserSupabaseClient } from "@supabase/auth-helpers-nextjs";
 import en from "javascript-time-ago/locale/en.json";
-import theme from "./theme";
+import theme from "../lib/theme";
 import { useState } from "react";
 
 TimeAgo.addDefaultLocale(en);
