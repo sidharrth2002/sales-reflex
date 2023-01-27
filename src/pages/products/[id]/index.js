@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   Card,
   CardBody,
@@ -39,15 +38,14 @@ import {
   FaSearch,
   FaTrash,
 } from "react-icons/fa";
-// import scatter plot from nivo
-import { Node, ResponsiveScatterPlot } from "@nivo/scatterplot";
 import { loadModel, nasi_lemak, predict } from "@/lib/food-classifier";
 import { useEffect, useRef, useState } from "react";
 
 import { FileUploader } from "react-drag-drop-files";
-import Head from "next/head";
 import { Inter } from "@next/font/google";
 import Layout from "components/Layout";
+// import scatter plot from nivo
+import { ResponsiveScatterPlot } from "@nivo/scatterplot";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useSupabaseClient } from "@supabase/auth-helpers-react";
