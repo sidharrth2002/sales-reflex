@@ -1,8 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
-import Layout from "components/Layout";
 import { useEffect, useState } from "react";
 import Store from "components/Store";
 import Register3D from "components/Register3D";
