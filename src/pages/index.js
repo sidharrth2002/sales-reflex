@@ -6,7 +6,6 @@ import Layout from "components/Layout";
 import { useEffect, useState } from "react";
 import Store from "components/Store";
 import Register3D from "components/Register3D";
-import Register from "components/Register";
 import { useRouter } from "next/router";
 import { Canvas } from "@react-three/fiber";
 import Link from "next/link";
