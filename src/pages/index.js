@@ -29,6 +29,9 @@ export default function Home() {
         <Store />
       ) : (
         <div className="w-[100vw] h-[100vh] relative">
+          <Head>
+            <title>SalesReflex - Registration</title>
+          </Head>
           <Link
             href="/register"
             className="absolute z-10 px-6 py-2 text-white border border-white cursor-pointer hover:text-white hover:bg-primary-4-light top-5 right-5"
