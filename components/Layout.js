@@ -68,7 +68,7 @@ export default function Layout({ children, pageMeta }) {
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
-        <link href="/static/favicons/favicon.ico" rel="shortcut icon" />
+        <link href="/favicon.ico" rel="shortcut icon" />
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"

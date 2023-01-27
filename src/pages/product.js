@@ -228,7 +228,7 @@ export default function Register() {
 
   return (
     <>
-      <Layout>
+      <Layout pageMeta={{ title: "SalesReflex - Product" }}>
         <div className="grid w-full lg:grid-cols-6 gap-5 min-h-[92vh] py-4">
           <section className="col-span-2 pr-4 lg:border-r">
             <h4 className="flex items-center gap-2 text-base font-bold md:text-lg">
@@ -495,18 +495,28 @@ export default function Register() {
                     data={[
                       {
                         id: "1",
-                        data: generateRandom(20, 100, 60, 20),
+                        data: generateRandom(
+                          20,
+                          100,
+                          Number(productPrice) ?? 5,
+                          20
+                        ),
                       },
                       {
                         id: "2",
-                        data: generateRandom(20, 100, 60, 20),
+                        data: generateRandom(
+                          20,
+                          100,
+                          Number(productPrice) ?? 5,
+                          20
+                        ),
                       },
                       {
                         id: "3",
                         data: [
                           {
                             x: 100,
-                            y: 100,
+                            y: 15,
                           },
                         ],
                       },

@@ -58,7 +58,7 @@ export default function Sales() {
   }, [router.isReady, supabase]);
 
   return (
-    <Layout>
+    <Layout pageMeta={{ title: "SalesReflex - Sales" }}>
       <Modal
         isOpen={isOpen}
         onClose={() => {
@@ -211,7 +211,7 @@ export default function Sales() {
               </select>
             </div>
           </div>
-          <div className="w-full h-[25vh]">
+          <div className="w-full 3xl:h-[25vh] h-[28vh]">
             <LineChart data={[sales_data[1]]} />
           </div>
         </div>
@@ -236,7 +236,7 @@ export default function Sales() {
               </select>
             </div>
           </div>
-          <div className="w-full h-[25vh]">
+          <div className="w-full 3xl:h-[25vh] h-[28vh]">
             <LineChart data={[sales_data[2]]} />
           </div>
         </div>

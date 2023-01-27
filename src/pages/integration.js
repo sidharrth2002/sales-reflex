@@ -7,7 +7,7 @@ import { BiCabinet, BiPlug } from "react-icons/bi";
 export default function Integrations() {
   const [integration, setIntegration] = useState(data);
   return (
-    <Layout>
+    <Layout pageMeta={{ title: "SalesReflex - Integrations" }}>
       <div className="grid w-full lg:grid-cols-5 gap-5 min-h-[92vh] py-4">
         <section className="pr-4 lg:border-r">
           <h4 className="text-base font-bold md:text-lg">Integrations</h4>
