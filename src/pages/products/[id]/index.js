@@ -214,7 +214,7 @@ export default function Register() {
 
   const generateDescriptionFromKeywords = async () => {
     const description = await axios.post(
-      `${process.env.NEXT_API_URL}/descriptions`,
+      `${process.env.NEXT_PUBLIC_API_URL}/descriptions`,
       {
         keywords,
       }

@@ -81,7 +81,7 @@ export default function Register() {
 
   const autocomplete = async (prompt) => {
     const { error, data } = await axios.post(
-      `${process.env.NEXT_API_URL}/gpt2`,
+      `${process.env.NEXT_PUBLIC_API_URL}/gpt2`,
       {
         text: prompt,
       }
@@ -110,7 +110,7 @@ export default function Register() {
 
   const generateDescriptionFromKeywords = async () => {
     const description = await axios.post(
-      `${process.env.NEXT_API_URL}/descriptions`,
+      `${process.env.NEXT_PUBLIC_API_URL}/descriptions`,
       {
         keywords,
       }
