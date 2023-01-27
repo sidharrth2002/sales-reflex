@@ -118,3 +118,7 @@ html {
 .thin-scrollbar::-webkit-scrollbar-thumb:hover {
   background: rgb(179, 179, 179);
 }
+
+* {
+  font-family: "Inter" !important;
+}

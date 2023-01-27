@@ -109,6 +109,7 @@ export default function Register() {
   };
 
   const generateDescriptionFromKeywords = async () => {
+    setInferring(true);
     const description = await axios.post(
       `${process.env.NEXT_PUBLIC_API_URL}/descriptions`,
       {
@@ -116,6 +117,7 @@ export default function Register() {
       }
     );
     setDescription(capitaliseFirstLetter(description.data.description));
+    setInferring(false);
   };
 
   const capitaliseFirstLetter = (str) => {
@@ -179,7 +181,15 @@ export default function Register() {
               </FormControl>{" "}
               <FormControl>
                 <FormLabel className="text-primary-4-light">Keywords</FormLabel>
-                <HStack spacing={4} mb={4}>
+
+                <Flex
+                  // spacing={4}
+                  mb={4}
+                  wrap="wrap"
+                  maxWidth={"90%"}
+                  // justifyContent={"center"}
+                  alignItems={"center"}
+                >
                   {keywords.map((word) => (
                     <Tag
                       size={word}
@@ -187,9 +197,9 @@ export default function Register() {
                       borderRadius="full"
                       variant="solid"
                       // randomColor
-                      colorScheme={"teal"}
-                      className="bg-primary-4-light"
+                      backgroundColor={"teal"}
                       padding={2}
+                      margin={2}
                     >
                       <TagLabel>{word}</TagLabel>
                       <TagCloseButton
@@ -199,7 +209,7 @@ export default function Register() {
                       />
                     </Tag>
                   ))}
-                </HStack>
+                </Flex>
                 <HStack>
                   <Input
                     type="text"
@@ -309,12 +319,12 @@ export default function Register() {
             <Box>
               <Text mb={3}>Public URL:</Text>
               <HStack mb={5}>
-                <Code padding={4}>https://{slugify(name)}.salesreflex.com</Code>
+                <Code padding={4}>https://{slug}.salesreflex.com</Code>
                 <Icon
                   as={FaClipboard}
                   onClick={() => {
                     navigator.clipboard.writeText(
-                      `https://${slugify(name)}.salesreflex.com`
+                      `https://${slug}.salesreflex.com`
                     );
                   }}
                 />
