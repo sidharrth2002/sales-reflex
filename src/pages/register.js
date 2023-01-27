@@ -354,7 +354,7 @@ export default function Register() {
               variant="ghost"
               onClick={() => {
                 window.open(
-                  `${slugify(name)}.salesreflex.com/product`,
+                  `${slug}.salesreflex.com/product`,
                   "_blank"
                 );
                 // router.push(`${slugify(name)}.salesreflex.com/product`);
