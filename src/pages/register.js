@@ -335,7 +335,7 @@ export default function Register() {
               alignSelf={"flex-end"}
               variant="ghost"
               onClick={() => {
-                router.push(`/products/${slugify(name)}`);
+                router.push(`${slugify(name)}.salesreflex.com/product`);
               }}
             >
               Go to store
