@@ -353,7 +353,11 @@ export default function Register() {
               alignSelf={"flex-end"}
               variant="ghost"
               onClick={() => {
-                router.push(`${slugify(name)}.salesreflex.com/product`);
+                window.open(
+                  `${slugify(name)}.salesreflex.com/product`,
+                  "_blank"
+                );
+                // router.push(`${slugify(name)}.salesreflex.com/product`);
               }}
             >
               Go to store
