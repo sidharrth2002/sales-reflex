@@ -90,7 +90,14 @@ export default function Layout({ children, pageMeta }) {
         <nav className="fixed z-50 !bg-white w-[60px] border-r-2 border-r-gray-50 h-[100vh] flex flex-col items-center justify-between py-2">
           <div>
             <div className="mb-2 border-b border-b-gray-100">
-              <NavItem href="/home" logo={true}>
+              <NavItem
+                href={
+                  process.env.NODE_ENV === "development"
+                    ? "http://localhost:3000"
+                    : "https://salesreflex.com"
+                }
+                logo={true}
+              >
                 <BiWifi2 className="rotate-45 w-7 h-7 text-primary-1-light" />
               </NavItem>
               {/* <NavItem href="/home" tooltip="Home" className="!p-3 mb-2">

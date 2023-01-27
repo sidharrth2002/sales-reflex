@@ -55,16 +55,15 @@ import { useSupabaseClient } from "@supabase/auth-helpers-react";
 const inter = Inter({ subsets: ["latin"] });
 
 // function to generate random list of numbers from x1 to x2
-const generateRandom = (x1, x2, num = 100) => {
-  let list = [];
-  for (let i = 0; i < num; i++) {
-    let num = Math.floor(Math.random() * (x2 - x1 + 1)) + x1;
-    list.push({
-      x: "c" + i,
-      y: num,
+const generateRandom = (x1, x2, target, num = 100) => {
+  return Array(num)
+    .fill(1)
+    .map((d) => {
+      return {
+        x: Math.floor(Math.random() * (x2 - x1 + 1)) + x1,
+        y: target,
+      };
     });
-  }
-  return list;
 };
 
 // function to add midpoint to a list of numbers
@@ -230,8 +229,8 @@ export default function Register() {
   return (
     <>
       <Layout>
-        <div className="grid w-full lg:grid-cols-5 gap-5 min-h-[92vh] py-4">
-          <section className="pr-4 lg:border-r">
+        <div className="grid w-full lg:grid-cols-6 gap-5 min-h-[92vh] py-4">
+          <section className="col-span-2 pr-4 lg:border-r">
             <h4 className="flex items-center gap-2 text-base font-bold md:text-lg">
               <BiCabinet className="w-5 h-5" />
               Products
@@ -350,7 +349,7 @@ export default function Register() {
                   to boost the sales performance
                 </h2>
               </div>
-              <div className="grid gap-5 mt-10 2xl:grid-cols-5 lg:grid-cols-3 sm:grid-cols-2">
+              <div className="grid gap-5 mt-10 3xl:grid-cols-5 xl:grid-cols-3 lg:grid-cols-2 sm:grid-cols-1">
                 {products
                   .filter((product) => {
                     if (searchTerm === "") {
@@ -487,74 +486,93 @@ export default function Register() {
                 </HStack>
               </FormControl>{" "}
               {/* plot to show pricing of competitor products */}
-              {pricingData &&
+              {/* pricingData &&
                 pricingData[0]["data"].length > 0 &&
-                recommendPrice && (
-                  <VStack height={300} width={"100%"}>
-                    <ResponsiveScatterPlot
-                      data={pricingData}
-                      margin={{ top: 60, right: 100, bottom: 60, left: 100 }}
-                      xScale={{ type: "linear", min: 0, max: "auto" }}
-                      yScale={{ type: "linear", min: 0, max: "auto" }}
-                      axisTop={null}
-                      axisRight={null}
-                      axisBottom={{
-                        orient: "bottom",
-                        tickSize: 0,
-                        tickPadding: 5,
-                        tickRotation: 0,
-                        format: () => "",
-                      }}
-                      axisLeft={{
-                        orient: "left",
-                        tickSize: 5,
-                        tickPadding: 5,
-                        tickRotation: 0,
-                        legend: "Price (RM)",
-                        legendPosition: "middle",
-                        legendOffset: -60,
-                      }}
-                      // colors={(node) => {
-                      //   return node.y === findMidpoint(pricingData[0].data)
-                      //     ? "red"
-                      //     : "orange";
-                      // }}
-                      pointSize={10}
-                      pointColor={{ theme: "background" }}
-                      pointBorderWidth={2}
-                      pointBorderColor={{ from: "serieColor" }}
-                      pointLabel="y"
-                      pointLabelYOffset={-12}
-                      useMesh={true}
-                      legends={[
-                        {
-                          anchor: "bottom-right",
-                          direction: "column",
-                          justify: false,
-                          translateX: 130,
-                          translateY: 0,
-                          itemsSpacing: 0,
-                          itemDirection: "left-to-right",
-                          itemWidth: 100,
-                          itemHeight: 20,
-                          itemOpacity: 0.75,
-                          symbolSize: 12,
-                          symbolShape: "circle",
-                          symbolBorderColor: "rgba(0, 0, 0, .5)",
-                          effects: [
-                            {
-                              on: "hover",
-                              style: {
-                                itemBackground: "rgba(0, 0, 0, .03)",
-                                itemOpacity: 1,
-                              },
+                recommendPrice && */}
+              {
+                <VStack height={300} width={"100%"}>
+                  <ResponsiveScatterPlot
+                    data={[
+                      {
+                        id: "1",
+                        data: generateRandom(20, 100, 60, 20),
+                      },
+                      {
+                        id: "2",
+                        data: generateRandom(20, 100, 60, 20),
+                      },
+                      {
+                        id: "3",
+                        data: [
+                          {
+                            x: 100,
+                            y: 100,
+                          },
+                        ],
+                      },
+                    ]}
+                    margin={{ top: 60, right: 50, bottom: 60, left: 70 }}
+                    xScale={{ type: "linear", min: 0, max: "auto" }}
+                    yScale={{ type: "linear", min: 0, max: "auto" }}
+                    axisTop={null}
+                    axisRight={null}
+                    axisBottom={{
+                      orient: "bottom",
+                      tickSize: 0,
+                      tickPadding: 5,
+                      tickRotation: 0,
+                      format: () => "",
+                    }}
+                    axisLeft={{
+                      orient: "left",
+                      tickSize: 5,
+                      tickPadding: 5,
+                      tickRotation: 0,
+                      legend: "Price (RM)",
+                      legendPosition: "middle",
+                      legendOffset: -60,
+                    }}
+                    // colors={(node) => {
+                    //   return node.y === findMidpoint(pricingData[0].data)
+                    //     ? "red"
+                    //     : "orange";
+                    // }}
+                    pointSize={10}
+                    pointColor={{ theme: "background" }}
+                    pointBorderWidth={2}
+                    pointBorderColor={{ from: "serieColor" }}
+                    pointLabel="y"
+                    pointLabelYOffset={-12}
+                    useMesh={true}
+                    legends={[
+                      {
+                        anchor: "bottom-right",
+                        direction: "column",
+                        justify: false,
+                        translateX: 130,
+                        translateY: 0,
+                        itemsSpacing: 0,
+                        itemDirection: "left-to-right",
+                        itemWidth: 100,
+                        itemHeight: 20,
+                        itemOpacity: 0.75,
+                        symbolSize: 12,
+                        symbolShape: "circle",
+                        symbolBorderColor: "rgba(0, 0, 0, .5)",
+                        effects: [
+                          {
+                            on: "hover",
+                            style: {
+                              itemBackground: "rgba(0, 0, 0, .03)",
+                              itemOpacity: 1,
                             },
-                          ],
-                        },
-                      ]}
-                    />
-                  </VStack>
-                )}
+                          },
+                        ],
+                      },
+                    ]}
+                  />
+                </VStack>
+              }
               <FormControl>
                 <FormLabel>Image</FormLabel>
                 <FileUploader
