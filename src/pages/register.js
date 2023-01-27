@@ -160,7 +160,7 @@ export default function Register() {
                     className="w-full text-right"
                     placeholder="lol"
                     type="slug"
-                    onChange={(e) => setSlug(slugify(e.target.value))}
+                    onChange={(e) => setSlug(e.target.value)}
                     value={slug}
                   />
                   <div className="px-1">.salesreflex.com</div>
