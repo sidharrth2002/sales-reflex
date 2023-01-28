@@ -100,7 +100,7 @@ export default function Register() {
   const [products, setProducts] = useState([]);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [productName, setProductName] = useState("");
-  const [productPrice, setProductPrice] = useState(0);
+  const [productPrice, setProductPrice] = useState(3);
   const [productDescription, setProductDescription] = useState("");
   const [productImage, setProductImage] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
@@ -513,6 +513,51 @@ export default function Register() {
                       },
                       {
                         id: "3",
+                        data: Array(20)
+                          .fill(1)
+                          .map((d) => {
+                            return {
+                              x:
+                                Math.floor(Math.random() * (100 - 20 + 1)) + 20,
+                              y:
+                                Math.floor(
+                                  Math.random() *
+                                    (Number(productPrice) + 2 ??
+                                    5 - Number(productPrice) > 2
+                                      ? Number(productPrice) - 2
+                                      : 0 + 1)
+                                ) +
+                                  Number(productPrice) >
+                                2
+                                  ? Number(productPrice) - 2
+                                  : 0 ?? 5,
+                            };
+                          }),
+                      },
+                      {
+                        id: "4",
+                        data: Array(20)
+                          .fill(1)
+                          .map((d) => {
+                            return {
+                              x:
+                                Math.floor(Math.random() * (100 - 20 + 1)) + 20,
+                              y:
+                                Math.floor(
+                                  Math.random() *
+                                    (Number(productPrice) + 2 ??
+                                      5 - Number(productPrice) - 2 ??
+                                      0 + 1)
+                                ) +
+                                  Number(productPrice) -
+                                  2 ??
+                                0 ??
+                                5,
+                            };
+                          }),
+                      },
+                      {
+                        id: "5",
                         data: [
                           {
                             x: 100,
