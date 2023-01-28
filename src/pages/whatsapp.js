@@ -150,7 +150,7 @@ export default function Whatsapp() {
           <Link
             target={`_blank`}
             href={`https://web.whatsapp.com/send?phone=${
-              +60108375380
+              store?.mobile_number
             }&text=Hi, I am ${name},%0a%0d%0a
 
 I am interested in the following products:
