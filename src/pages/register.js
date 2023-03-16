@@ -113,6 +113,7 @@ export default function Register() {
     const description = await axios.post(
       `${process.env.NEXT_PUBLIC_API_URL}/descriptions`,
       {
+        name,
         keywords,
       }
     );

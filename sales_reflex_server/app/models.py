@@ -73,6 +73,7 @@ class RecordsEntitiesByTypeResponse(BaseModel):
     values: List[RecordEntitiesByTypeResponse]
 
 class CompanyDescriptionRequest(BaseModel):
+    name: str
     keywords: List[str]
 
 class CompanyDescriptionResponse(BaseModel):
