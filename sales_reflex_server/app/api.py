@@ -21,7 +21,7 @@ from app.models import (
     CompanyDescriptionRequest,
     CompanyDescriptionResponse
 )
-from app.descriptor import download_model
+from app.descriptor import load_descriptor
 from app.spacy_extractor import SpacyExtractor
 from wordwise import Extractor
 
@@ -50,7 +50,7 @@ example_request = srsly.read_json("app/data/example_request.json")
 nlp = spacy.load("en_core_web_sm")
 extractor = SpacyExtractor(nlp)
 
-company_description_model = download_model()
+llm = load_descriptor("app/data/company_description_prompt.json")
 
 
 @app.get("/", include_in_schema=False)
@@ -127,7 +127,7 @@ async def extract_entities_by_type(body: RecordsRequest = Body(..., example=exam
     "/descriptions", response_model=CompanyDescriptionResponse
 )
 async def get_company_descriptions_from_keywords(body: CompanyDescriptionRequest):
-    description = company_description_model.predict(
-        keywords=body.keywords, use_gpu=False)
-    print(description)
+    print(body.name, body.keywords)
+    description = llm.run(company=body.name, keywords=", ".join(body.keywords))
+
     return {"description": description}
