@@ -10,4 +10,4 @@
 
 ![image](https://github.com/sidharrth2002/sales-reflex/assets/53941721/0d8f9d0d-4ac1-47bb-811e-46f956ba0f7c)
 
-![image](https://github.com/sidharrth2002/sales-reflex/assets/53941721/e1cb9a72-6df6-4ec7-8b53-7a30f815aa3f)
+![image](https://github.com/sidharrth2002/sales-reflex/assets/53941721/8945a62b-2e6a-4491-a68c-572b6b796fde)
